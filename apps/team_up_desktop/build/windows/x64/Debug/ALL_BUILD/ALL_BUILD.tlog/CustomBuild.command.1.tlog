@@ -1,0 +1,10 @@
+^D:\PROJEKTY\TEAM_UP\APPS\TEAM_UP_DESKTOP\WINDOWS\CMAKELISTS.TXT
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/Projekty/team_up/apps/team_up_desktop/windows -BD:/Projekty/team_up/apps/team_up_desktop/build/windows --check-stamp-file D:/Projekty/team_up/apps/team_up_desktop/build/windows/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

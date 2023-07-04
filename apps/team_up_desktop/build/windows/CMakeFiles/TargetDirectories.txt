@@ -1,0 +1,10 @@
+D:/Projekty/team_up/apps/team_up_desktop/build/windows/CMakeFiles/INSTALL.dir
+D:/Projekty/team_up/apps/team_up_desktop/build/windows/CMakeFiles/ALL_BUILD.dir
+D:/Projekty/team_up/apps/team_up_desktop/build/windows/CMakeFiles/ZERO_CHECK.dir
+D:/Projekty/team_up/apps/team_up_desktop/build/windows/flutter/CMakeFiles/flutter_wrapper_plugin.dir
+D:/Projekty/team_up/apps/team_up_desktop/build/windows/flutter/CMakeFiles/flutter_wrapper_app.dir
+D:/Projekty/team_up/apps/team_up_desktop/build/windows/flutter/CMakeFiles/flutter_assemble.dir
+D:/Projekty/team_up/apps/team_up_desktop/build/windows/flutter/CMakeFiles/INSTALL.dir
+D:/Projekty/team_up/apps/team_up_desktop/build/windows/runner/CMakeFiles/team_up_desktop.dir
+D:/Projekty/team_up/apps/team_up_desktop/build/windows/runner/CMakeFiles/INSTALL.dir
+D:/Projekty/team_up/apps/team_up_desktop/build/windows/runner/CMakeFiles/ALL_BUILD.dir

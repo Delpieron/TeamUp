@@ -1,0 +1,77 @@
+name: team_up
+
+packages:
+  - "apps/**"
+  - "shared/**"
+
+command:
+  version:
+    includeScopes: false
+    includeCommitId: false
+    linkToCommits: false
+    workspaceChangelog: false
+    updateGitTagRefs: false
+    fetchTags: false
+
+  bootstrap:
+    # It seems so that running "pub get" in parallel has some issues (like
+    # https://github.com/dart-lang/pub/issues/3404). Disabling this feature
+    # makes the CI much more stable.
+    runPubGetInParallel: false
+
+scripts:
+
+  postclean:
+    exec: flutter clean
+
+  pubget:
+    exec: flutter pub get
+
+  format:
+    exec: dart format -l 120 --set-exit-if-changed .
+
+  analyze:
+    exec: flutter analyze
+
+  # Specific to generate
+
+  localization:translations:
+    run: >
+      flutter pub run easy_localization:generate -f keys -o locale_keys.g.dart -O lib/src/l10n -s en-EN.json -S assets/l10n &&
+      flutter pub run easy_localization:generate -f json -o codegen_loader.g.dart -O lib/src/l10n -S assets/l10n
+    packageFilters:
+      scope: 'localization_pkg'
+    exec:
+      concurrency: 1
+
+  generate-code:
+    run: melos exec --depends-on="build_runner" --order-dependents --fail-fast -- flutter pub run build_runner build --delete-conflicting-outputs
+
+  rebuild:
+    run: >
+      melos run postclean &&
+      melos bootstrap &&
+      melos run localization:translations &&
+      melos run generate-code
+
+  # App build
+
+  build:team_up:android:
+    run: >
+      flutter config --enable-android &&
+      flutter build appbundle
+    packageFilters:
+      scope: 'team_up_desktop'
+    exec:
+      failFast: true
+      concurrency: 1
+
+  build:team_up:ios:
+    run: >
+      flutter config --enable-ios &&
+      flutter build ipa
+    packageFilters:
+      scope: 'team_up_desktop'
+    exec:
+      failFast: true
+      concurrency: 1

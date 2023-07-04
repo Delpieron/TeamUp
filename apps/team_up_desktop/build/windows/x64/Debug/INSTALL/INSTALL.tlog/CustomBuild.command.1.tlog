@@ -1,0 +1,10 @@
+^D:\PROJEKTY\TEAM_UP\APPS\TEAM_UP_DESKTOP\BUILD\WINDOWS\CMAKEFILES\0312392E7BCB937539974A88EADD273C\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
