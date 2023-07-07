@@ -11,7 +11,7 @@ class FirstStartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => FirstStartBloc(),
+      create: (_) => FirstStartBloc(),
       child: Scaffold(
         body: Row(
           mainAxisSize: MainAxisSize.min,

@@ -52,12 +52,14 @@ mixin _$FirstStartEvent {
 
 /// @nodoc
 abstract class $FirstStartEventCopyWith<$Res> {
-  factory $FirstStartEventCopyWith(FirstStartEvent value, $Res Function(FirstStartEvent) then) =
+  factory $FirstStartEventCopyWith(
+          FirstStartEvent value, $Res Function(FirstStartEvent) then) =
       _$FirstStartEventCopyWithImpl<$Res, FirstStartEvent>;
 }
 
 /// @nodoc
-class _$FirstStartEventCopyWithImpl<$Res, $Val extends FirstStartEvent> implements $FirstStartEventCopyWith<$Res> {
+class _$FirstStartEventCopyWithImpl<$Res, $Val extends FirstStartEvent>
+    implements $FirstStartEventCopyWith<$Res> {
   _$FirstStartEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -68,14 +70,17 @@ class _$FirstStartEventCopyWithImpl<$Res, $Val extends FirstStartEvent> implemen
 
 /// @nodoc
 abstract class _$$_OnNewPageRequestCopyWith<$Res> {
-  factory _$$_OnNewPageRequestCopyWith(_$_OnNewPageRequest value, $Res Function(_$_OnNewPageRequest) then) =
+  factory _$$_OnNewPageRequestCopyWith(
+          _$_OnNewPageRequest value, $Res Function(_$_OnNewPageRequest) then) =
       __$$_OnNewPageRequestCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_OnNewPageRequestCopyWithImpl<$Res> extends _$FirstStartEventCopyWithImpl<$Res, _$_OnNewPageRequest>
+class __$$_OnNewPageRequestCopyWithImpl<$Res>
+    extends _$FirstStartEventCopyWithImpl<$Res, _$_OnNewPageRequest>
     implements _$$_OnNewPageRequestCopyWith<$Res> {
-  __$$_OnNewPageRequestCopyWithImpl(_$_OnNewPageRequest _value, $Res Function(_$_OnNewPageRequest) _then)
+  __$$_OnNewPageRequestCopyWithImpl(
+      _$_OnNewPageRequest _value, $Res Function(_$_OnNewPageRequest) _then)
       : super(_value, _then);
 }
 
@@ -91,7 +96,8 @@ class _$_OnNewPageRequest implements _OnNewPageRequest {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$_OnNewPageRequest);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_OnNewPageRequest);
   }
 
   @override
@@ -164,19 +170,22 @@ mixin _$FirstStartState {
   bool get isLoginView => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $FirstStartStateCopyWith<FirstStartState> get copyWith => throw _privateConstructorUsedError;
+  $FirstStartStateCopyWith<FirstStartState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $FirstStartStateCopyWith<$Res> {
-  factory $FirstStartStateCopyWith(FirstStartState value, $Res Function(FirstStartState) then) =
+  factory $FirstStartStateCopyWith(
+          FirstStartState value, $Res Function(FirstStartState) then) =
       _$FirstStartStateCopyWithImpl<$Res, FirstStartState>;
   @useResult
   $Res call({StateType type, bool isLoginView});
 }
 
 /// @nodoc
-class _$FirstStartStateCopyWithImpl<$Res, $Val extends FirstStartState> implements $FirstStartStateCopyWith<$Res> {
+class _$FirstStartStateCopyWithImpl<$Res, $Val extends FirstStartState>
+    implements $FirstStartStateCopyWith<$Res> {
   _$FirstStartStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -204,8 +213,10 @@ class _$FirstStartStateCopyWithImpl<$Res, $Val extends FirstStartState> implemen
 }
 
 /// @nodoc
-abstract class _$$_FirstStartStateCopyWith<$Res> implements $FirstStartStateCopyWith<$Res> {
-  factory _$$_FirstStartStateCopyWith(_$_FirstStartState value, $Res Function(_$_FirstStartState) then) =
+abstract class _$$_FirstStartStateCopyWith<$Res>
+    implements $FirstStartStateCopyWith<$Res> {
+  factory _$$_FirstStartStateCopyWith(
+          _$_FirstStartState value, $Res Function(_$_FirstStartState) then) =
       __$$_FirstStartStateCopyWithImpl<$Res>;
   @override
   @useResult
@@ -213,9 +224,11 @@ abstract class _$$_FirstStartStateCopyWith<$Res> implements $FirstStartStateCopy
 }
 
 /// @nodoc
-class __$$_FirstStartStateCopyWithImpl<$Res> extends _$FirstStartStateCopyWithImpl<$Res, _$_FirstStartState>
+class __$$_FirstStartStateCopyWithImpl<$Res>
+    extends _$FirstStartStateCopyWithImpl<$Res, _$_FirstStartState>
     implements _$$_FirstStartStateCopyWith<$Res> {
-  __$$_FirstStartStateCopyWithImpl(_$_FirstStartState _value, $Res Function(_$_FirstStartState) _then)
+  __$$_FirstStartStateCopyWithImpl(
+      _$_FirstStartState _value, $Res Function(_$_FirstStartState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -258,7 +271,8 @@ class _$_FirstStartState implements _FirstStartState {
         (other.runtimeType == runtimeType &&
             other is _$_FirstStartState &&
             (identical(other.type, type) || other.type == type) &&
-            (identical(other.isLoginView, isLoginView) || other.isLoginView == isLoginView));
+            (identical(other.isLoginView, isLoginView) ||
+                other.isLoginView == isLoginView));
   }
 
   @override
@@ -272,7 +286,9 @@ class _$_FirstStartState implements _FirstStartState {
 }
 
 abstract class _FirstStartState implements FirstStartState {
-  const factory _FirstStartState({required final StateType type, required final bool isLoginView}) = _$_FirstStartState;
+  const factory _FirstStartState(
+      {required final StateType type,
+      required final bool isLoginView}) = _$_FirstStartState;
 
   @override
   StateType get type;
@@ -280,5 +296,6 @@ abstract class _FirstStartState implements FirstStartState {
   bool get isLoginView;
   @override
   @JsonKey(ignore: true)
-  _$$_FirstStartStateCopyWith<_$_FirstStartState> get copyWith => throw _privateConstructorUsedError;
+  _$$_FirstStartStateCopyWith<_$_FirstStartState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

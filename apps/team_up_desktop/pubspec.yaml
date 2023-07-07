@@ -12,7 +12,7 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
-  http: ^0.13.5
+  http: ^1.0.0
   provider: ^6.0.4
   async_builder: ^1.3.1
   json_serializable: ^6.5.3
@@ -27,6 +27,10 @@ dependencies:
 
   # Modules
   library_pkg:
+  connection_checker_pkg:
+  local_storage_pkg:
+  rest_client_pkg:
+  background_worker_pkg:
 
 dev_dependencies:
   flutter_test:
