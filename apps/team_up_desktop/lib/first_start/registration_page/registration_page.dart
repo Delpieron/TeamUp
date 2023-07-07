@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:library_pkg/library_pkg.dart';
-import 'package:team_up_desktop/first_start/first_start_bloc.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+import '../first_start_bloc.dart';
+
+class RegistrationPage extends StatelessWidget {
+  const RegistrationPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class LoginPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                'Zaloguj się',
+                'Rejestracja',
                 style: TextStyle(color: Colors.white, fontSize: 64),
               ),
               const Padding(
@@ -28,11 +29,19 @@ class LoginPage extends StatelessWidget {
                 padding: EdgeInsets.all(18),
                 child: CustomTextFormField(label: 'Hasło'),
               ),
+              const Padding(
+                padding: EdgeInsets.all(18),
+                child: CustomTextFormField(label: 'Powtórz hasło'),
+              ),
+              const Padding(
+                padding: EdgeInsets.all(18),
+                child: CustomTextFormField(label: 'Email'),
+              ),
               Padding(
                 padding: const EdgeInsets.only(top: 32),
                 child: CustomButton(
                   onPressed: () => print(''),
-                  child: const Text('Zaloguj'),
+                  child: const Text('Zarejestruj'),
                 ),
               ),
               const Padding(
@@ -41,7 +50,7 @@ class LoginPage extends StatelessWidget {
               ),
               CustomButton(
                 onPressed: () => context.read<FirstStartBloc>().add(const FirstStartEvent.onNewPageRequest()),
-                child: const Text('Zarejestruj się'),
+                child: const Text('Zaloguj się'),
               ),
             ],
           ),
