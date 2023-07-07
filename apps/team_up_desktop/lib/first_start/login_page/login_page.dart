@@ -71,8 +71,12 @@ class LoginPage extends StatelessWidget {
       );
       return;
     }
-    final token = await bloc.onLoginRequest();
-    print(token.token);
+    final loginResult = await bloc.onLoginRequest();
+    print(loginResult);
+
+    // if(loginResult){
+    //   Navigator.of(context).push(route);
+    // }
   }
 }
 
