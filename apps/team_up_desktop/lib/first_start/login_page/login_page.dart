@@ -71,8 +71,8 @@ class LoginPage extends StatelessWidget {
       );
       return;
     }
-    final a = await bloc.onLoginRequest();
-    print('$a---------------------------------------------------------------------------');
+    final token = await bloc.onLoginRequest();
+    print(token.token);
   }
 }
 
