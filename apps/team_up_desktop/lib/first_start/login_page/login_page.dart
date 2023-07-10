@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:library_pkg/library_pkg.dart';
+import 'package:team_up_desktop/enums/first_start_page_enum.dart';
 import 'package:team_up_desktop/first_start/first_start_bloc.dart';
 import 'package:team_up_desktop/first_start/login_page/login_bloc.dart';
 
@@ -15,53 +16,63 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return InitBuilder<LoginBloc>(
       getter: _registerBloc,
-      disposer: (_) => ScaffoldMessenger.of(context).clearSnackBars(),
       builder: (context, bloc) {
-        return Form(
-          child: Expanded(
-            flex: 2,
-            child: ColoredBox(
-              color: const Color(0xff2e6ff2),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    'Zaloguj się',
-                    style: TextStyle(color: Colors.white, fontSize: 64),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.all(18),
-                    child: CustomTextFormField(label: 'Nazwa użytkownika'),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.all(18),
-                    child: CustomTextFormField(label: 'Hasło'),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 32),
-                    child: CustomButton(
-                      onPressed: () => _onLoginRequest(bloc!, context),
-                      child: const Text('Zaloguj'),
+        return InitBuilder<Map<String, TextEditingController>>(
+          getter: _getTextControllers,
+          builder: (context, controllers) {
+            return Expanded(
+              flex: 2,
+              child: ColoredBox(
+                color: const Color(0xff2e6ff2),
+                child: SizedBox(
+                  height: MediaQuery.sizeOf(context).height,
+                  child: SingleChildScrollView(
+                    child: Form(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            'Zaloguj się',
+                            style: TextStyle(color: Colors.white, fontSize: 64),
+                          ),
+                          CustomTextFormField(controller: controllers!['email']!, label: 'Email'),
+                          CustomTextFormField(controller: controllers['password']!, label: 'Hasło'),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 32),
+                            child: CustomButton(
+                              onPressed: () => _onLoginRequest(
+                                bloc!,
+                                context,
+                                controllers['email']!.text,
+                                controllers['password']!.text,
+                              ),
+                              child: const Text('Zaloguj'),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(vertical: 64, horizontal: 32),
+                            child: Divider(height: 10, thickness: 2, color: Colors.white),
+                          ),
+                          CustomButton(
+                            onPressed: () => context.read<FirstStartBloc>().add(
+                                  const FirstStartEvent.onNewPageRequest(FirstStartPageEnum.registrationPage),
+                                ),
+                            child: const Text('Zarejestruj się'),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 64, horizontal: 32),
-                    child: Divider(height: 10, thickness: 2, color: Colors.white),
-                  ),
-                  CustomButton(
-                    onPressed: () => context.read<FirstStartBloc>().add(const FirstStartEvent.onNewPageRequest()),
-                    child: const Text('Zarejestruj się'),
-                  ),
-                ],
+                ),
               ),
-            ),
-          ),
+            );
+          },
         );
       },
     );
   }
 
-  Future<void> _onLoginRequest(LoginBloc bloc, BuildContext context) async {
+  Future<void> _onLoginRequest(LoginBloc bloc, BuildContext context, String email, String password) async {
     if (!bloc.isInternetConnected()) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
@@ -71,12 +82,7 @@ class LoginPage extends StatelessWidget {
       );
       return;
     }
-    final loginResult = await bloc.onLoginRequest();
-    print(loginResult);
-
-    // if(loginResult){
-    //   Navigator.of(context).push(route);
-    // }
+    final loginResult = await bloc.onLoginRequest(email, password);
   }
 }
 
@@ -86,3 +92,8 @@ LoginBloc _registerBloc() {
   }
   return _getIt.get<LoginBloc>();
 }
+
+Map<String, TextEditingController> _getTextControllers() => {
+      'email': TextEditingController(),
+      'password': TextEditingController(),
+    };

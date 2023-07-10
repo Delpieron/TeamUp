@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:team_up_desktop/enums/first_start_page_enum.dart';
 import 'package:team_up_desktop/first_start/first_start_bloc.dart';
 import 'package:team_up_desktop/first_start/login_page/login_page.dart';
+import 'package:team_up_desktop/first_start/registration_page/first_boarding_page.dart';
 import 'package:team_up_desktop/first_start/registration_page/registration_page.dart';
+import 'package:team_up_desktop/first_start/registration_page/second_boarding_page.dart';
 
 class FirstStartView extends StatelessWidget {
   const FirstStartView({super.key});
@@ -14,7 +17,6 @@ class FirstStartView extends StatelessWidget {
       create: (_) => FirstStartBloc(),
       child: Scaffold(
         body: Row(
-          mainAxisSize: MainAxisSize.min,
           children: [
             Expanded(
               child: ColoredBox(
@@ -50,7 +52,18 @@ class FirstStartView extends StatelessWidget {
             ),
             BlocBuilder<FirstStartBloc, FirstStartState>(
               builder: (context, state) {
-                return state.isLoginView ? const LoginPage() : const RegistrationPage();
+                switch (state.currentPage) {
+                  case FirstStartPageEnum.loginPage:
+                    return const LoginPage();
+                  case FirstStartPageEnum.registrationPage:
+                    return const RegistrationPage();
+                  case FirstStartPageEnum.onBoardingFirstPage:
+                    return const FirstBoardingPage();
+                    case FirstStartPageEnum.onBoardingSecondPage:
+                    return SecondBoardingPage();
+                  default:
+                    return const SizedBox.shrink();
+                }
               },
             ),
           ],

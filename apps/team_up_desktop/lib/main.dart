@@ -10,7 +10,7 @@ import 'package:team_up_desktop/first_start/first_start_view.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  _registerDependecies();
+  _registerDependencies();
   await GetIt.I.isReady<BackgroundWorkerProvider>();
   runApp(const MyApp());
 }
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-void _registerDependecies() {
+void _registerDependencies() {
   final getIt = GetIt.instance;
   getIt
     ..registerSingletonAsync<BackgroundWorkerProvider>(

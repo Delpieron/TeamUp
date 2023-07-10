@@ -10,16 +10,16 @@ import 'package:team_up_desktop/models/login_response.dart';
 final _getIt = GetIt.I;
 
 class LoginBloc {
-  final ConnectionCheckerProvider _conncetionChecker = _getIt.get<ConnectionCheckerProvider>();
+  final ConnectionCheckerProvider _connectionChecker = _getIt.get<ConnectionCheckerProvider>();
   final RestClientProvider _restApi = _getIt.get<RestClientProvider>()..init();
   final LocalStorageProvider _localStorage = _getIt.get<LocalStorageProvider>()..init();
 
-  bool isInternetConnected() => _conncetionChecker.isNetworkConnected;
+  bool isInternetConnected() => _connectionChecker.isNetworkConnected;
 
-  Future<bool> onLoginRequest() async {
+  Future<bool> onLoginRequest(String email, String password) async {
     final result = await _restApi.post<dynamic>(
-      '${Constants.apiBaseURL}/api/v1/Login',
-      data: {'email': 'string2', 'password': 'string2'},
+      '${Constants.apiBaseURL}Login',
+      data: {'email': email, 'password': password},
       fromJson: (element) => LoginResponse.fromJson(element as Map<String, Object?>),
     );
     if (result.statusCode != RestStatusCodes.ok) {
@@ -28,20 +28,4 @@ class LoginBloc {
     final response = result.result! as LoginResponse;
     return _localStorage.storeData(Constants.authTokenKey, response.token);
   }
-
-  Future<void> getToken() async {
-    final a = await _localStorage.loadData<String>(
-      Constants.authTokenKey,
-      (element) => element as String,
-    );
-    print(a);
-  }
 }
-
-// _restApi.get<List<String>>(
-// '${Constants.apiBaseURL}/api/v1/Game/Categories',
-// fromJson: (element) => (element as Iterable).map((e) {
-// print(e);
-// return '';
-// }).toList(),
-// );

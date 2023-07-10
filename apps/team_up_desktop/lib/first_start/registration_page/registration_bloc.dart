@@ -10,34 +10,32 @@ import 'package:team_up_desktop/models/login_response.dart';
 final _getIt = GetIt.I;
 
 class RegistrationBloc {
-  final ConnectionCheckerProvider _conncetionChecker = _getIt.get<ConnectionCheckerProvider>();
-  final RestClientProvider _restApi = _getIt.get<RestClientProvider>()
-    ..init();
-  final LocalStorageProvider _localStorage = _getIt.get<LocalStorageProvider>()
-    ..init();
+  final ConnectionCheckerProvider _connectionChecker = _getIt.get<ConnectionCheckerProvider>();
+  final RestClientProvider _restApi = _getIt.get<RestClientProvider>()..init();
+  final LocalStorageProvider _localStorage = _getIt.get<LocalStorageProvider>()..init();
 
-  bool isInternetConnected() => _conncetionChecker.isNetworkConnected;
+  bool isInternetConnected() => _connectionChecker.isNetworkConnected;
 
-  Future<void> onRegisterRequest() async {
-    final result = await _restApi.post<void>(
-      '${Constants.apiBaseURL}/api/v1/Login',
+  Future<bool> onRegisterRequest(String email, String userName, String password) async {
+    final result = await _restApi.post<dynamic>(
+      '${Constants.apiBaseURL}Register',
       data: {
-        'email': 'string2',
-        'username': 'string2',
-        'password': 'string2',
+        'email': email,
+        'username': userName,
+        'password': password,
         'age': 0,
         'startHour': 0,
         'endHour': 0,
-        'friendsList': 'string',
-        'gamesList': 'string'
+        'friendsList': '',
+        'gamesList': ''
       },
+      fromJson: (element) => LoginResponse.fromJson(element as Map<String, Object?>),
     );
     if (result.statusCode != RestStatusCodes.ok) {
-      return;
+      return false;
     }
-    // final response = result.result! as RestResponse;
+    final response = result.result! as LoginResponse;
 
-    // return _localStorage.storeData(Constants.authTokenKey, response.token);
+    return _localStorage.storeData(Constants.authTokenKey, response.token);
   }
 }
-
