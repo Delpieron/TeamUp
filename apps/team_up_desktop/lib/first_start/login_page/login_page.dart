@@ -36,7 +36,11 @@ class LoginPage extends StatelessWidget {
                           style: TextStyle(color: Colors.white, fontSize: 64),
                         ),
                         CustomTextFormField(controller: controllers!['email']!, label: 'Email'),
-                        CustomTextFormField(controller: controllers['password']!, label: 'Hasło'),
+                        CustomTextFormField(
+                          controller: controllers['password']!,
+                          label: 'Hasło',
+                          obscureText: true,
+                        ),
                         Padding(
                           padding: const EdgeInsets.only(top: 32),
                           child: CustomButton(

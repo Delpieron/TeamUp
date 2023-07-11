@@ -28,9 +28,17 @@ class RegistrationPage extends StatelessWidget {
                       style: TextStyle(color: Colors.white, fontSize: 64),
                     ),
                     CustomTextFormField(controller: controllers!['userName']!, label: 'Nazwa użytkownika'),
-                    CustomTextFormField(controller: controllers['password']!, label: 'Hasło'),
-                    CustomTextFormField(controller: controllers['repeatPassword']!, label: 'Powtórz hasło'),
                     CustomTextFormField(controller: controllers['email']!, label: 'Email'),
+                    CustomTextFormField(
+                      controller: controllers['password']!,
+                      label: 'Hasło',
+                      obscureText: true,
+                    ),
+                    CustomTextFormField(
+                      controller: controllers['repeatPassword']!,
+                      label: 'Powtórz hasło',
+                      obscureText: true,
+                    ),
                     Padding(
                       padding: const EdgeInsets.only(top: 32),
                       child: CustomButton(
