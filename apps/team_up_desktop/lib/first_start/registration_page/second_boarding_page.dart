@@ -1,80 +1,116 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:library_pkg/library_pkg.dart';
+import 'package:team_up_desktop/enums/first_start_page_enum.dart';
+import 'package:team_up_desktop/first_start/first_start_bloc.dart';
+import 'package:team_up_desktop/first_start/registration_page/registration_bloc.dart';
+import 'package:team_up_desktop/main_view/main_view.dart';
 
-class SecondBoardingPage extends StatefulWidget {
-  SecondBoardingPage({super.key});
-
-  @override
-  State<SecondBoardingPage> createState() => _SecondBoardingPageState();
-}
-
-class _SecondBoardingPageState extends State<SecondBoardingPage> {
-  final dupa = [
-    'aaaaa',
-    'bbbbbb1',
-    'bbbbbb2',
-    'bbbbbb3',
-  ];
-
-  final List<String> kupa = [];
+class SecondBoardingPage extends StatelessWidget {
+  const SecondBoardingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      flex: 2,
-      child: ColoredBox(
-        color: Colors.blue,
-        child: Column(
-          children: [
-            const Text(
-              'Rejestracja',
-              style: TextStyle(color: Colors.white, fontSize: 64),
+    return ColoredBox(
+      color: Colors.blue,
+      child: Column(
+        children: [
+          const Text(
+            'Rejestracja',
+            style: TextStyle(color: Colors.white, fontSize: 64),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(bottom: 16),
+            child: Text(
+              'Wybierz swoje ulubione gry!',
+              style: TextStyle(color: Colors.white, fontSize: 31),
             ),
-            const Padding(
-              padding: EdgeInsets.only(bottom: 16),
-              child: Text(
-                'Wybierz swoje ulubione gry!',
-                style: TextStyle(color: Colors.white, fontSize: 31),
-              ),
-            ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 128),
-                child: GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    childAspectRatio: 3,
-                    mainAxisSpacing: 10,
-                    crossAxisSpacing: 10,
-                  ),
-                  itemCount: dupa.length,
-                  itemBuilder: (context, index) {
-                    return ColoredBox(
-                      color: kupa.contains(dupa[index]) ? Colors.red : Colors.white60,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.all(8),
-                            child: IconButton(icon: Icon(Icons.add),onPressed: (){
-                              setState(() {
-                                kupa.add(dupa[index]);
-                              });
-                            },),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8),
-                            child: Text(dupa[index]),
-                          ),
-                        ],
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 128),
+              child: BlocBuilder<RegistrationBloc, RegistrationBlocState>(
+                builder: (context, state) {
+                  return state.type.map(
+                    loading: () => const Center(
+                      child: CircularProgressIndicator(),
+                    ),
+                    loaded: () => GridView.builder(
+                      padding: const EdgeInsets.symmetric(horizontal: 80),
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        mainAxisSpacing: 30,
+                        crossAxisSpacing: 30,
                       ),
-                    );
-                  },
-                ),
+                      itemCount: state.availableGames.length,
+                      itemBuilder: (context, index) {
+                        final item = state.availableGames[index];
+                        return MaterialButton(
+                          onPressed: () => context.read<RegistrationBloc>().add(
+                                RegistrationBlocEvent.onGameItemSelected(item.id),
+                              ),
+                          child: DecoratedBox(
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage('assets/images/${item.name.replaceAll(':', '')}_logo.png'),
+                                fit: BoxFit.fill,
+                                opacity: state.selectedGamesIds.contains(item.id) ? 1 : .6,
+                              ),
+                            ),
+                            child: Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Text(
+                                item.name,
+                                style: const TextStyle(color: Colors.white, fontSize: 16),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  );
+                },
               ),
             ),
-          ],
-        ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CustomButton(
+                  onPressed: () => context.read<FirstStartBloc>().add(
+                        const FirstStartEvent.onNewPageRequest(FirstStartPageEnum.loginPage),
+                      ),
+                  child: const Text('Zaloguj się'),
+                ),
+                const SizedBox(width: 100),
+                CustomButton(
+                  onPressed: () {
+                    context.read<RegistrationBloc>().onRegisterRequest().then((result) {
+                      if (!result) {
+                        onRegistrationFailed(context);
+                        return;
+                      }
+                      Navigator.push(context, MaterialPageRoute(builder: (_) => const MainView()));
+                    });
+                  },
+                  child: const Text('Zarejestruj!'),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
+  }
+
+  void onRegistrationFailed(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('Rejestracja nie powiodła się, spróbuj ponownie'),
+      ),
+    );
+    context.read<FirstStartBloc>().add(const FirstStartEvent.onNewPageRequest(FirstStartPageEnum.registrationPage));
   }
 }

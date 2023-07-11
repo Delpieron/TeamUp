@@ -16,88 +16,80 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$FirstStartEvent {
-  FirstStartPageEnum get firstStartPageEnum => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(FirstStartPageEnum firstStartPageEnum) onNewPageRequest,
+    required TResult Function(FirstStartPageEnum firstStartPageEnum)
+        onNewPageRequest,
+    required TResult Function(bool startLoading) onStartLoading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(FirstStartPageEnum firstStartPageEnum)? onNewPageRequest,
+    TResult? Function(bool startLoading)? onStartLoading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(FirstStartPageEnum firstStartPageEnum)? onNewPageRequest,
+    TResult Function(bool startLoading)? onStartLoading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_OnNewPageRequest value) onNewPageRequest,
+    required TResult Function(_OnStartLoading value) onStartLoading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_OnNewPageRequest value)? onNewPageRequest,
+    TResult? Function(_OnStartLoading value)? onStartLoading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_OnNewPageRequest value)? onNewPageRequest,
+    TResult Function(_OnStartLoading value)? onStartLoading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $FirstStartEventCopyWith<FirstStartEvent> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $FirstStartEventCopyWith<$Res> {
-  factory $FirstStartEventCopyWith(FirstStartEvent value, $Res Function(FirstStartEvent) then) =
+  factory $FirstStartEventCopyWith(
+          FirstStartEvent value, $Res Function(FirstStartEvent) then) =
       _$FirstStartEventCopyWithImpl<$Res, FirstStartEvent>;
-  @useResult
-  $Res call({FirstStartPageEnum firstStartPageEnum});
 }
 
 /// @nodoc
-class _$FirstStartEventCopyWithImpl<$Res, $Val extends FirstStartEvent> implements $FirstStartEventCopyWith<$Res> {
+class _$FirstStartEventCopyWithImpl<$Res, $Val extends FirstStartEvent>
+    implements $FirstStartEventCopyWith<$Res> {
   _$FirstStartEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? firstStartPageEnum = null,
-  }) {
-    return _then(_value.copyWith(
-      firstStartPageEnum: null == firstStartPageEnum
-          ? _value.firstStartPageEnum
-          : firstStartPageEnum // ignore: cast_nullable_to_non_nullable
-              as FirstStartPageEnum,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$_OnNewPageRequestCopyWith<$Res> implements $FirstStartEventCopyWith<$Res> {
-  factory _$$_OnNewPageRequestCopyWith(_$_OnNewPageRequest value, $Res Function(_$_OnNewPageRequest) then) =
+abstract class _$$_OnNewPageRequestCopyWith<$Res> {
+  factory _$$_OnNewPageRequestCopyWith(
+          _$_OnNewPageRequest value, $Res Function(_$_OnNewPageRequest) then) =
       __$$_OnNewPageRequestCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({FirstStartPageEnum firstStartPageEnum});
 }
 
 /// @nodoc
-class __$$_OnNewPageRequestCopyWithImpl<$Res> extends _$FirstStartEventCopyWithImpl<$Res, _$_OnNewPageRequest>
+class __$$_OnNewPageRequestCopyWithImpl<$Res>
+    extends _$FirstStartEventCopyWithImpl<$Res, _$_OnNewPageRequest>
     implements _$$_OnNewPageRequestCopyWith<$Res> {
-  __$$_OnNewPageRequestCopyWithImpl(_$_OnNewPageRequest _value, $Res Function(_$_OnNewPageRequest) _then)
+  __$$_OnNewPageRequestCopyWithImpl(
+      _$_OnNewPageRequest _value, $Res Function(_$_OnNewPageRequest) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -148,7 +140,9 @@ class _$_OnNewPageRequest implements _OnNewPageRequest {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(FirstStartPageEnum firstStartPageEnum) onNewPageRequest,
+    required TResult Function(FirstStartPageEnum firstStartPageEnum)
+        onNewPageRequest,
+    required TResult Function(bool startLoading) onStartLoading,
   }) {
     return onNewPageRequest(firstStartPageEnum);
   }
@@ -157,6 +151,7 @@ class _$_OnNewPageRequest implements _OnNewPageRequest {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(FirstStartPageEnum firstStartPageEnum)? onNewPageRequest,
+    TResult? Function(bool startLoading)? onStartLoading,
   }) {
     return onNewPageRequest?.call(firstStartPageEnum);
   }
@@ -165,6 +160,7 @@ class _$_OnNewPageRequest implements _OnNewPageRequest {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(FirstStartPageEnum firstStartPageEnum)? onNewPageRequest,
+    TResult Function(bool startLoading)? onStartLoading,
     required TResult orElse(),
   }) {
     if (onNewPageRequest != null) {
@@ -177,6 +173,7 @@ class _$_OnNewPageRequest implements _OnNewPageRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_OnNewPageRequest value) onNewPageRequest,
+    required TResult Function(_OnStartLoading value) onStartLoading,
   }) {
     return onNewPageRequest(this);
   }
@@ -185,6 +182,7 @@ class _$_OnNewPageRequest implements _OnNewPageRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_OnNewPageRequest value)? onNewPageRequest,
+    TResult? Function(_OnStartLoading value)? onStartLoading,
   }) {
     return onNewPageRequest?.call(this);
   }
@@ -193,6 +191,7 @@ class _$_OnNewPageRequest implements _OnNewPageRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_OnNewPageRequest value)? onNewPageRequest,
+    TResult Function(_OnStartLoading value)? onStartLoading,
     required TResult orElse(),
   }) {
     if (onNewPageRequest != null) {
@@ -203,13 +202,148 @@ class _$_OnNewPageRequest implements _OnNewPageRequest {
 }
 
 abstract class _OnNewPageRequest implements FirstStartEvent {
-  const factory _OnNewPageRequest(final FirstStartPageEnum firstStartPageEnum) = _$_OnNewPageRequest;
+  const factory _OnNewPageRequest(final FirstStartPageEnum firstStartPageEnum) =
+      _$_OnNewPageRequest;
+
+  FirstStartPageEnum get firstStartPageEnum;
+  @JsonKey(ignore: true)
+  _$$_OnNewPageRequestCopyWith<_$_OnNewPageRequest> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_OnStartLoadingCopyWith<$Res> {
+  factory _$$_OnStartLoadingCopyWith(
+          _$_OnStartLoading value, $Res Function(_$_OnStartLoading) then) =
+      __$$_OnStartLoadingCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool startLoading});
+}
+
+/// @nodoc
+class __$$_OnStartLoadingCopyWithImpl<$Res>
+    extends _$FirstStartEventCopyWithImpl<$Res, _$_OnStartLoading>
+    implements _$$_OnStartLoadingCopyWith<$Res> {
+  __$$_OnStartLoadingCopyWithImpl(
+      _$_OnStartLoading _value, $Res Function(_$_OnStartLoading) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? startLoading = null,
+  }) {
+    return _then(_$_OnStartLoading(
+      null == startLoading
+          ? _value.startLoading
+          : startLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnStartLoading implements _OnStartLoading {
+  const _$_OnStartLoading(this.startLoading);
 
   @override
-  FirstStartPageEnum get firstStartPageEnum;
+  final bool startLoading;
+
   @override
+  String toString() {
+    return 'FirstStartEvent.onStartLoading(startLoading: $startLoading)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnStartLoading &&
+            (identical(other.startLoading, startLoading) ||
+                other.startLoading == startLoading));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, startLoading);
+
   @JsonKey(ignore: true)
-  _$$_OnNewPageRequestCopyWith<_$_OnNewPageRequest> get copyWith => throw _privateConstructorUsedError;
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnStartLoadingCopyWith<_$_OnStartLoading> get copyWith =>
+      __$$_OnStartLoadingCopyWithImpl<_$_OnStartLoading>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(FirstStartPageEnum firstStartPageEnum)
+        onNewPageRequest,
+    required TResult Function(bool startLoading) onStartLoading,
+  }) {
+    return onStartLoading(startLoading);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(FirstStartPageEnum firstStartPageEnum)? onNewPageRequest,
+    TResult? Function(bool startLoading)? onStartLoading,
+  }) {
+    return onStartLoading?.call(startLoading);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(FirstStartPageEnum firstStartPageEnum)? onNewPageRequest,
+    TResult Function(bool startLoading)? onStartLoading,
+    required TResult orElse(),
+  }) {
+    if (onStartLoading != null) {
+      return onStartLoading(startLoading);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnNewPageRequest value) onNewPageRequest,
+    required TResult Function(_OnStartLoading value) onStartLoading,
+  }) {
+    return onStartLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnNewPageRequest value)? onNewPageRequest,
+    TResult? Function(_OnStartLoading value)? onStartLoading,
+  }) {
+    return onStartLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnNewPageRequest value)? onNewPageRequest,
+    TResult Function(_OnStartLoading value)? onStartLoading,
+    required TResult orElse(),
+  }) {
+    if (onStartLoading != null) {
+      return onStartLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnStartLoading implements FirstStartEvent {
+  const factory _OnStartLoading(final bool startLoading) = _$_OnStartLoading;
+
+  bool get startLoading;
+  @JsonKey(ignore: true)
+  _$$_OnStartLoadingCopyWith<_$_OnStartLoading> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -218,19 +352,22 @@ mixin _$FirstStartState {
   FirstStartPageEnum get currentPage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $FirstStartStateCopyWith<FirstStartState> get copyWith => throw _privateConstructorUsedError;
+  $FirstStartStateCopyWith<FirstStartState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $FirstStartStateCopyWith<$Res> {
-  factory $FirstStartStateCopyWith(FirstStartState value, $Res Function(FirstStartState) then) =
+  factory $FirstStartStateCopyWith(
+          FirstStartState value, $Res Function(FirstStartState) then) =
       _$FirstStartStateCopyWithImpl<$Res, FirstStartState>;
   @useResult
   $Res call({StateType type, FirstStartPageEnum currentPage});
 }
 
 /// @nodoc
-class _$FirstStartStateCopyWithImpl<$Res, $Val extends FirstStartState> implements $FirstStartStateCopyWith<$Res> {
+class _$FirstStartStateCopyWithImpl<$Res, $Val extends FirstStartState>
+    implements $FirstStartStateCopyWith<$Res> {
   _$FirstStartStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -258,8 +395,10 @@ class _$FirstStartStateCopyWithImpl<$Res, $Val extends FirstStartState> implemen
 }
 
 /// @nodoc
-abstract class _$$_FirstStartStateCopyWith<$Res> implements $FirstStartStateCopyWith<$Res> {
-  factory _$$_FirstStartStateCopyWith(_$_FirstStartState value, $Res Function(_$_FirstStartState) then) =
+abstract class _$$_FirstStartStateCopyWith<$Res>
+    implements $FirstStartStateCopyWith<$Res> {
+  factory _$$_FirstStartStateCopyWith(
+          _$_FirstStartState value, $Res Function(_$_FirstStartState) then) =
       __$$_FirstStartStateCopyWithImpl<$Res>;
   @override
   @useResult
@@ -267,9 +406,11 @@ abstract class _$$_FirstStartStateCopyWith<$Res> implements $FirstStartStateCopy
 }
 
 /// @nodoc
-class __$$_FirstStartStateCopyWithImpl<$Res> extends _$FirstStartStateCopyWithImpl<$Res, _$_FirstStartState>
+class __$$_FirstStartStateCopyWithImpl<$Res>
+    extends _$FirstStartStateCopyWithImpl<$Res, _$_FirstStartState>
     implements _$$_FirstStartStateCopyWith<$Res> {
-  __$$_FirstStartStateCopyWithImpl(_$_FirstStartState _value, $Res Function(_$_FirstStartState) _then)
+  __$$_FirstStartStateCopyWithImpl(
+      _$_FirstStartState _value, $Res Function(_$_FirstStartState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -312,7 +453,8 @@ class _$_FirstStartState implements _FirstStartState {
         (other.runtimeType == runtimeType &&
             other is _$_FirstStartState &&
             (identical(other.type, type) || other.type == type) &&
-            (identical(other.currentPage, currentPage) || other.currentPage == currentPage));
+            (identical(other.currentPage, currentPage) ||
+                other.currentPage == currentPage));
   }
 
   @override
@@ -326,8 +468,9 @@ class _$_FirstStartState implements _FirstStartState {
 }
 
 abstract class _FirstStartState implements FirstStartState {
-  const factory _FirstStartState({required final StateType type, required final FirstStartPageEnum currentPage}) =
-      _$_FirstStartState;
+  const factory _FirstStartState(
+      {required final StateType type,
+      required final FirstStartPageEnum currentPage}) = _$_FirstStartState;
 
   @override
   StateType get type;
@@ -335,5 +478,6 @@ abstract class _FirstStartState implements FirstStartState {
   FirstStartPageEnum get currentPage;
   @override
   @JsonKey(ignore: true)
-  _$$_FirstStartStateCopyWith<_$_FirstStartState> get copyWith => throw _privateConstructorUsedError;
+  _$$_FirstStartStateCopyWith<_$_FirstStartState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

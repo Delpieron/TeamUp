@@ -13,11 +13,18 @@ part 'first_start_bloc.freezed.dart';
 class FirstStartBloc extends Bloc<FirstStartEvent, FirstStartState> {
   FirstStartBloc() : super(FirstStartState.initial()) {
     on<_OnNewPageRequest>(_loadNewPage);
+    on<_OnStartLoading>(_startLoading);
   }
 
   Future<void> _loadNewPage(_OnNewPageRequest event, Emitter<FirstStartState> emit) async {
     emit(
-      state.copyWith(currentPage: event.firstStartPageEnum),
+      state.copyWith(currentPage: event.firstStartPageEnum, type: StateType.loaded),
+    );
+  }
+
+  Future<void> _startLoading(_OnStartLoading event, Emitter<FirstStartState> emit) async {
+    emit(
+      state.copyWith(type: event.startLoading ? StateType.loading : StateType.loaded),
     );
   }
 }
