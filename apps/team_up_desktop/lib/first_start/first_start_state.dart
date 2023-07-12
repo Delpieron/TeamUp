@@ -4,12 +4,12 @@ part of 'first_start_bloc.dart';
 abstract class FirstStartState with _$FirstStartState {
   const factory FirstStartState({
     required StateType type,
-    required bool isLoginView,
+    required FirstStartPageEnum currentPage,
   }) = _FirstStartState;
 
   factory FirstStartState.initial() {
     return const FirstStartState(
-      isLoginView: true,
+      currentPage: FirstStartPageEnum.loginPage,
       type: StateType.loaded,
     );
   }

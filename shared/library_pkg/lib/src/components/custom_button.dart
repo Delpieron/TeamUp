@@ -15,7 +15,7 @@ class CustomButton extends StatelessWidget {
         backgroundColor: const Color(0xFF3ACAAB),
         minimumSize: Size(
           MediaQuery.sizeOf(context).width / 10,
-          MediaQuery.sizeOf(context).height / 16,
+          MediaQuery.sizeOf(context).height / 13,
         ),
       ),
       child: child,

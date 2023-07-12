@@ -1,0 +1,24 @@
+name: connection_checker_pkg
+description: connection checker
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.19.4 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  connectivity_plus: ^3.0.3
+  rxdart: ^0.27.7
+  comprehensive_utils: ^0.5.0
+
+  # Modules
+  dependency_interfaces:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
