@@ -18,7 +18,7 @@ dependencies:
   json_serializable: ^6.5.3
   rxdart: ^0.27.5
   uuid: ^3.0.7
-  json_annotation: ^4.8.0
+  json_annotation: ^4.8.1
   get_it: ^7.2.0
   flutter_svg: ^2.0.7
   flutter_bloc: ^8.1.2

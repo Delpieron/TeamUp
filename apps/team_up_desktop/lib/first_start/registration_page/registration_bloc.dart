@@ -6,7 +6,7 @@ import 'package:library_pkg/library_pkg.dart';
 import 'package:local_storage_pkg/local_storage_pkg.dart';
 import 'package:rest_client_pkg/rest_client_pkg.dart';
 import 'package:team_up_desktop/constants.dart';
-import 'package:team_up_desktop/models/game.dart';
+import 'package:team_up_desktop/models/game/game.dart';
 import 'package:team_up_desktop/models/login_response.dart';
 
 part 'registration_bloc.freezed.dart';

@@ -19,7 +19,7 @@ class LoginBloc {
   Future<bool> onLoginRequest(String email, String password) async {
     final result = await _restApi.post<dynamic>(
       '${Constants.apiBaseURL}Login',
-      data: {'email': email, 'password': 'password'},
+      data: {'email': 'kw@interia.pl', 'password': 'zaq1@WSX'},
       fromJson: (element) => LoginResponse.fromJson(element as Map<String, Object?>),
     );
     if (result.statusCode != RestStatusCodes.ok) {
