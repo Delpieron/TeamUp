@@ -50,6 +50,7 @@ class LoginPage extends StatelessWidget {
                               controllers['email']!.text,
                               controllers['password']!.text,
                             ),
+                            backgroundColor: const Color(0xFF3ACAAB),
                             child: const Text('Zaloguj'),
                           ),
                         ),
@@ -61,6 +62,7 @@ class LoginPage extends StatelessWidget {
                           onPressed: () => context.read<FirstStartBloc>().add(
                                 const FirstStartEvent.onNewPageRequest(FirstStartPageEnum.registrationPage),
                               ),
+                          backgroundColor: const Color(0xFF3ACAAB),
                           child: const Text('Zarejestruj się'),
                         ),
                       ],
@@ -86,7 +88,7 @@ class LoginPage extends StatelessWidget {
       return;
     }
     context.read<FirstStartBloc>().add(const FirstStartEvent.onStartLoading(true));
-    await bloc.onLoginRequest(email, password).then((result) {
+    await bloc.onLoginRequest(email, password).then((result) async {
       if (!result) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
@@ -97,7 +99,8 @@ class LoginPage extends StatelessWidget {
         return;
       }
       context.read<FirstStartBloc>().add(const FirstStartEvent.onStartLoading(false));
-      Navigator.push(context, MaterialPageRoute(builder: (_) => const MainView()));
+      final token = await context.read<FirstStartBloc>().getCurrentUserToken();
+      await Navigator.push(context, MaterialPageRoute(builder: (_) => MainView(token:token)));
       return;
     });
   }

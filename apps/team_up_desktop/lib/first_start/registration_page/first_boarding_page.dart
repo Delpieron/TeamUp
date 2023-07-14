@@ -76,6 +76,7 @@ class FirstBoardingPage extends StatelessWidget {
                             const FirstStartEvent.onNewPageRequest(FirstStartPageEnum.onBoardingSecondPage),
                           );
                     },
+                    backgroundColor: const Color(0xFF3ACAAB),
                     child: const Text('Dalej'),
                   ),
                 ),
@@ -87,6 +88,7 @@ class FirstBoardingPage extends StatelessWidget {
                   onPressed: () => context.read<FirstStartBloc>().add(
                         const FirstStartEvent.onNewPageRequest(FirstStartPageEnum.loginPage),
                       ),
+                  backgroundColor: const Color(0xFF3ACAAB),
                   child: const Text('Zaloguj się'),
                 ),
               ],

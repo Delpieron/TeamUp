@@ -54,7 +54,8 @@ class FirstStartView extends StatelessWidget {
                   ),
                 ),
               ),
-              Expanded(flex: 2,
+              Expanded(
+                flex: 2,
                 child: BlocBuilder<FirstStartBloc, FirstStartState>(
                   builder: (context, state) {
                     return Stack(

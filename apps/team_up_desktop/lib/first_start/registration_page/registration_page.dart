@@ -52,6 +52,7 @@ class RegistrationPage extends StatelessWidget {
                                 const FirstStartEvent.onNewPageRequest(FirstStartPageEnum.onBoardingFirstPage),
                               );
                         },
+                        backgroundColor: const Color(0xFF3ACAAB),
                         child: const Text('Dalej'),
                       ),
                     ),
@@ -65,6 +66,7 @@ class RegistrationPage extends StatelessWidget {
                         onPressed: () => context.read<FirstStartBloc>().add(
                               const FirstStartEvent.onNewPageRequest(FirstStartPageEnum.loginPage),
                             ),
+                        backgroundColor: const Color(0xFF3ACAAB),
                         child: const Text('Zaloguj się'),
                       ),
                     ),

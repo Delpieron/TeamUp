@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({required this.child, this.onPressed, super.key});
+  const CustomButton({required this.child, required this.backgroundColor, this.onPressed, super.key});
 
   final Widget child;
+  final Color backgroundColor;
   final void Function()? onPressed;
 
   @override
@@ -12,7 +13,7 @@ class CustomButton extends StatelessWidget {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         shape: const StadiumBorder(),
-        backgroundColor: const Color(0xFF3ACAAB),
+        backgroundColor: backgroundColor,
         minimumSize: Size(
           MediaQuery.sizeOf(context).width / 10,
           MediaQuery.sizeOf(context).height / 13,
