@@ -69,8 +69,30 @@ final class RestClientService extends dep.Service implements dep.RestClient {
   }
 
   @override
-  void delete() {
-    throw UnimplementedError();
+  Future<RestResponse<T>> delete<T>(
+    String uri, {
+    Object? data,
+    T Function(dynamic)? fromJson,
+    Map<String, String>? headers,
+    Encoding? encoding,
+  }) async {
+    final json = data == null ? null : jsonEncode(data);
+    final response = await _client
+        .delete(
+      Uri.parse(uri),
+      headers: headers ?? {'Content-Type': 'application/json'},
+      body: json,
+      encoding: encoding,
+    )
+        .onError((error, stackTrace) {
+      logger?.w('RestClientService post', error, stackTrace);
+      return Response(error.toString(), 1024);
+    });
+    final statusCode = RestStatusCodes.fromNumber(response.statusCode);
+    if (statusCode == RestStatusCodes.ok && fromJson != null) {
+      return RestResponse<T>(statusCode: statusCode, result: fromJson(jsonDecode(response.body)));
+    }
+    return RestResponse<T>(statusCode: statusCode);
   }
 
   @override
@@ -105,8 +127,16 @@ final class RestClientService extends dep.Service implements dep.RestClient {
         put();
         break;
       case RestClientCommand.delete:
-        delete();
-        break;
+        final params = messageWrapper.arg! as RestParameters;
+        final result = await delete(
+          params.uri,
+          data: params.data,
+          fromJson: params.fromJson,
+          headers: params.headers,
+          encoding: params.encoding,
+        );
+        callback(messageWrapper(result));
+        return;
     }
     callback(messageWrapper.wrapEmpty());
   }

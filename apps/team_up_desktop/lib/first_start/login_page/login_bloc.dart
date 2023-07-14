@@ -1,11 +1,10 @@
 import 'package:connection_checker_pkg/connection_checker_pkg.dart';
 import 'package:get_it/get_it.dart';
+import 'package:library_pkg/library_pkg.dart';
 import 'package:local_storage_pkg/local_storage_pkg.dart';
 import 'package:rest_client_pkg/rest_client_pkg.dart';
-
 import 'package:team_up_desktop/constants.dart';
 
-import 'package:team_up_desktop/models/login_response.dart';
 
 final _getIt = GetIt.I;
 

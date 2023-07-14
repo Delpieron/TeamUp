@@ -20,18 +20,24 @@ mixin _$MainViewEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String? gameId) onLoadSuggestedFriends,
     required TResult Function() onLoadCurrentUser,
+    required TResult Function() onGamesLoadRequest,
+    required TResult Function(String value, String gameId) onGameChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String? gameId)? onLoadSuggestedFriends,
     TResult? Function()? onLoadCurrentUser,
+    TResult? Function()? onGamesLoadRequest,
+    TResult? Function(String value, String gameId)? onGameChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String? gameId)? onLoadSuggestedFriends,
     TResult Function()? onLoadCurrentUser,
+    TResult Function()? onGamesLoadRequest,
+    TResult Function(String value, String gameId)? onGameChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -40,18 +46,24 @@ mixin _$MainViewEvent {
     required TResult Function(_OnLoadSuggestedFriends value)
         onLoadSuggestedFriends,
     required TResult Function(_OnLoadCurrentUser value) onLoadCurrentUser,
+    required TResult Function(_OnGamesLoadRequest value) onGamesLoadRequest,
+    required TResult Function(_OnGameChanged value) onGameChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_OnLoadSuggestedFriends value)? onLoadSuggestedFriends,
     TResult? Function(_OnLoadCurrentUser value)? onLoadCurrentUser,
+    TResult? Function(_OnGamesLoadRequest value)? onGamesLoadRequest,
+    TResult? Function(_OnGameChanged value)? onGameChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_OnLoadSuggestedFriends value)? onLoadSuggestedFriends,
     TResult Function(_OnLoadCurrentUser value)? onLoadCurrentUser,
+    TResult Function(_OnGamesLoadRequest value)? onGamesLoadRequest,
+    TResult Function(_OnGameChanged value)? onGameChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -142,6 +154,8 @@ class _$_OnLoadSuggestedFriends implements _OnLoadSuggestedFriends {
   TResult when<TResult extends Object?>({
     required TResult Function(String? gameId) onLoadSuggestedFriends,
     required TResult Function() onLoadCurrentUser,
+    required TResult Function() onGamesLoadRequest,
+    required TResult Function(String value, String gameId) onGameChanged,
   }) {
     return onLoadSuggestedFriends(gameId);
   }
@@ -151,6 +165,8 @@ class _$_OnLoadSuggestedFriends implements _OnLoadSuggestedFriends {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String? gameId)? onLoadSuggestedFriends,
     TResult? Function()? onLoadCurrentUser,
+    TResult? Function()? onGamesLoadRequest,
+    TResult? Function(String value, String gameId)? onGameChanged,
   }) {
     return onLoadSuggestedFriends?.call(gameId);
   }
@@ -160,6 +176,8 @@ class _$_OnLoadSuggestedFriends implements _OnLoadSuggestedFriends {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String? gameId)? onLoadSuggestedFriends,
     TResult Function()? onLoadCurrentUser,
+    TResult Function()? onGamesLoadRequest,
+    TResult Function(String value, String gameId)? onGameChanged,
     required TResult orElse(),
   }) {
     if (onLoadSuggestedFriends != null) {
@@ -174,6 +192,8 @@ class _$_OnLoadSuggestedFriends implements _OnLoadSuggestedFriends {
     required TResult Function(_OnLoadSuggestedFriends value)
         onLoadSuggestedFriends,
     required TResult Function(_OnLoadCurrentUser value) onLoadCurrentUser,
+    required TResult Function(_OnGamesLoadRequest value) onGamesLoadRequest,
+    required TResult Function(_OnGameChanged value) onGameChanged,
   }) {
     return onLoadSuggestedFriends(this);
   }
@@ -183,6 +203,8 @@ class _$_OnLoadSuggestedFriends implements _OnLoadSuggestedFriends {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_OnLoadSuggestedFriends value)? onLoadSuggestedFriends,
     TResult? Function(_OnLoadCurrentUser value)? onLoadCurrentUser,
+    TResult? Function(_OnGamesLoadRequest value)? onGamesLoadRequest,
+    TResult? Function(_OnGameChanged value)? onGameChanged,
   }) {
     return onLoadSuggestedFriends?.call(this);
   }
@@ -192,6 +214,8 @@ class _$_OnLoadSuggestedFriends implements _OnLoadSuggestedFriends {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_OnLoadSuggestedFriends value)? onLoadSuggestedFriends,
     TResult Function(_OnLoadCurrentUser value)? onLoadCurrentUser,
+    TResult Function(_OnGamesLoadRequest value)? onGamesLoadRequest,
+    TResult Function(_OnGameChanged value)? onGameChanged,
     required TResult orElse(),
   }) {
     if (onLoadSuggestedFriends != null) {
@@ -251,6 +275,8 @@ class _$_OnLoadCurrentUser implements _OnLoadCurrentUser {
   TResult when<TResult extends Object?>({
     required TResult Function(String? gameId) onLoadSuggestedFriends,
     required TResult Function() onLoadCurrentUser,
+    required TResult Function() onGamesLoadRequest,
+    required TResult Function(String value, String gameId) onGameChanged,
   }) {
     return onLoadCurrentUser();
   }
@@ -260,6 +286,8 @@ class _$_OnLoadCurrentUser implements _OnLoadCurrentUser {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String? gameId)? onLoadSuggestedFriends,
     TResult? Function()? onLoadCurrentUser,
+    TResult? Function()? onGamesLoadRequest,
+    TResult? Function(String value, String gameId)? onGameChanged,
   }) {
     return onLoadCurrentUser?.call();
   }
@@ -269,6 +297,8 @@ class _$_OnLoadCurrentUser implements _OnLoadCurrentUser {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String? gameId)? onLoadSuggestedFriends,
     TResult Function()? onLoadCurrentUser,
+    TResult Function()? onGamesLoadRequest,
+    TResult Function(String value, String gameId)? onGameChanged,
     required TResult orElse(),
   }) {
     if (onLoadCurrentUser != null) {
@@ -283,6 +313,8 @@ class _$_OnLoadCurrentUser implements _OnLoadCurrentUser {
     required TResult Function(_OnLoadSuggestedFriends value)
         onLoadSuggestedFriends,
     required TResult Function(_OnLoadCurrentUser value) onLoadCurrentUser,
+    required TResult Function(_OnGamesLoadRequest value) onGamesLoadRequest,
+    required TResult Function(_OnGameChanged value) onGameChanged,
   }) {
     return onLoadCurrentUser(this);
   }
@@ -292,6 +324,8 @@ class _$_OnLoadCurrentUser implements _OnLoadCurrentUser {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_OnLoadSuggestedFriends value)? onLoadSuggestedFriends,
     TResult? Function(_OnLoadCurrentUser value)? onLoadCurrentUser,
+    TResult? Function(_OnGamesLoadRequest value)? onGamesLoadRequest,
+    TResult? Function(_OnGameChanged value)? onGameChanged,
   }) {
     return onLoadCurrentUser?.call(this);
   }
@@ -301,6 +335,8 @@ class _$_OnLoadCurrentUser implements _OnLoadCurrentUser {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_OnLoadSuggestedFriends value)? onLoadSuggestedFriends,
     TResult Function(_OnLoadCurrentUser value)? onLoadCurrentUser,
+    TResult Function(_OnGamesLoadRequest value)? onGamesLoadRequest,
+    TResult Function(_OnGameChanged value)? onGameChanged,
     required TResult orElse(),
   }) {
     if (onLoadCurrentUser != null) {
@@ -315,10 +351,283 @@ abstract class _OnLoadCurrentUser implements MainViewEvent {
 }
 
 /// @nodoc
+abstract class _$$_OnGamesLoadRequestCopyWith<$Res> {
+  factory _$$_OnGamesLoadRequestCopyWith(_$_OnGamesLoadRequest value,
+          $Res Function(_$_OnGamesLoadRequest) then) =
+      __$$_OnGamesLoadRequestCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_OnGamesLoadRequestCopyWithImpl<$Res>
+    extends _$MainViewEventCopyWithImpl<$Res, _$_OnGamesLoadRequest>
+    implements _$$_OnGamesLoadRequestCopyWith<$Res> {
+  __$$_OnGamesLoadRequestCopyWithImpl(
+      _$_OnGamesLoadRequest _value, $Res Function(_$_OnGamesLoadRequest) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_OnGamesLoadRequest implements _OnGamesLoadRequest {
+  const _$_OnGamesLoadRequest();
+
+  @override
+  String toString() {
+    return 'MainViewEvent.onGamesLoadRequest()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_OnGamesLoadRequest);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? gameId) onLoadSuggestedFriends,
+    required TResult Function() onLoadCurrentUser,
+    required TResult Function() onGamesLoadRequest,
+    required TResult Function(String value, String gameId) onGameChanged,
+  }) {
+    return onGamesLoadRequest();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String? gameId)? onLoadSuggestedFriends,
+    TResult? Function()? onLoadCurrentUser,
+    TResult? Function()? onGamesLoadRequest,
+    TResult? Function(String value, String gameId)? onGameChanged,
+  }) {
+    return onGamesLoadRequest?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? gameId)? onLoadSuggestedFriends,
+    TResult Function()? onLoadCurrentUser,
+    TResult Function()? onGamesLoadRequest,
+    TResult Function(String value, String gameId)? onGameChanged,
+    required TResult orElse(),
+  }) {
+    if (onGamesLoadRequest != null) {
+      return onGamesLoadRequest();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnLoadSuggestedFriends value)
+        onLoadSuggestedFriends,
+    required TResult Function(_OnLoadCurrentUser value) onLoadCurrentUser,
+    required TResult Function(_OnGamesLoadRequest value) onGamesLoadRequest,
+    required TResult Function(_OnGameChanged value) onGameChanged,
+  }) {
+    return onGamesLoadRequest(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnLoadSuggestedFriends value)? onLoadSuggestedFriends,
+    TResult? Function(_OnLoadCurrentUser value)? onLoadCurrentUser,
+    TResult? Function(_OnGamesLoadRequest value)? onGamesLoadRequest,
+    TResult? Function(_OnGameChanged value)? onGameChanged,
+  }) {
+    return onGamesLoadRequest?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnLoadSuggestedFriends value)? onLoadSuggestedFriends,
+    TResult Function(_OnLoadCurrentUser value)? onLoadCurrentUser,
+    TResult Function(_OnGamesLoadRequest value)? onGamesLoadRequest,
+    TResult Function(_OnGameChanged value)? onGameChanged,
+    required TResult orElse(),
+  }) {
+    if (onGamesLoadRequest != null) {
+      return onGamesLoadRequest(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnGamesLoadRequest implements MainViewEvent {
+  const factory _OnGamesLoadRequest() = _$_OnGamesLoadRequest;
+}
+
+/// @nodoc
+abstract class _$$_OnGameChangedCopyWith<$Res> {
+  factory _$$_OnGameChangedCopyWith(
+          _$_OnGameChanged value, $Res Function(_$_OnGameChanged) then) =
+      __$$_OnGameChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value, String gameId});
+}
+
+/// @nodoc
+class __$$_OnGameChangedCopyWithImpl<$Res>
+    extends _$MainViewEventCopyWithImpl<$Res, _$_OnGameChanged>
+    implements _$$_OnGameChangedCopyWith<$Res> {
+  __$$_OnGameChangedCopyWithImpl(
+      _$_OnGameChanged _value, $Res Function(_$_OnGameChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+    Object? gameId = null,
+  }) {
+    return _then(_$_OnGameChanged(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == gameId
+          ? _value.gameId
+          : gameId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnGameChanged implements _OnGameChanged {
+  const _$_OnGameChanged(this.value, this.gameId);
+
+  @override
+  final String value;
+  @override
+  final String gameId;
+
+  @override
+  String toString() {
+    return 'MainViewEvent.onGameChanged(value: $value, gameId: $gameId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnGameChanged &&
+            (identical(other.value, value) || other.value == value) &&
+            (identical(other.gameId, gameId) || other.gameId == gameId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value, gameId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OnGameChangedCopyWith<_$_OnGameChanged> get copyWith =>
+      __$$_OnGameChangedCopyWithImpl<_$_OnGameChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? gameId) onLoadSuggestedFriends,
+    required TResult Function() onLoadCurrentUser,
+    required TResult Function() onGamesLoadRequest,
+    required TResult Function(String value, String gameId) onGameChanged,
+  }) {
+    return onGameChanged(value, gameId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String? gameId)? onLoadSuggestedFriends,
+    TResult? Function()? onLoadCurrentUser,
+    TResult? Function()? onGamesLoadRequest,
+    TResult? Function(String value, String gameId)? onGameChanged,
+  }) {
+    return onGameChanged?.call(value, gameId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? gameId)? onLoadSuggestedFriends,
+    TResult Function()? onLoadCurrentUser,
+    TResult Function()? onGamesLoadRequest,
+    TResult Function(String value, String gameId)? onGameChanged,
+    required TResult orElse(),
+  }) {
+    if (onGameChanged != null) {
+      return onGameChanged(value, gameId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnLoadSuggestedFriends value)
+        onLoadSuggestedFriends,
+    required TResult Function(_OnLoadCurrentUser value) onLoadCurrentUser,
+    required TResult Function(_OnGamesLoadRequest value) onGamesLoadRequest,
+    required TResult Function(_OnGameChanged value) onGameChanged,
+  }) {
+    return onGameChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnLoadSuggestedFriends value)? onLoadSuggestedFriends,
+    TResult? Function(_OnLoadCurrentUser value)? onLoadCurrentUser,
+    TResult? Function(_OnGamesLoadRequest value)? onGamesLoadRequest,
+    TResult? Function(_OnGameChanged value)? onGameChanged,
+  }) {
+    return onGameChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnLoadSuggestedFriends value)? onLoadSuggestedFriends,
+    TResult Function(_OnLoadCurrentUser value)? onLoadCurrentUser,
+    TResult Function(_OnGamesLoadRequest value)? onGamesLoadRequest,
+    TResult Function(_OnGameChanged value)? onGameChanged,
+    required TResult orElse(),
+  }) {
+    if (onGameChanged != null) {
+      return onGameChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnGameChanged implements MainViewEvent {
+  const factory _OnGameChanged(final String value, final String gameId) =
+      _$_OnGameChanged;
+
+  String get value;
+  String get gameId;
+  @JsonKey(ignore: true)
+  _$$_OnGameChangedCopyWith<_$_OnGameChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$MainViewState {
   StateType get type => throw _privateConstructorUsedError;
   List<User>? get suggestedUsers => throw _privateConstructorUsedError;
   User? get currentUser => throw _privateConstructorUsedError;
+  List<Game> get availableGames => throw _privateConstructorUsedError;
+  String get selectedValue => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $MainViewStateCopyWith<MainViewState> get copyWith =>
@@ -331,7 +640,12 @@ abstract class $MainViewStateCopyWith<$Res> {
           MainViewState value, $Res Function(MainViewState) then) =
       _$MainViewStateCopyWithImpl<$Res, MainViewState>;
   @useResult
-  $Res call({StateType type, List<User>? suggestedUsers, User? currentUser});
+  $Res call(
+      {StateType type,
+      List<User>? suggestedUsers,
+      User? currentUser,
+      List<Game> availableGames,
+      String selectedValue});
 
   $UserCopyWith<$Res>? get currentUser;
 }
@@ -352,6 +666,8 @@ class _$MainViewStateCopyWithImpl<$Res, $Val extends MainViewState>
     Object? type = null,
     Object? suggestedUsers = freezed,
     Object? currentUser = freezed,
+    Object? availableGames = null,
+    Object? selectedValue = null,
   }) {
     return _then(_value.copyWith(
       type: null == type
@@ -366,6 +682,14 @@ class _$MainViewStateCopyWithImpl<$Res, $Val extends MainViewState>
           ? _value.currentUser
           : currentUser // ignore: cast_nullable_to_non_nullable
               as User?,
+      availableGames: null == availableGames
+          ? _value.availableGames
+          : availableGames // ignore: cast_nullable_to_non_nullable
+              as List<Game>,
+      selectedValue: null == selectedValue
+          ? _value.selectedValue
+          : selectedValue // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 
@@ -390,7 +714,12 @@ abstract class _$$_MainViewStateCopyWith<$Res>
       __$$_MainViewStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({StateType type, List<User>? suggestedUsers, User? currentUser});
+  $Res call(
+      {StateType type,
+      List<User>? suggestedUsers,
+      User? currentUser,
+      List<Game> availableGames,
+      String selectedValue});
 
   @override
   $UserCopyWith<$Res>? get currentUser;
@@ -410,6 +739,8 @@ class __$$_MainViewStateCopyWithImpl<$Res>
     Object? type = null,
     Object? suggestedUsers = freezed,
     Object? currentUser = freezed,
+    Object? availableGames = null,
+    Object? selectedValue = null,
   }) {
     return _then(_$_MainViewState(
       type: null == type
@@ -424,6 +755,14 @@ class __$$_MainViewStateCopyWithImpl<$Res>
           ? _value.currentUser
           : currentUser // ignore: cast_nullable_to_non_nullable
               as User?,
+      availableGames: null == availableGames
+          ? _value._availableGames
+          : availableGames // ignore: cast_nullable_to_non_nullable
+              as List<Game>,
+      selectedValue: null == selectedValue
+          ? _value.selectedValue
+          : selectedValue // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -434,8 +773,11 @@ class _$_MainViewState implements _MainViewState {
   const _$_MainViewState(
       {required this.type,
       required final List<User>? suggestedUsers,
-      required this.currentUser})
-      : _suggestedUsers = suggestedUsers;
+      required this.currentUser,
+      required final List<Game> availableGames,
+      required this.selectedValue})
+      : _suggestedUsers = suggestedUsers,
+        _availableGames = availableGames;
 
   @override
   final StateType type;
@@ -451,10 +793,20 @@ class _$_MainViewState implements _MainViewState {
 
   @override
   final User? currentUser;
+  final List<Game> _availableGames;
+  @override
+  List<Game> get availableGames {
+    if (_availableGames is EqualUnmodifiableListView) return _availableGames;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_availableGames);
+  }
+
+  @override
+  final String selectedValue;
 
   @override
   String toString() {
-    return 'MainViewState(type: $type, suggestedUsers: $suggestedUsers, currentUser: $currentUser)';
+    return 'MainViewState(type: $type, suggestedUsers: $suggestedUsers, currentUser: $currentUser, availableGames: $availableGames, selectedValue: $selectedValue)';
   }
 
   @override
@@ -466,12 +818,21 @@ class _$_MainViewState implements _MainViewState {
             const DeepCollectionEquality()
                 .equals(other._suggestedUsers, _suggestedUsers) &&
             (identical(other.currentUser, currentUser) ||
-                other.currentUser == currentUser));
+                other.currentUser == currentUser) &&
+            const DeepCollectionEquality()
+                .equals(other._availableGames, _availableGames) &&
+            (identical(other.selectedValue, selectedValue) ||
+                other.selectedValue == selectedValue));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, type,
-      const DeepCollectionEquality().hash(_suggestedUsers), currentUser);
+  int get hashCode => Object.hash(
+      runtimeType,
+      type,
+      const DeepCollectionEquality().hash(_suggestedUsers),
+      currentUser,
+      const DeepCollectionEquality().hash(_availableGames),
+      selectedValue);
 
   @JsonKey(ignore: true)
   @override
@@ -484,7 +845,9 @@ abstract class _MainViewState implements MainViewState {
   const factory _MainViewState(
       {required final StateType type,
       required final List<User>? suggestedUsers,
-      required final User? currentUser}) = _$_MainViewState;
+      required final User? currentUser,
+      required final List<Game> availableGames,
+      required final String selectedValue}) = _$_MainViewState;
 
   @override
   StateType get type;
@@ -492,6 +855,10 @@ abstract class _MainViewState implements MainViewState {
   List<User>? get suggestedUsers;
   @override
   User? get currentUser;
+  @override
+  List<Game> get availableGames;
+  @override
+  String get selectedValue;
   @override
   @JsonKey(ignore: true)
   _$$_MainViewStateCopyWith<_$_MainViewState> get copyWith =>

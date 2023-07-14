@@ -10,6 +10,13 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_bloc: ^8.1.2
+  freezed: ^2.3.4
+  freezed_annotation: ^2.2.0
+  json_annotation: ^4.8.1
+  json_serializable: ^6.5.3
+  flutter_svg: ^2.0.7
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
