@@ -1,5 +1,6 @@
-import 'package:team_up_desktop/models/game/game.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import 'package:library_pkg/src/models/game/game.dart';
 
 part 'user.freezed.dart';
 
