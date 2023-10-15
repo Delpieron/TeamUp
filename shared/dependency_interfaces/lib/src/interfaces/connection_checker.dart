@@ -1,6 +1,6 @@
-import 'package:dependency_interfaces/src/base/instantiable.dart';
+import 'package:dependency_interfaces/src/base/disposable.dart';
 
-abstract class ConnectionChecker implements Instantiable {
+abstract interface class ConnectionChecker implements Disposable {
   bool get isNetworkConnected;
 
   Future<Enum> checkInternetAccess({String? host});

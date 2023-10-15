@@ -4,22 +4,23 @@ import 'dart:io';
 import 'package:comprehensive_utils/comprehensive_utils.dart';
 import 'package:connection_checker_pkg/src/enums/connection_status.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:dependency_interfaces/dependency_interfaces.dart' as dep show ConnectionChecker, Logger;
+import 'package:dependency_interfaces/dependency_interfaces.dart' as dep show ConnectionChecker;
 import 'package:rxdart/rxdart.dart';
 
-class ConnectionCheckerProvider implements dep.ConnectionChecker {
-  ConnectionCheckerProvider({dep.Logger? logger, String host = 'example.com'})
-      : _host = host,
-        _connectivity = Connectivity(),
-        _connectivitySubject = BehaviorSubject<ConnectivityResult>.seeded(ConnectivityResult.none),
-        _connectionStatusSubject = DistinctSubject<ConnectionStatus>(),
-        _logger = logger;
+final class ConnectionCheckerProvider implements dep.ConnectionChecker {
+  ConnectionCheckerProvider([String host = 'example.com']) : _host = host {
+    _subscription = _connectivity.onConnectivityChanged
+        .startWith(ConnectivityResult.none)
+        .doOnData(_connectivitySubject.add)
+        .map(_isNetworkConnected)
+        .asyncMap(_checkStatus)
+        .listen(_connectionStatusSubject.add);
+  }
 
-  final dep.Logger? _logger;
   final String _host;
-  final Connectivity _connectivity;
-  final BehaviorSubject<ConnectivityResult> _connectivitySubject;
-  final DistinctSubject<ConnectionStatus> _connectionStatusSubject;
+  final Connectivity _connectivity = Connectivity();
+  final BehaviorSubject<ConnectivityResult> _connectivitySubject = BehaviorSubject<ConnectivityResult>();
+  final DistinctSubject<ConnectionStatus> _connectionStatusSubject = DistinctSubject<ConnectionStatus>();
   late final StreamSubscription<ConnectionStatus> _subscription;
 
   @override
@@ -27,16 +28,6 @@ class ConnectionCheckerProvider implements dep.ConnectionChecker {
 
   @override
   ConnectionStatus? get connectionStatus => _connectionStatusSubject.valueOrNull;
-
-  @override
-  void init() {
-    _connectivitySubject.addStream(_connectivity.onConnectivityChanged);
-    _subscription = _connectivitySubject.stream
-        .map(_isNetworkConnected)
-        .asyncMap(_checkStatus)
-        .listen(_connectionStatusSubject.add);
-    _logger?.d('$this initialized');
-  }
 
   @override
   bool get isNetworkConnected => _isNetworkConnected(_connectivitySubject.value);

@@ -1,5 +1,5 @@
 import 'dart:async';
 
-abstract class Disposable {
+abstract interface class Disposable {
   FutureOr<void> dispose();
 }

@@ -1,8 +1,7 @@
-mixin LocalStorageCommand {
-  static const initLocalStorage = 'initLocalStorage';
-  static const dispose = 'dispose';
+sealed class LocalStorageCommand {
+  LocalStorageCommand._();
 
-  /// LOCAL STORAGE
+  static const dispose = 'dispose';
 
   /// Load
   static const loadData = 'loadData';

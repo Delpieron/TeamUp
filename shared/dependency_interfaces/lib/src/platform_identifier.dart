@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart' show TargetPlatform, defaultTargetPlatform, kIsWeb;
 
-class PlatformIdentifier {
+sealed class PlatformIdentifier {
   PlatformIdentifier._();
 
   static RuntimePlatform get currentPlatform => _platform;

@@ -1,9 +1,9 @@
-abstract class RestClientCommand {
+sealed class RestClientCommand {
   RestClientCommand._();
 
-  static const dispose = 'dispose';
-  static const get = 'get';
-  static const post = 'post';
-  static const put = 'put';
-  static const delete = 'delete';
+  static const String dispose = 'dispose';
+  static const String get = 'get';
+  static const String post = 'post';
+  static const String put = 'put';
+  static const String delete = 'delete';
 }

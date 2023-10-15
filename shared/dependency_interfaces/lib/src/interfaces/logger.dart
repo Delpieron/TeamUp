@@ -1,15 +1,15 @@
-abstract class Logger {
-  void v(dynamic message, [dynamic error, StackTrace? stackTrace]);
+import 'package:dependency_interfaces/src/base/disposable.dart';
 
-  void d(dynamic message, [dynamic error, StackTrace? stackTrace]);
+abstract interface class Logger implements Disposable {
+  void t(dynamic message, {DateTime? time, Object? error, StackTrace? stackTrace});
 
-  void i(dynamic message, [dynamic error, StackTrace? stackTrace]);
+  void d(dynamic message, {DateTime? time, Object? error, StackTrace? stackTrace});
 
-  void w(dynamic message, [dynamic error, StackTrace? stackTrace]);
+  void i(dynamic message, {DateTime? time, Object? error, StackTrace? stackTrace});
 
-  void e(dynamic message, [dynamic error, StackTrace? stackTrace]);
+  void w(dynamic message, {DateTime? time, Object? error, StackTrace? stackTrace});
 
-  void wtf(dynamic message, [dynamic error, StackTrace? stackTrace]);
+  void e(dynamic message, {DateTime? time, Object? error, StackTrace? stackTrace});
 
-  Future<void> dispose();
+  void f(dynamic message, {DateTime? time, Object? error, StackTrace? stackTrace});
 }

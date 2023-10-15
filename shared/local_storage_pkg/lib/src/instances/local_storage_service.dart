@@ -7,11 +7,11 @@ import 'package:local_storage_pkg/src/models/local_storage_parameters.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 final class LocalStorageService extends dep.Service implements dep.LocalStorage {
-  LocalStorageService(super.services, super.logger);
+  LocalStorageService(super.services);
 
   /// Load
   @override
-  Future<T?> loadData<T>(String key, T Function(dynamic) fromJson) async {
+  Future<T?> loadData<T>(String key, T Function(dynamic json) fromJson) async {
     final String? data = await SharedPreferences.getInstance().then((value) => value.getString(key));
     if (data?.isEmpty ?? true) {
       return null;
@@ -27,7 +27,12 @@ final class LocalStorageService extends dep.Service implements dep.LocalStorage 
 
   /// Edit
   @override
-  Future<bool> replaceOnList<T>(String key, T toEdit, T Function(dynamic) fromJson, bool Function(T) predicate) async {
+  Future<bool> replaceOnList<T>(
+    String key,
+    T toEdit,
+    T Function(dynamic json) fromJson,
+    bool Function(T) predicate,
+  ) async {
     final prefs = await SharedPreferences.getInstance();
     final object = prefs.getString(key);
     if (object?.isEmpty ?? true) {
@@ -47,15 +52,16 @@ final class LocalStorageService extends dep.Service implements dep.LocalStorage 
   Future<bool> deleteData(String key) => SharedPreferences.getInstance().then((value) => value.remove(key));
 
   @override
-  Future<bool> removeFromList<T>(String key, List<T> toRemove, T Function(dynamic) fromJson) async {
+  Future<bool> removeFromList<T>(String key, List<T> toRemove, T Function(dynamic json) fromJson) async {
     final prefs = await SharedPreferences.getInstance();
     final String? data = prefs.getString(key);
     if (data?.isEmpty ?? true) {
       return false;
     }
-
-    final storedList = (jsonDecode(data!) as Iterable).map((e) => fromJson(e as Map<String, Object?>)).toList();
-    toRemove.forEach(storedList.remove);
+    final storedList = (jsonDecode(data!) as Iterable)
+        .map((e) => fromJson(e as Map<String, Object?>))
+        .skipWhile((item) => toRemove.contains(item))
+        .toList(growable: false);
     return prefs.setString(key, jsonEncode(storedList));
   }
 
@@ -65,6 +71,9 @@ final class LocalStorageService extends dep.Service implements dep.LocalStorage 
     void Function(dep.WrappedResult<Object?>) callback,
   ) async {
     switch (messageWrapper.command) {
+      case LocalStorageCommand.dispose:
+        super.dispose();
+        break;
       case LocalStorageCommand.loadData:
         final params = messageWrapper.arg! as LocalStorageParameters;
         final result = await loadData(params.key, params.fromJson!);

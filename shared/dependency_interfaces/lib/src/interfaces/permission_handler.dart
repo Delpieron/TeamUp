@@ -1,6 +1,6 @@
 typedef Permission = Object;
 
-abstract class PermissionHandler {
+abstract interface class PermissionHandler {
   Future<bool> requestPermissions(Iterable<Permission> permissions);
 
   Future<bool> retryRequests();
