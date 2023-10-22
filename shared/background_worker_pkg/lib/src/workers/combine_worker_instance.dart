@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:isolate';
 
 import 'package:background_worker_pkg/src/services/service_handler.dart';
 import 'package:background_worker_pkg/src/workers/worker_base.dart';
@@ -6,7 +7,7 @@ import 'package:combine/combine.dart';
 import 'package:dependency_interfaces/dependency_interfaces.dart' as dep show MessageWrapper;
 import 'package:flutter/services.dart';
 
-class CombineWorkerInstance extends WorkerBase {
+final class CombineWorkerInstance extends WorkerBase {
   CombineWorkerInstance._(this._combineIsolate, super.sendCallback, super.resultStream);
 
   final CombineIsolate _combineIsolate;
@@ -20,7 +21,7 @@ class CombineWorkerInstance extends WorkerBase {
 
   @override
   Future<void> dispose() async {
-    _combineIsolate.kill(priority: 0);
+    _combineIsolate.kill(priority: Isolate.immediate);
     await super.dispose();
   }
 }

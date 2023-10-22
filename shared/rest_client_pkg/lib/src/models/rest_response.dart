@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:rest_client_pkg/src/enums/rest_status_codes.dart';
 
 @immutable
-class RestResponse<T> {
+final class RestResponse<T> {
   const RestResponse({required this.statusCode, this.result});
 
   final RestStatusCodes statusCode;

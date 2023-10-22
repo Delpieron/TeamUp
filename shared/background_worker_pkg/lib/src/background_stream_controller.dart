@@ -12,7 +12,7 @@ class BackgroundStreamController<T> {
   final FutureOr<void> Function()? onCancel;
 
   BackgroundStreamSubscription<T>? _subscription;
-  bool? _isBusy = false;
+  bool _isBusy = false;
 
   bool get isClosed => _subscription == null;
 
@@ -28,20 +28,21 @@ class BackgroundStreamController<T> {
   }
 
   void close() {
-    assert(!isClosed, 'You cannot close a closed Stream');
+    if (isClosed) {
+      return;
+    }
     _isBusy = true;
     // ignore: cancel_subscriptions
-    final item = _subscription!;
-    if (!item.isPaused) {
-      item._onDone?.call();
+    final sub = _subscription!;
+    if (!sub.isPaused) {
+      sub._onDone?.call();
     }
     _isBusy = false;
     _subscription = null;
-    _isBusy = null;
   }
 
   FutureOr<void> _addSubscription(BackgroundStreamSubscription<T> subs) async {
-    if (!_isBusy!) {
+    if (!_isBusy) {
       _subscription = subs;
     } else {
       await Future<void>.delayed(Duration.zero);
@@ -50,7 +51,7 @@ class BackgroundStreamController<T> {
   }
 
   FutureOr<void> _removeSubscription() async {
-    if (!_isBusy!) {
+    if (!_isBusy) {
       _subscription = null;
     } else {
       await Future<void>.delayed(Duration.zero);

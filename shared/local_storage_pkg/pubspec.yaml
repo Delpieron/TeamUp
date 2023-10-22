@@ -12,8 +12,10 @@ dependencies:
   flutter:
     sdk: flutter
 
-  shared_preferences: ^2.0.15
-  fast_immutable_collections: ^9.0.0
+  shared_preferences: ^2.2.1
+  fast_immutable_collections: ^9.1.5
+  freezed: ^2.4.2
+  freezed_annotation: ^2.4.1
 
   # Modules
   dependency_interfaces:
@@ -21,3 +23,5 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner: ^2.4.6
+  json_serializable: ^6.7.1

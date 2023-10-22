@@ -5,12 +5,11 @@ import 'package:dependency_interfaces/dependency_interfaces.dart' as dep
     show MessageWrapper, RestClient, Service, WrappedResult;
 import 'package:http/http.dart';
 import 'package:rest_client_pkg/src/constants/rest_client_commands.dart';
-import 'package:rest_client_pkg/src/enums/rest_status_codes.dart';
-import 'package:rest_client_pkg/src/models/rest_parameters.dart';
+import 'package:rest_client_pkg/src/models/rest_request.dart';
 import 'package:rest_client_pkg/src/models/rest_response.dart';
 
 final class RestClientService extends dep.Service implements dep.RestClient {
-  RestClientService(super.services, super.logger);
+  RestClientService(super.services);
 
   final Client _client = Client();
 
@@ -19,6 +18,7 @@ final class RestClientService extends dep.Service implements dep.RestClient {
     String uri, {
     T Function(dynamic)? fromJson,
     Map<String, String>? headers,
+    RestRequest<T>? params, // Generic Type loss workaround
   }) async {
     final response = await _client
         .get(
@@ -26,14 +26,10 @@ final class RestClientService extends dep.Service implements dep.RestClient {
       headers: headers ?? {'Content-Type': 'application/json'},
     )
         .onError((error, stackTrace) {
-      logger?.w('RestClientService get', error, stackTrace);
+      logger?.w('RestClientService get', error: error, stackTrace: stackTrace);
       return Response(error.toString(), 1024);
     });
-    final statusCode = RestStatusCodes.fromNumber(response.statusCode);
-    if (statusCode == RestStatusCodes.ok && fromJson != null) {
-      return RestResponse<T>(statusCode: statusCode, result: fromJson(jsonDecode(response.body)));
-    }
-    return RestResponse<T>(statusCode: statusCode);
+    return params!.convertResponse(response);
   }
 
   @override
@@ -43,6 +39,7 @@ final class RestClientService extends dep.Service implements dep.RestClient {
     T Function(dynamic)? fromJson,
     Map<String, String>? headers,
     Encoding? encoding,
+    RestRequest<T>? params, // Generic Type loss workaround
   }) async {
     final json = data == null ? null : jsonEncode(data);
     final response = await _client
@@ -53,14 +50,10 @@ final class RestClientService extends dep.Service implements dep.RestClient {
       encoding: encoding,
     )
         .onError((error, stackTrace) {
-      logger?.w('RestClientService post', error, stackTrace);
+      logger?.w('RestClientService post', error: error, stackTrace: stackTrace);
       return Response(error.toString(), 1024);
     });
-    final statusCode = RestStatusCodes.fromNumber(response.statusCode);
-    if (statusCode == RestStatusCodes.ok && fromJson != null) {
-      return RestResponse<T>(statusCode: statusCode, result: fromJson(jsonDecode(response.body)));
-    }
-    return RestResponse<T>(statusCode: statusCode);
+    return params!.convertResponse(response);
   }
 
   @override
@@ -69,34 +62,15 @@ final class RestClientService extends dep.Service implements dep.RestClient {
   }
 
   @override
-  Future<RestResponse<T>> delete<T>(
-    String uri, {
-    Object? data,
-    T Function(dynamic)? fromJson,
-    Map<String, String>? headers,
-    Encoding? encoding,
-  }) async {
-    final json = data == null ? null : jsonEncode(data);
-    final response = await _client
-        .delete(
-      Uri.parse(uri),
-      headers: headers ?? {'Content-Type': 'application/json'},
-      body: json,
-      encoding: encoding,
-    )
-        .onError((error, stackTrace) {
-      logger?.w('RestClientService post', error, stackTrace);
-      return Response(error.toString(), 1024);
-    });
-    final statusCode = RestStatusCodes.fromNumber(response.statusCode);
-    if (statusCode == RestStatusCodes.ok && fromJson != null) {
-      return RestResponse<T>(statusCode: statusCode, result: fromJson(jsonDecode(response.body)));
-    }
-    return RestResponse<T>(statusCode: statusCode);
+  void delete() {
+    throw UnimplementedError();
   }
 
   @override
-  void dispose() => _client.close();
+  void dispose() {
+    _client.close();
+    super.dispose();
+  }
 
   @override
   Future<void> handleCommand(
@@ -108,18 +82,19 @@ final class RestClientService extends dep.Service implements dep.RestClient {
         dispose();
         break;
       case RestClientCommand.get:
-        final params = messageWrapper.arg! as RestParameters;
-        final result = await get(params.uri, fromJson: params.fromJson, headers: params.headers);
+        final params = messageWrapper.arg! as RestRequest;
+        final result = await get(params.uri, fromJson: params.fromJson, headers: params.headers, params: params);
         callback(messageWrapper(result));
         return;
       case RestClientCommand.post:
-        final params = messageWrapper.arg! as RestParameters;
+        final params = messageWrapper.arg! as RestRequest;
         final result = await post(
           params.uri,
           data: params.data,
           fromJson: params.fromJson,
           headers: params.headers,
           encoding: params.encoding,
+          params: params,
         );
         callback(messageWrapper(result));
         return;
@@ -127,16 +102,8 @@ final class RestClientService extends dep.Service implements dep.RestClient {
         put();
         break;
       case RestClientCommand.delete:
-        final params = messageWrapper.arg! as RestParameters;
-        final result = await delete(
-          params.uri,
-          data: params.data,
-          fromJson: params.fromJson,
-          headers: params.headers,
-          encoding: params.encoding,
-        );
-        callback(messageWrapper(result));
-        return;
+        delete();
+        break;
     }
     callback(messageWrapper.wrapEmpty());
   }

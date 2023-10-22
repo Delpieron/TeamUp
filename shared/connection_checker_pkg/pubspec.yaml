@@ -6,15 +6,15 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.19.4 <3.0.0'
+  sdk: '>=3.0.1 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
 
-  connectivity_plus: ^3.0.3
+  connectivity_plus: ^4.0.2
   rxdart: ^0.27.7
-  comprehensive_utils: ^0.5.0
+  comprehensive_utils: ^0.5.2
 
   # Modules
   dependency_interfaces:

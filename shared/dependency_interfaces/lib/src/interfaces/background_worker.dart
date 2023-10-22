@@ -1,21 +1,21 @@
 import 'dart:async';
 
-import 'package:dependency_interfaces/dependency_interfaces.dart' show Logger, Service;
+import 'package:dependency_interfaces/dependency_interfaces.dart' show Service;
 import 'package:dependency_interfaces/src/base/disposable.dart';
 
-abstract class BackgroundWorker implements Disposable {
+abstract interface class BackgroundWorker implements Disposable {
   void runCommand<S>(String serviceName, String command, S param);
 
   Future<void> runVoid<S>(String serviceName, String command, S param);
 
   Future<T> runForResult<T extends Object?, S>(String serviceName, String command, S param);
 
-  Future<void> registerService(String serviceName, Service Function(Map<String, Service>, Logger?) initializer);
+  Future<void> registerService(String serviceName, Service Function(Map<String, Service> services) initializer);
 
   Stream<T> runForStream<T extends Object?, S>(String serviceName, String command, S param);
 }
 
-class BackgroundWrapper {
+final class BackgroundWrapper {
   BackgroundWrapper(this._worker, this._serviceName);
 
   final BackgroundWorker _worker;
@@ -28,7 +28,7 @@ class BackgroundWrapper {
   Future<T> runForResult<T extends Object?, S>(String command, S param) =>
       _worker.runForResult<T, S>(_serviceName, command, param);
 
-  Future<void> registerService(Service Function(Map<String, Service>, Logger?) initializer) {
+  Future<void> registerService(Service Function(Map<String, Service> services) initializer) {
     return _worker.registerService(_serviceName, initializer);
   }
 

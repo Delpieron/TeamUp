@@ -6,7 +6,7 @@ import 'package:background_worker_pkg/src/workers/worker_base.dart';
 import 'package:dependency_interfaces/dependency_interfaces.dart' as dep show MessageWrapper;
 import 'package:flutter/services.dart';
 
-class IsolateWorkerInstance extends WorkerBase {
+final class IsolateWorkerInstance extends WorkerBase {
   IsolateWorkerInstance._(this._isolate, this._receivePort, super.sendCallback, super.resultStream);
 
   final Isolate _isolate;
