@@ -88,20 +88,22 @@ class _$MainViewEventCopyWithImpl<$Res, $Val extends MainViewEvent>
 }
 
 /// @nodoc
-abstract class _$$_OnLoadSuggestedFriendsCopyWith<$Res> {
-  factory _$$_OnLoadSuggestedFriendsCopyWith(_$_OnLoadSuggestedFriends value,
-          $Res Function(_$_OnLoadSuggestedFriends) then) =
-      __$$_OnLoadSuggestedFriendsCopyWithImpl<$Res>;
+abstract class _$$OnLoadSuggestedFriendsImplCopyWith<$Res> {
+  factory _$$OnLoadSuggestedFriendsImplCopyWith(
+          _$OnLoadSuggestedFriendsImpl value,
+          $Res Function(_$OnLoadSuggestedFriendsImpl) then) =
+      __$$OnLoadSuggestedFriendsImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? gameId});
 }
 
 /// @nodoc
-class __$$_OnLoadSuggestedFriendsCopyWithImpl<$Res>
-    extends _$MainViewEventCopyWithImpl<$Res, _$_OnLoadSuggestedFriends>
-    implements _$$_OnLoadSuggestedFriendsCopyWith<$Res> {
-  __$$_OnLoadSuggestedFriendsCopyWithImpl(_$_OnLoadSuggestedFriends _value,
-      $Res Function(_$_OnLoadSuggestedFriends) _then)
+class __$$OnLoadSuggestedFriendsImplCopyWithImpl<$Res>
+    extends _$MainViewEventCopyWithImpl<$Res, _$OnLoadSuggestedFriendsImpl>
+    implements _$$OnLoadSuggestedFriendsImplCopyWith<$Res> {
+  __$$OnLoadSuggestedFriendsImplCopyWithImpl(
+      _$OnLoadSuggestedFriendsImpl _value,
+      $Res Function(_$OnLoadSuggestedFriendsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -109,7 +111,7 @@ class __$$_OnLoadSuggestedFriendsCopyWithImpl<$Res>
   $Res call({
     Object? gameId = freezed,
   }) {
-    return _then(_$_OnLoadSuggestedFriends(
+    return _then(_$OnLoadSuggestedFriendsImpl(
       freezed == gameId
           ? _value.gameId
           : gameId // ignore: cast_nullable_to_non_nullable
@@ -120,8 +122,8 @@ class __$$_OnLoadSuggestedFriendsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnLoadSuggestedFriends implements _OnLoadSuggestedFriends {
-  const _$_OnLoadSuggestedFriends([this.gameId]);
+class _$OnLoadSuggestedFriendsImpl implements _OnLoadSuggestedFriends {
+  const _$OnLoadSuggestedFriendsImpl([this.gameId]);
 
   @override
   final String? gameId;
@@ -135,7 +137,7 @@ class _$_OnLoadSuggestedFriends implements _OnLoadSuggestedFriends {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnLoadSuggestedFriends &&
+            other is _$OnLoadSuggestedFriendsImpl &&
             (identical(other.gameId, gameId) || other.gameId == gameId));
   }
 
@@ -145,9 +147,9 @@ class _$_OnLoadSuggestedFriends implements _OnLoadSuggestedFriends {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnLoadSuggestedFriendsCopyWith<_$_OnLoadSuggestedFriends> get copyWith =>
-      __$$_OnLoadSuggestedFriendsCopyWithImpl<_$_OnLoadSuggestedFriends>(
-          this, _$identity);
+  _$$OnLoadSuggestedFriendsImplCopyWith<_$OnLoadSuggestedFriendsImpl>
+      get copyWith => __$$OnLoadSuggestedFriendsImplCopyWithImpl<
+          _$OnLoadSuggestedFriendsImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -227,34 +229,34 @@ class _$_OnLoadSuggestedFriends implements _OnLoadSuggestedFriends {
 
 abstract class _OnLoadSuggestedFriends implements MainViewEvent {
   const factory _OnLoadSuggestedFriends([final String? gameId]) =
-      _$_OnLoadSuggestedFriends;
+      _$OnLoadSuggestedFriendsImpl;
 
   String? get gameId;
   @JsonKey(ignore: true)
-  _$$_OnLoadSuggestedFriendsCopyWith<_$_OnLoadSuggestedFriends> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$OnLoadSuggestedFriendsImplCopyWith<_$OnLoadSuggestedFriendsImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_OnLoadCurrentUserCopyWith<$Res> {
-  factory _$$_OnLoadCurrentUserCopyWith(_$_OnLoadCurrentUser value,
-          $Res Function(_$_OnLoadCurrentUser) then) =
-      __$$_OnLoadCurrentUserCopyWithImpl<$Res>;
+abstract class _$$OnLoadCurrentUserImplCopyWith<$Res> {
+  factory _$$OnLoadCurrentUserImplCopyWith(_$OnLoadCurrentUserImpl value,
+          $Res Function(_$OnLoadCurrentUserImpl) then) =
+      __$$OnLoadCurrentUserImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_OnLoadCurrentUserCopyWithImpl<$Res>
-    extends _$MainViewEventCopyWithImpl<$Res, _$_OnLoadCurrentUser>
-    implements _$$_OnLoadCurrentUserCopyWith<$Res> {
-  __$$_OnLoadCurrentUserCopyWithImpl(
-      _$_OnLoadCurrentUser _value, $Res Function(_$_OnLoadCurrentUser) _then)
+class __$$OnLoadCurrentUserImplCopyWithImpl<$Res>
+    extends _$MainViewEventCopyWithImpl<$Res, _$OnLoadCurrentUserImpl>
+    implements _$$OnLoadCurrentUserImplCopyWith<$Res> {
+  __$$OnLoadCurrentUserImplCopyWithImpl(_$OnLoadCurrentUserImpl _value,
+      $Res Function(_$OnLoadCurrentUserImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_OnLoadCurrentUser implements _OnLoadCurrentUser {
-  const _$_OnLoadCurrentUser();
+class _$OnLoadCurrentUserImpl implements _OnLoadCurrentUser {
+  const _$OnLoadCurrentUserImpl();
 
   @override
   String toString() {
@@ -264,7 +266,7 @@ class _$_OnLoadCurrentUser implements _OnLoadCurrentUser {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_OnLoadCurrentUser);
+        (other.runtimeType == runtimeType && other is _$OnLoadCurrentUserImpl);
   }
 
   @override
@@ -347,29 +349,29 @@ class _$_OnLoadCurrentUser implements _OnLoadCurrentUser {
 }
 
 abstract class _OnLoadCurrentUser implements MainViewEvent {
-  const factory _OnLoadCurrentUser() = _$_OnLoadCurrentUser;
+  const factory _OnLoadCurrentUser() = _$OnLoadCurrentUserImpl;
 }
 
 /// @nodoc
-abstract class _$$_OnGamesLoadRequestCopyWith<$Res> {
-  factory _$$_OnGamesLoadRequestCopyWith(_$_OnGamesLoadRequest value,
-          $Res Function(_$_OnGamesLoadRequest) then) =
-      __$$_OnGamesLoadRequestCopyWithImpl<$Res>;
+abstract class _$$OnGamesLoadRequestImplCopyWith<$Res> {
+  factory _$$OnGamesLoadRequestImplCopyWith(_$OnGamesLoadRequestImpl value,
+          $Res Function(_$OnGamesLoadRequestImpl) then) =
+      __$$OnGamesLoadRequestImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_OnGamesLoadRequestCopyWithImpl<$Res>
-    extends _$MainViewEventCopyWithImpl<$Res, _$_OnGamesLoadRequest>
-    implements _$$_OnGamesLoadRequestCopyWith<$Res> {
-  __$$_OnGamesLoadRequestCopyWithImpl(
-      _$_OnGamesLoadRequest _value, $Res Function(_$_OnGamesLoadRequest) _then)
+class __$$OnGamesLoadRequestImplCopyWithImpl<$Res>
+    extends _$MainViewEventCopyWithImpl<$Res, _$OnGamesLoadRequestImpl>
+    implements _$$OnGamesLoadRequestImplCopyWith<$Res> {
+  __$$OnGamesLoadRequestImplCopyWithImpl(_$OnGamesLoadRequestImpl _value,
+      $Res Function(_$OnGamesLoadRequestImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_OnGamesLoadRequest implements _OnGamesLoadRequest {
-  const _$_OnGamesLoadRequest();
+class _$OnGamesLoadRequestImpl implements _OnGamesLoadRequest {
+  const _$OnGamesLoadRequestImpl();
 
   @override
   String toString() {
@@ -379,7 +381,7 @@ class _$_OnGamesLoadRequest implements _OnGamesLoadRequest {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_OnGamesLoadRequest);
+        (other.runtimeType == runtimeType && other is _$OnGamesLoadRequestImpl);
   }
 
   @override
@@ -462,24 +464,24 @@ class _$_OnGamesLoadRequest implements _OnGamesLoadRequest {
 }
 
 abstract class _OnGamesLoadRequest implements MainViewEvent {
-  const factory _OnGamesLoadRequest() = _$_OnGamesLoadRequest;
+  const factory _OnGamesLoadRequest() = _$OnGamesLoadRequestImpl;
 }
 
 /// @nodoc
-abstract class _$$_OnGameChangedCopyWith<$Res> {
-  factory _$$_OnGameChangedCopyWith(
-          _$_OnGameChanged value, $Res Function(_$_OnGameChanged) then) =
-      __$$_OnGameChangedCopyWithImpl<$Res>;
+abstract class _$$OnGameChangedImplCopyWith<$Res> {
+  factory _$$OnGameChangedImplCopyWith(
+          _$OnGameChangedImpl value, $Res Function(_$OnGameChangedImpl) then) =
+      __$$OnGameChangedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String value, String gameId});
 }
 
 /// @nodoc
-class __$$_OnGameChangedCopyWithImpl<$Res>
-    extends _$MainViewEventCopyWithImpl<$Res, _$_OnGameChanged>
-    implements _$$_OnGameChangedCopyWith<$Res> {
-  __$$_OnGameChangedCopyWithImpl(
-      _$_OnGameChanged _value, $Res Function(_$_OnGameChanged) _then)
+class __$$OnGameChangedImplCopyWithImpl<$Res>
+    extends _$MainViewEventCopyWithImpl<$Res, _$OnGameChangedImpl>
+    implements _$$OnGameChangedImplCopyWith<$Res> {
+  __$$OnGameChangedImplCopyWithImpl(
+      _$OnGameChangedImpl _value, $Res Function(_$OnGameChangedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -488,7 +490,7 @@ class __$$_OnGameChangedCopyWithImpl<$Res>
     Object? value = null,
     Object? gameId = null,
   }) {
-    return _then(_$_OnGameChanged(
+    return _then(_$OnGameChangedImpl(
       null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -503,8 +505,8 @@ class __$$_OnGameChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnGameChanged implements _OnGameChanged {
-  const _$_OnGameChanged(this.value, this.gameId);
+class _$OnGameChangedImpl implements _OnGameChanged {
+  const _$OnGameChangedImpl(this.value, this.gameId);
 
   @override
   final String value;
@@ -520,7 +522,7 @@ class _$_OnGameChanged implements _OnGameChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnGameChanged &&
+            other is _$OnGameChangedImpl &&
             (identical(other.value, value) || other.value == value) &&
             (identical(other.gameId, gameId) || other.gameId == gameId));
   }
@@ -531,8 +533,8 @@ class _$_OnGameChanged implements _OnGameChanged {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnGameChangedCopyWith<_$_OnGameChanged> get copyWith =>
-      __$$_OnGameChangedCopyWithImpl<_$_OnGameChanged>(this, _$identity);
+  _$$OnGameChangedImplCopyWith<_$OnGameChangedImpl> get copyWith =>
+      __$$OnGameChangedImplCopyWithImpl<_$OnGameChangedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -612,12 +614,12 @@ class _$_OnGameChanged implements _OnGameChanged {
 
 abstract class _OnGameChanged implements MainViewEvent {
   const factory _OnGameChanged(final String value, final String gameId) =
-      _$_OnGameChanged;
+      _$OnGameChangedImpl;
 
   String get value;
   String get gameId;
   @JsonKey(ignore: true)
-  _$$_OnGameChangedCopyWith<_$_OnGameChanged> get copyWith =>
+  _$$OnGameChangedImplCopyWith<_$OnGameChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -707,11 +709,11 @@ class _$MainViewStateCopyWithImpl<$Res, $Val extends MainViewState>
 }
 
 /// @nodoc
-abstract class _$$_MainViewStateCopyWith<$Res>
+abstract class _$$MainViewStateImplCopyWith<$Res>
     implements $MainViewStateCopyWith<$Res> {
-  factory _$$_MainViewStateCopyWith(
-          _$_MainViewState value, $Res Function(_$_MainViewState) then) =
-      __$$_MainViewStateCopyWithImpl<$Res>;
+  factory _$$MainViewStateImplCopyWith(
+          _$MainViewStateImpl value, $Res Function(_$MainViewStateImpl) then) =
+      __$$MainViewStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -726,11 +728,11 @@ abstract class _$$_MainViewStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_MainViewStateCopyWithImpl<$Res>
-    extends _$MainViewStateCopyWithImpl<$Res, _$_MainViewState>
-    implements _$$_MainViewStateCopyWith<$Res> {
-  __$$_MainViewStateCopyWithImpl(
-      _$_MainViewState _value, $Res Function(_$_MainViewState) _then)
+class __$$MainViewStateImplCopyWithImpl<$Res>
+    extends _$MainViewStateCopyWithImpl<$Res, _$MainViewStateImpl>
+    implements _$$MainViewStateImplCopyWith<$Res> {
+  __$$MainViewStateImplCopyWithImpl(
+      _$MainViewStateImpl _value, $Res Function(_$MainViewStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -742,7 +744,7 @@ class __$$_MainViewStateCopyWithImpl<$Res>
     Object? availableGames = null,
     Object? selectedValue = null,
   }) {
-    return _then(_$_MainViewState(
+    return _then(_$MainViewStateImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -769,8 +771,8 @@ class __$$_MainViewStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_MainViewState implements _MainViewState {
-  const _$_MainViewState(
+class _$MainViewStateImpl implements _MainViewState {
+  const _$MainViewStateImpl(
       {required this.type,
       required final List<User>? suggestedUsers,
       required this.currentUser,
@@ -813,7 +815,7 @@ class _$_MainViewState implements _MainViewState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MainViewState &&
+            other is _$MainViewStateImpl &&
             (identical(other.type, type) || other.type == type) &&
             const DeepCollectionEquality()
                 .equals(other._suggestedUsers, _suggestedUsers) &&
@@ -837,8 +839,8 @@ class _$_MainViewState implements _MainViewState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MainViewStateCopyWith<_$_MainViewState> get copyWith =>
-      __$$_MainViewStateCopyWithImpl<_$_MainViewState>(this, _$identity);
+  _$$MainViewStateImplCopyWith<_$MainViewStateImpl> get copyWith =>
+      __$$MainViewStateImplCopyWithImpl<_$MainViewStateImpl>(this, _$identity);
 }
 
 abstract class _MainViewState implements MainViewState {
@@ -847,7 +849,7 @@ abstract class _MainViewState implements MainViewState {
       required final List<User>? suggestedUsers,
       required final User? currentUser,
       required final List<Game> availableGames,
-      required final String selectedValue}) = _$_MainViewState;
+      required final String selectedValue}) = _$MainViewStateImpl;
 
   @override
   StateType get type;
@@ -861,6 +863,6 @@ abstract class _MainViewState implements MainViewState {
   String get selectedValue;
   @override
   @JsonKey(ignore: true)
-  _$$_MainViewStateCopyWith<_$_MainViewState> get copyWith =>
+  _$$MainViewStateImplCopyWith<_$MainViewStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

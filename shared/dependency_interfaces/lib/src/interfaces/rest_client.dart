@@ -15,5 +15,11 @@ abstract interface class RestClient implements Disposable {
 
   void put();
 
-  void delete();
+  Future<Object> delete<T>(
+    String uri, {
+    Object? data,
+    T Function(dynamic)? fromJson,
+    Map<String, String>? headers,
+    Encoding? encoding,
+  });
 }

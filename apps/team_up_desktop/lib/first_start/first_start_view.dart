@@ -76,7 +76,7 @@ class FirstStartView extends StatelessWidget {
 }
 
 class _CurrentPage extends StatelessWidget {
-  const _CurrentPage(this.currentPage, {super.key});
+  const _CurrentPage(this.currentPage);
 
   final FirstStartPageEnum currentPage;
 

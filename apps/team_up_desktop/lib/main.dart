@@ -12,6 +12,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   _registerDependencies();
   await GetIt.I.isReady<BackgroundWorkerProvider>();
+  await GetIt.I.isReady<LocalStorageProvider>();
   runApp(const MyApp());
 }
 
@@ -43,14 +44,13 @@ void _registerDependencies() {
       ConnectionCheckerProvider.new,
       dispose: (bloc) => bloc.dispose(),
     )
-    ..registerSingletonWithDependencies<LocalStorageProvider>(
-      () => LocalStorageProvider(getIt.get<BackgroundWorkerProvider>()),
+    ..registerSingletonAsync<LocalStorageProvider>(
+      () => LocalStorageProvider.createAsync(getIt.get<BackgroundWorkerProvider>()),
       dependsOn: [BackgroundWorkerProvider],
     )
-    ..registerSingletonWithDependencies<RestClientProvider>(
-      () => RestClientProvider(getIt.get<BackgroundWorkerProvider>()),
+    ..registerSingletonAsync<RestClientProvider>(
+      () => RestClientProvider.createAsync(getIt.get<BackgroundWorkerProvider>()),
       dependsOn: [BackgroundWorkerProvider],
       dispose: (bloc) => bloc.dispose(),
     );
-  getIt.get<ConnectionCheckerProvider>().init();
 }

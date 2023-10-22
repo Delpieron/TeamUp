@@ -74,22 +74,22 @@ class _$SavedDeviceCopyWithImpl<$Res, $Val extends SavedDevice>
 }
 
 /// @nodoc
-abstract class _$$_SavedDeviceCopyWith<$Res>
+abstract class _$$SavedDeviceImplCopyWith<$Res>
     implements $SavedDeviceCopyWith<$Res> {
-  factory _$$_SavedDeviceCopyWith(
-          _$_SavedDevice value, $Res Function(_$_SavedDevice) then) =
-      __$$_SavedDeviceCopyWithImpl<$Res>;
+  factory _$$SavedDeviceImplCopyWith(
+          _$SavedDeviceImpl value, $Res Function(_$SavedDeviceImpl) then) =
+      __$$SavedDeviceImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String name, String address, String fullName});
 }
 
 /// @nodoc
-class __$$_SavedDeviceCopyWithImpl<$Res>
-    extends _$SavedDeviceCopyWithImpl<$Res, _$_SavedDevice>
-    implements _$$_SavedDeviceCopyWith<$Res> {
-  __$$_SavedDeviceCopyWithImpl(
-      _$_SavedDevice _value, $Res Function(_$_SavedDevice) _then)
+class __$$SavedDeviceImplCopyWithImpl<$Res>
+    extends _$SavedDeviceCopyWithImpl<$Res, _$SavedDeviceImpl>
+    implements _$$SavedDeviceImplCopyWith<$Res> {
+  __$$SavedDeviceImplCopyWithImpl(
+      _$SavedDeviceImpl _value, $Res Function(_$SavedDeviceImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -99,7 +99,7 @@ class __$$_SavedDeviceCopyWithImpl<$Res>
     Object? address = null,
     Object? fullName = null,
   }) {
-    return _then(_$_SavedDevice(
+    return _then(_$SavedDeviceImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -118,12 +118,12 @@ class __$$_SavedDeviceCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SavedDevice implements _SavedDevice {
-  const _$_SavedDevice(
+class _$SavedDeviceImpl implements _SavedDevice {
+  const _$SavedDeviceImpl(
       {required this.name, required this.address, required this.fullName});
 
-  factory _$_SavedDevice.fromJson(Map<String, dynamic> json) =>
-      _$$_SavedDeviceFromJson(json);
+  factory _$SavedDeviceImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SavedDeviceImplFromJson(json);
 
   @override
   final String name;
@@ -141,7 +141,7 @@ class _$_SavedDevice implements _SavedDevice {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SavedDevice &&
+            other is _$SavedDeviceImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.fullName, fullName) ||
@@ -155,12 +155,12 @@ class _$_SavedDevice implements _SavedDevice {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SavedDeviceCopyWith<_$_SavedDevice> get copyWith =>
-      __$$_SavedDeviceCopyWithImpl<_$_SavedDevice>(this, _$identity);
+  _$$SavedDeviceImplCopyWith<_$SavedDeviceImpl> get copyWith =>
+      __$$SavedDeviceImplCopyWithImpl<_$SavedDeviceImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SavedDeviceToJson(
+    return _$$SavedDeviceImplToJson(
       this,
     );
   }
@@ -170,10 +170,10 @@ abstract class _SavedDevice implements SavedDevice {
   const factory _SavedDevice(
       {required final String name,
       required final String address,
-      required final String fullName}) = _$_SavedDevice;
+      required final String fullName}) = _$SavedDeviceImpl;
 
   factory _SavedDevice.fromJson(Map<String, dynamic> json) =
-      _$_SavedDevice.fromJson;
+      _$SavedDeviceImpl.fromJson;
 
   @override
   String get name;
@@ -183,6 +183,6 @@ abstract class _SavedDevice implements SavedDevice {
   String get fullName;
   @override
   @JsonKey(ignore: true)
-  _$$_SavedDeviceCopyWith<_$_SavedDevice> get copyWith =>
+  _$$SavedDeviceImplCopyWith<_$SavedDeviceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

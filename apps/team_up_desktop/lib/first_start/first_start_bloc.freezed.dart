@@ -76,20 +76,20 @@ class _$FirstStartEventCopyWithImpl<$Res, $Val extends FirstStartEvent>
 }
 
 /// @nodoc
-abstract class _$$_OnNewPageRequestCopyWith<$Res> {
-  factory _$$_OnNewPageRequestCopyWith(
-          _$_OnNewPageRequest value, $Res Function(_$_OnNewPageRequest) then) =
-      __$$_OnNewPageRequestCopyWithImpl<$Res>;
+abstract class _$$OnNewPageRequestImplCopyWith<$Res> {
+  factory _$$OnNewPageRequestImplCopyWith(_$OnNewPageRequestImpl value,
+          $Res Function(_$OnNewPageRequestImpl) then) =
+      __$$OnNewPageRequestImplCopyWithImpl<$Res>;
   @useResult
   $Res call({FirstStartPageEnum firstStartPageEnum});
 }
 
 /// @nodoc
-class __$$_OnNewPageRequestCopyWithImpl<$Res>
-    extends _$FirstStartEventCopyWithImpl<$Res, _$_OnNewPageRequest>
-    implements _$$_OnNewPageRequestCopyWith<$Res> {
-  __$$_OnNewPageRequestCopyWithImpl(
-      _$_OnNewPageRequest _value, $Res Function(_$_OnNewPageRequest) _then)
+class __$$OnNewPageRequestImplCopyWithImpl<$Res>
+    extends _$FirstStartEventCopyWithImpl<$Res, _$OnNewPageRequestImpl>
+    implements _$$OnNewPageRequestImplCopyWith<$Res> {
+  __$$OnNewPageRequestImplCopyWithImpl(_$OnNewPageRequestImpl _value,
+      $Res Function(_$OnNewPageRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -97,7 +97,7 @@ class __$$_OnNewPageRequestCopyWithImpl<$Res>
   $Res call({
     Object? firstStartPageEnum = null,
   }) {
-    return _then(_$_OnNewPageRequest(
+    return _then(_$OnNewPageRequestImpl(
       null == firstStartPageEnum
           ? _value.firstStartPageEnum
           : firstStartPageEnum // ignore: cast_nullable_to_non_nullable
@@ -108,8 +108,8 @@ class __$$_OnNewPageRequestCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnNewPageRequest implements _OnNewPageRequest {
-  const _$_OnNewPageRequest(this.firstStartPageEnum);
+class _$OnNewPageRequestImpl implements _OnNewPageRequest {
+  const _$OnNewPageRequestImpl(this.firstStartPageEnum);
 
   @override
   final FirstStartPageEnum firstStartPageEnum;
@@ -123,7 +123,7 @@ class _$_OnNewPageRequest implements _OnNewPageRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnNewPageRequest &&
+            other is _$OnNewPageRequestImpl &&
             (identical(other.firstStartPageEnum, firstStartPageEnum) ||
                 other.firstStartPageEnum == firstStartPageEnum));
   }
@@ -134,8 +134,9 @@ class _$_OnNewPageRequest implements _OnNewPageRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnNewPageRequestCopyWith<_$_OnNewPageRequest> get copyWith =>
-      __$$_OnNewPageRequestCopyWithImpl<_$_OnNewPageRequest>(this, _$identity);
+  _$$OnNewPageRequestImplCopyWith<_$OnNewPageRequestImpl> get copyWith =>
+      __$$OnNewPageRequestImplCopyWithImpl<_$OnNewPageRequestImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -203,29 +204,29 @@ class _$_OnNewPageRequest implements _OnNewPageRequest {
 
 abstract class _OnNewPageRequest implements FirstStartEvent {
   const factory _OnNewPageRequest(final FirstStartPageEnum firstStartPageEnum) =
-      _$_OnNewPageRequest;
+      _$OnNewPageRequestImpl;
 
   FirstStartPageEnum get firstStartPageEnum;
   @JsonKey(ignore: true)
-  _$$_OnNewPageRequestCopyWith<_$_OnNewPageRequest> get copyWith =>
+  _$$OnNewPageRequestImplCopyWith<_$OnNewPageRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_OnStartLoadingCopyWith<$Res> {
-  factory _$$_OnStartLoadingCopyWith(
-          _$_OnStartLoading value, $Res Function(_$_OnStartLoading) then) =
-      __$$_OnStartLoadingCopyWithImpl<$Res>;
+abstract class _$$OnStartLoadingImplCopyWith<$Res> {
+  factory _$$OnStartLoadingImplCopyWith(_$OnStartLoadingImpl value,
+          $Res Function(_$OnStartLoadingImpl) then) =
+      __$$OnStartLoadingImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool startLoading});
 }
 
 /// @nodoc
-class __$$_OnStartLoadingCopyWithImpl<$Res>
-    extends _$FirstStartEventCopyWithImpl<$Res, _$_OnStartLoading>
-    implements _$$_OnStartLoadingCopyWith<$Res> {
-  __$$_OnStartLoadingCopyWithImpl(
-      _$_OnStartLoading _value, $Res Function(_$_OnStartLoading) _then)
+class __$$OnStartLoadingImplCopyWithImpl<$Res>
+    extends _$FirstStartEventCopyWithImpl<$Res, _$OnStartLoadingImpl>
+    implements _$$OnStartLoadingImplCopyWith<$Res> {
+  __$$OnStartLoadingImplCopyWithImpl(
+      _$OnStartLoadingImpl _value, $Res Function(_$OnStartLoadingImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -233,7 +234,7 @@ class __$$_OnStartLoadingCopyWithImpl<$Res>
   $Res call({
     Object? startLoading = null,
   }) {
-    return _then(_$_OnStartLoading(
+    return _then(_$OnStartLoadingImpl(
       null == startLoading
           ? _value.startLoading
           : startLoading // ignore: cast_nullable_to_non_nullable
@@ -244,8 +245,8 @@ class __$$_OnStartLoadingCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnStartLoading implements _OnStartLoading {
-  const _$_OnStartLoading(this.startLoading);
+class _$OnStartLoadingImpl implements _OnStartLoading {
+  const _$OnStartLoadingImpl(this.startLoading);
 
   @override
   final bool startLoading;
@@ -259,7 +260,7 @@ class _$_OnStartLoading implements _OnStartLoading {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnStartLoading &&
+            other is _$OnStartLoadingImpl &&
             (identical(other.startLoading, startLoading) ||
                 other.startLoading == startLoading));
   }
@@ -270,8 +271,9 @@ class _$_OnStartLoading implements _OnStartLoading {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnStartLoadingCopyWith<_$_OnStartLoading> get copyWith =>
-      __$$_OnStartLoadingCopyWithImpl<_$_OnStartLoading>(this, _$identity);
+  _$$OnStartLoadingImplCopyWith<_$OnStartLoadingImpl> get copyWith =>
+      __$$OnStartLoadingImplCopyWithImpl<_$OnStartLoadingImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -338,11 +340,11 @@ class _$_OnStartLoading implements _OnStartLoading {
 }
 
 abstract class _OnStartLoading implements FirstStartEvent {
-  const factory _OnStartLoading(final bool startLoading) = _$_OnStartLoading;
+  const factory _OnStartLoading(final bool startLoading) = _$OnStartLoadingImpl;
 
   bool get startLoading;
   @JsonKey(ignore: true)
-  _$$_OnStartLoadingCopyWith<_$_OnStartLoading> get copyWith =>
+  _$$OnStartLoadingImplCopyWith<_$OnStartLoadingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -395,22 +397,22 @@ class _$FirstStartStateCopyWithImpl<$Res, $Val extends FirstStartState>
 }
 
 /// @nodoc
-abstract class _$$_FirstStartStateCopyWith<$Res>
+abstract class _$$FirstStartStateImplCopyWith<$Res>
     implements $FirstStartStateCopyWith<$Res> {
-  factory _$$_FirstStartStateCopyWith(
-          _$_FirstStartState value, $Res Function(_$_FirstStartState) then) =
-      __$$_FirstStartStateCopyWithImpl<$Res>;
+  factory _$$FirstStartStateImplCopyWith(_$FirstStartStateImpl value,
+          $Res Function(_$FirstStartStateImpl) then) =
+      __$$FirstStartStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({StateType type, FirstStartPageEnum currentPage});
 }
 
 /// @nodoc
-class __$$_FirstStartStateCopyWithImpl<$Res>
-    extends _$FirstStartStateCopyWithImpl<$Res, _$_FirstStartState>
-    implements _$$_FirstStartStateCopyWith<$Res> {
-  __$$_FirstStartStateCopyWithImpl(
-      _$_FirstStartState _value, $Res Function(_$_FirstStartState) _then)
+class __$$FirstStartStateImplCopyWithImpl<$Res>
+    extends _$FirstStartStateCopyWithImpl<$Res, _$FirstStartStateImpl>
+    implements _$$FirstStartStateImplCopyWith<$Res> {
+  __$$FirstStartStateImplCopyWithImpl(
+      _$FirstStartStateImpl _value, $Res Function(_$FirstStartStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -419,7 +421,7 @@ class __$$_FirstStartStateCopyWithImpl<$Res>
     Object? type = null,
     Object? currentPage = null,
   }) {
-    return _then(_$_FirstStartState(
+    return _then(_$FirstStartStateImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -434,8 +436,8 @@ class __$$_FirstStartStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_FirstStartState implements _FirstStartState {
-  const _$_FirstStartState({required this.type, required this.currentPage});
+class _$FirstStartStateImpl implements _FirstStartState {
+  const _$FirstStartStateImpl({required this.type, required this.currentPage});
 
   @override
   final StateType type;
@@ -451,7 +453,7 @@ class _$_FirstStartState implements _FirstStartState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FirstStartState &&
+            other is _$FirstStartStateImpl &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.currentPage, currentPage) ||
                 other.currentPage == currentPage));
@@ -463,14 +465,15 @@ class _$_FirstStartState implements _FirstStartState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FirstStartStateCopyWith<_$_FirstStartState> get copyWith =>
-      __$$_FirstStartStateCopyWithImpl<_$_FirstStartState>(this, _$identity);
+  _$$FirstStartStateImplCopyWith<_$FirstStartStateImpl> get copyWith =>
+      __$$FirstStartStateImplCopyWithImpl<_$FirstStartStateImpl>(
+          this, _$identity);
 }
 
 abstract class _FirstStartState implements FirstStartState {
   const factory _FirstStartState(
       {required final StateType type,
-      required final FirstStartPageEnum currentPage}) = _$_FirstStartState;
+      required final FirstStartPageEnum currentPage}) = _$FirstStartStateImpl;
 
   @override
   StateType get type;
@@ -478,6 +481,6 @@ abstract class _FirstStartState implements FirstStartState {
   FirstStartPageEnum get currentPage;
   @override
   @JsonKey(ignore: true)
-  _$$_FirstStartStateCopyWith<_$_FirstStartState> get copyWith =>
+  _$$FirstStartStateImplCopyWith<_$FirstStartStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

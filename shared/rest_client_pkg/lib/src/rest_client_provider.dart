@@ -63,8 +63,23 @@ final class RestClientProvider implements dep.RestClient {
   }
 
   @override
-  void delete() {
-    throw UnimplementedError();
+  Future<RestResponse<T>> delete<T>(
+    String uri, {
+    Object? data,
+    T Function(dynamic)? fromJson,
+    Map<String, String>? headers,
+    Encoding? encoding,
+  }) {
+    return _backgroundService.runForResult<RestResponse<T>, RestRequest<T>>(
+      RestClientCommand.delete,
+      RestRequest<T>(
+        uri,
+        data: data,
+        fromJson: fromJson,
+        headers: headers,
+        encoding: encoding,
+      ),
+    );
   }
 
   @override

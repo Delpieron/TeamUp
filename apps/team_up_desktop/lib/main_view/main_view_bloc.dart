@@ -6,9 +6,7 @@ import 'package:rest_client_pkg/rest_client_pkg.dart';
 import 'package:team_up_desktop/constants.dart';
 
 part 'main_view_bloc.freezed.dart';
-
 part 'main_view_event.dart';
-
 part 'main_view_state.dart';
 
 final _getIt = GetIt.I;
@@ -21,7 +19,7 @@ class MainViewBloc extends Bloc<MainViewEvent, MainViewState> {
     on<_OnGameChanged>(_onGameChanged);
   }
 
-  final RestClientProvider _restApi = _getIt.get<RestClientProvider>()..init();
+  final RestClientProvider _restApi = _getIt.get<RestClientProvider>();
 
   final String? token;
 

@@ -16,7 +16,7 @@ class FirstStartBloc extends Bloc<FirstStartEvent, FirstStartState> {
     on<_OnStartLoading>(_startLoading);
   }
 
-  final LocalStorageProvider _localStorage = GetIt.I.get<LocalStorageProvider>()..init();
+  final LocalStorageProvider _localStorage = GetIt.I.get<LocalStorageProvider>();
 
   Future<void> _loadNewPage(_OnNewPageRequest event, Emitter<FirstStartState> emit) async {
     emit(
@@ -24,7 +24,8 @@ class FirstStartBloc extends Bloc<FirstStartEvent, FirstStartState> {
     );
   }
 
-  Future<String?> getCurrentUserToken() async => _localStorage.loadData(Constants.authTokenKey, (items) => items as String);
+  Future<String?> getCurrentUserToken() async =>
+      _localStorage.loadData(Constants.authTokenKey, (items) => items as String);
 
   Future<void> _startLoading(_OnStartLoading event, Emitter<FirstStartState> emit) async {
     emit(

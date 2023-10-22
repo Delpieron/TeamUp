@@ -7,11 +7,8 @@ import 'package:local_storage_pkg/local_storage_pkg.dart';
 import 'package:rest_client_pkg/rest_client_pkg.dart';
 import 'package:team_up_desktop/constants.dart';
 
-
 part 'registration_bloc.freezed.dart';
-
 part 'registration_bloc_event.dart';
-
 part 'registration_bloc_state.dart';
 
 final _getIt = GetIt.I;
@@ -54,8 +51,8 @@ class RegistrationBloc extends Bloc<RegistrationBlocEvent, RegistrationBlocState
   }
 
   final ConnectionCheckerProvider _connectionChecker = _getIt.get<ConnectionCheckerProvider>();
-  final RestClientProvider _restApi = _getIt.get<RestClientProvider>()..init();
-  final LocalStorageProvider _localStorage = _getIt.get<LocalStorageProvider>()..init();
+  final RestClientProvider _restApi = _getIt.get<RestClientProvider>();
+  final LocalStorageProvider _localStorage = _getIt.get<LocalStorageProvider>();
 
   String _email = '';
   String _userName = '';

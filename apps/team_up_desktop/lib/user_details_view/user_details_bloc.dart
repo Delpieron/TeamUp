@@ -4,13 +4,10 @@ import 'package:get_it/get_it.dart';
 import 'package:library_pkg/library_pkg.dart';
 import 'package:local_storage_pkg/local_storage_pkg.dart';
 import 'package:rest_client_pkg/rest_client_pkg.dart';
-
 import 'package:team_up_desktop/constants.dart';
 
 part 'user_details_bloc.freezed.dart';
-
 part 'user_details_event.dart';
-
 part 'user_details_state.dart';
 
 final _getIt = GetIt.I;
@@ -21,8 +18,8 @@ class UserDetailsBloc extends Bloc<UserDetailsEvent, UserDetailsState> {
     on<_OnChangeUserFriendStatus>(_changeUserFriendStatus);
   }
 
-  final RestClientProvider _restApi = _getIt.get<RestClientProvider>()..init();
-  final LocalStorageProvider _localStorage = _getIt.get<LocalStorageProvider>()..init();
+  final RestClientProvider _restApi = _getIt.get<RestClientProvider>();
+  final LocalStorageProvider _localStorage = _getIt.get<LocalStorageProvider>();
 
   Future<String?> getCurrentUserToken() async =>
       _localStorage.loadData(Constants.authTokenKey, (items) => items as String);

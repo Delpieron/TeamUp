@@ -82,26 +82,27 @@ class _$UserDetailsEventCopyWithImpl<$Res, $Val extends UserDetailsEvent>
 }
 
 /// @nodoc
-abstract class _$$_OnUserGameCategoriesLoadCopyWith<$Res> {
-  factory _$$_OnUserGameCategoriesLoadCopyWith(
-          _$_OnUserGameCategoriesLoad value,
-          $Res Function(_$_OnUserGameCategoriesLoad) then) =
-      __$$_OnUserGameCategoriesLoadCopyWithImpl<$Res>;
+abstract class _$$OnUserGameCategoriesLoadImplCopyWith<$Res> {
+  factory _$$OnUserGameCategoriesLoadImplCopyWith(
+          _$OnUserGameCategoriesLoadImpl value,
+          $Res Function(_$OnUserGameCategoriesLoadImpl) then) =
+      __$$OnUserGameCategoriesLoadImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_OnUserGameCategoriesLoadCopyWithImpl<$Res>
-    extends _$UserDetailsEventCopyWithImpl<$Res, _$_OnUserGameCategoriesLoad>
-    implements _$$_OnUserGameCategoriesLoadCopyWith<$Res> {
-  __$$_OnUserGameCategoriesLoadCopyWithImpl(_$_OnUserGameCategoriesLoad _value,
-      $Res Function(_$_OnUserGameCategoriesLoad) _then)
+class __$$OnUserGameCategoriesLoadImplCopyWithImpl<$Res>
+    extends _$UserDetailsEventCopyWithImpl<$Res, _$OnUserGameCategoriesLoadImpl>
+    implements _$$OnUserGameCategoriesLoadImplCopyWith<$Res> {
+  __$$OnUserGameCategoriesLoadImplCopyWithImpl(
+      _$OnUserGameCategoriesLoadImpl _value,
+      $Res Function(_$OnUserGameCategoriesLoadImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_OnUserGameCategoriesLoad implements _OnUserGameCategoriesLoad {
-  const _$_OnUserGameCategoriesLoad();
+class _$OnUserGameCategoriesLoadImpl implements _OnUserGameCategoriesLoad {
+  const _$OnUserGameCategoriesLoadImpl();
 
   @override
   String toString() {
@@ -112,7 +113,7 @@ class _$_OnUserGameCategoriesLoad implements _OnUserGameCategoriesLoad {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnUserGameCategoriesLoad);
+            other is _$OnUserGameCategoriesLoadImpl);
   }
 
   @override
@@ -189,25 +190,26 @@ class _$_OnUserGameCategoriesLoad implements _OnUserGameCategoriesLoad {
 }
 
 abstract class _OnUserGameCategoriesLoad implements UserDetailsEvent {
-  const factory _OnUserGameCategoriesLoad() = _$_OnUserGameCategoriesLoad;
+  const factory _OnUserGameCategoriesLoad() = _$OnUserGameCategoriesLoadImpl;
 }
 
 /// @nodoc
-abstract class _$$_OnChangeUserFriendStatusCopyWith<$Res> {
-  factory _$$_OnChangeUserFriendStatusCopyWith(
-          _$_OnChangeUserFriendStatus value,
-          $Res Function(_$_OnChangeUserFriendStatus) then) =
-      __$$_OnChangeUserFriendStatusCopyWithImpl<$Res>;
+abstract class _$$OnChangeUserFriendStatusImplCopyWith<$Res> {
+  factory _$$OnChangeUserFriendStatusImplCopyWith(
+          _$OnChangeUserFriendStatusImpl value,
+          $Res Function(_$OnChangeUserFriendStatusImpl) then) =
+      __$$OnChangeUserFriendStatusImplCopyWithImpl<$Res>;
   @useResult
   $Res call({UserFriendActionStatus action, String userId});
 }
 
 /// @nodoc
-class __$$_OnChangeUserFriendStatusCopyWithImpl<$Res>
-    extends _$UserDetailsEventCopyWithImpl<$Res, _$_OnChangeUserFriendStatus>
-    implements _$$_OnChangeUserFriendStatusCopyWith<$Res> {
-  __$$_OnChangeUserFriendStatusCopyWithImpl(_$_OnChangeUserFriendStatus _value,
-      $Res Function(_$_OnChangeUserFriendStatus) _then)
+class __$$OnChangeUserFriendStatusImplCopyWithImpl<$Res>
+    extends _$UserDetailsEventCopyWithImpl<$Res, _$OnChangeUserFriendStatusImpl>
+    implements _$$OnChangeUserFriendStatusImplCopyWith<$Res> {
+  __$$OnChangeUserFriendStatusImplCopyWithImpl(
+      _$OnChangeUserFriendStatusImpl _value,
+      $Res Function(_$OnChangeUserFriendStatusImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -216,7 +218,7 @@ class __$$_OnChangeUserFriendStatusCopyWithImpl<$Res>
     Object? action = null,
     Object? userId = null,
   }) {
-    return _then(_$_OnChangeUserFriendStatus(
+    return _then(_$OnChangeUserFriendStatusImpl(
       null == action
           ? _value.action
           : action // ignore: cast_nullable_to_non_nullable
@@ -231,8 +233,8 @@ class __$$_OnChangeUserFriendStatusCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnChangeUserFriendStatus implements _OnChangeUserFriendStatus {
-  const _$_OnChangeUserFriendStatus(this.action, this.userId);
+class _$OnChangeUserFriendStatusImpl implements _OnChangeUserFriendStatus {
+  const _$OnChangeUserFriendStatusImpl(this.action, this.userId);
 
   @override
   final UserFriendActionStatus action;
@@ -248,7 +250,7 @@ class _$_OnChangeUserFriendStatus implements _OnChangeUserFriendStatus {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnChangeUserFriendStatus &&
+            other is _$OnChangeUserFriendStatusImpl &&
             (identical(other.action, action) || other.action == action) &&
             (identical(other.userId, userId) || other.userId == userId));
   }
@@ -259,9 +261,9 @@ class _$_OnChangeUserFriendStatus implements _OnChangeUserFriendStatus {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnChangeUserFriendStatusCopyWith<_$_OnChangeUserFriendStatus>
-      get copyWith => __$$_OnChangeUserFriendStatusCopyWithImpl<
-          _$_OnChangeUserFriendStatus>(this, _$identity);
+  _$$OnChangeUserFriendStatusImplCopyWith<_$OnChangeUserFriendStatusImpl>
+      get copyWith => __$$OnChangeUserFriendStatusImplCopyWithImpl<
+          _$OnChangeUserFriendStatusImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -336,12 +338,12 @@ class _$_OnChangeUserFriendStatus implements _OnChangeUserFriendStatus {
 abstract class _OnChangeUserFriendStatus implements UserDetailsEvent {
   const factory _OnChangeUserFriendStatus(
           final UserFriendActionStatus action, final String userId) =
-      _$_OnChangeUserFriendStatus;
+      _$OnChangeUserFriendStatusImpl;
 
   UserFriendActionStatus get action;
   String get userId;
   @JsonKey(ignore: true)
-  _$$_OnChangeUserFriendStatusCopyWith<_$_OnChangeUserFriendStatus>
+  _$$OnChangeUserFriendStatusImplCopyWith<_$OnChangeUserFriendStatusImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -404,11 +406,11 @@ class _$UserDetailsStateCopyWithImpl<$Res, $Val extends UserDetailsState>
 }
 
 /// @nodoc
-abstract class _$$_UserDetailsStateCopyWith<$Res>
+abstract class _$$UserDetailsStateImplCopyWith<$Res>
     implements $UserDetailsStateCopyWith<$Res> {
-  factory _$$_UserDetailsStateCopyWith(
-          _$_UserDetailsState value, $Res Function(_$_UserDetailsState) then) =
-      __$$_UserDetailsStateCopyWithImpl<$Res>;
+  factory _$$UserDetailsStateImplCopyWith(_$UserDetailsStateImpl value,
+          $Res Function(_$UserDetailsStateImpl) then) =
+      __$$UserDetailsStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -418,11 +420,11 @@ abstract class _$$_UserDetailsStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UserDetailsStateCopyWithImpl<$Res>
-    extends _$UserDetailsStateCopyWithImpl<$Res, _$_UserDetailsState>
-    implements _$$_UserDetailsStateCopyWith<$Res> {
-  __$$_UserDetailsStateCopyWithImpl(
-      _$_UserDetailsState _value, $Res Function(_$_UserDetailsState) _then)
+class __$$UserDetailsStateImplCopyWithImpl<$Res>
+    extends _$UserDetailsStateCopyWithImpl<$Res, _$UserDetailsStateImpl>
+    implements _$$UserDetailsStateImplCopyWith<$Res> {
+  __$$UserDetailsStateImplCopyWithImpl(_$UserDetailsStateImpl _value,
+      $Res Function(_$UserDetailsStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -432,7 +434,7 @@ class __$$_UserDetailsStateCopyWithImpl<$Res>
     Object? gameCategories = null,
     Object? userFriendActionStatus = null,
   }) {
-    return _then(_$_UserDetailsState(
+    return _then(_$UserDetailsStateImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -451,8 +453,8 @@ class __$$_UserDetailsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UserDetailsState implements _UserDetailsState {
-  const _$_UserDetailsState(
+class _$UserDetailsStateImpl implements _UserDetailsState {
+  const _$UserDetailsStateImpl(
       {required this.type,
       required final List<String> gameCategories,
       required this.userFriendActionStatus})
@@ -480,7 +482,7 @@ class _$_UserDetailsState implements _UserDetailsState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserDetailsState &&
+            other is _$UserDetailsStateImpl &&
             (identical(other.type, type) || other.type == type) &&
             const DeepCollectionEquality()
                 .equals(other._gameCategories, _gameCategories) &&
@@ -498,8 +500,9 @@ class _$_UserDetailsState implements _UserDetailsState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserDetailsStateCopyWith<_$_UserDetailsState> get copyWith =>
-      __$$_UserDetailsStateCopyWithImpl<_$_UserDetailsState>(this, _$identity);
+  _$$UserDetailsStateImplCopyWith<_$UserDetailsStateImpl> get copyWith =>
+      __$$UserDetailsStateImplCopyWithImpl<_$UserDetailsStateImpl>(
+          this, _$identity);
 }
 
 abstract class _UserDetailsState implements UserDetailsState {
@@ -507,7 +510,7 @@ abstract class _UserDetailsState implements UserDetailsState {
           {required final StateType type,
           required final List<String> gameCategories,
           required final UserFriendStatus userFriendActionStatus}) =
-      _$_UserDetailsState;
+      _$UserDetailsStateImpl;
 
   @override
   StateType get type;
@@ -517,6 +520,6 @@ abstract class _UserDetailsState implements UserDetailsState {
   UserFriendStatus get userFriendActionStatus;
   @override
   @JsonKey(ignore: true)
-  _$$_UserDetailsStateCopyWith<_$_UserDetailsState> get copyWith =>
+  _$$UserDetailsStateImplCopyWith<_$UserDetailsStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
