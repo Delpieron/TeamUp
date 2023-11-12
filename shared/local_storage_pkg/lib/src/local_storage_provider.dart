@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:dependency_interfaces/dependency_interfaces.dart' as dep
     show BackgroundCommand, BackgroundWorker, BackgroundWrapper, LocalStorage, Logger;
 import 'package:local_storage_pkg/src/constants/local_storage_commands.dart';
@@ -6,15 +7,14 @@ import 'package:local_storage_pkg/src/instances/local_storage_service.dart';
 import 'package:local_storage_pkg/src/models/local_storage_parameters.dart';
 
 final class LocalStorageProvider implements dep.LocalStorage {
-  LocalStorageProvider._(this._backgroundService, this._logger);
+  LocalStorageProvider._(this._backgroundService);
 
   final dep.BackgroundWrapper _backgroundService;
-  final dep.Logger? _logger;
 
   static Future<LocalStorageProvider> createAsync(dep.BackgroundWorker backgroundWorker, {dep.Logger? logger}) async {
     final backgroundService = dep.BackgroundWrapper(backgroundWorker, dep.BackgroundCommand.localStorage);
     await backgroundService.registerService(LocalStorageService.new);
-    final instance = LocalStorageProvider._(backgroundService, logger);
+    final instance = LocalStorageProvider._(backgroundService);
     logger?.d('Service $instance initialized');
     return instance;
   }

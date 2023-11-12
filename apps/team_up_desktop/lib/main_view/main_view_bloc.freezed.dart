@@ -43,8 +43,7 @@ mixin _$MainViewEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_OnLoadSuggestedFriends value)
-        onLoadSuggestedFriends,
+    required TResult Function(_OnLoadSuggestedFriends value) onLoadSuggestedFriends,
     required TResult Function(_OnLoadCurrentUser value) onLoadCurrentUser,
     required TResult Function(_OnGamesLoadRequest value) onGamesLoadRequest,
     required TResult Function(_OnGameChanged value) onGameChanged,
@@ -71,14 +70,12 @@ mixin _$MainViewEvent {
 
 /// @nodoc
 abstract class $MainViewEventCopyWith<$Res> {
-  factory $MainViewEventCopyWith(
-          MainViewEvent value, $Res Function(MainViewEvent) then) =
+  factory $MainViewEventCopyWith(MainViewEvent value, $Res Function(MainViewEvent) then) =
       _$MainViewEventCopyWithImpl<$Res, MainViewEvent>;
 }
 
 /// @nodoc
-class _$MainViewEventCopyWithImpl<$Res, $Val extends MainViewEvent>
-    implements $MainViewEventCopyWith<$Res> {
+class _$MainViewEventCopyWithImpl<$Res, $Val extends MainViewEvent> implements $MainViewEventCopyWith<$Res> {
   _$MainViewEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -90,8 +87,7 @@ class _$MainViewEventCopyWithImpl<$Res, $Val extends MainViewEvent>
 /// @nodoc
 abstract class _$$OnLoadSuggestedFriendsImplCopyWith<$Res> {
   factory _$$OnLoadSuggestedFriendsImplCopyWith(
-          _$OnLoadSuggestedFriendsImpl value,
-          $Res Function(_$OnLoadSuggestedFriendsImpl) then) =
+          _$OnLoadSuggestedFriendsImpl value, $Res Function(_$OnLoadSuggestedFriendsImpl) then) =
       __$$OnLoadSuggestedFriendsImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? gameId});
@@ -102,8 +98,7 @@ class __$$OnLoadSuggestedFriendsImplCopyWithImpl<$Res>
     extends _$MainViewEventCopyWithImpl<$Res, _$OnLoadSuggestedFriendsImpl>
     implements _$$OnLoadSuggestedFriendsImplCopyWith<$Res> {
   __$$OnLoadSuggestedFriendsImplCopyWithImpl(
-      _$OnLoadSuggestedFriendsImpl _value,
-      $Res Function(_$OnLoadSuggestedFriendsImpl) _then)
+      _$OnLoadSuggestedFriendsImpl _value, $Res Function(_$OnLoadSuggestedFriendsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -147,9 +142,8 @@ class _$OnLoadSuggestedFriendsImpl implements _OnLoadSuggestedFriends {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$OnLoadSuggestedFriendsImplCopyWith<_$OnLoadSuggestedFriendsImpl>
-      get copyWith => __$$OnLoadSuggestedFriendsImplCopyWithImpl<
-          _$OnLoadSuggestedFriendsImpl>(this, _$identity);
+  _$$OnLoadSuggestedFriendsImplCopyWith<_$OnLoadSuggestedFriendsImpl> get copyWith =>
+      __$$OnLoadSuggestedFriendsImplCopyWithImpl<_$OnLoadSuggestedFriendsImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -191,8 +185,7 @@ class _$OnLoadSuggestedFriendsImpl implements _OnLoadSuggestedFriends {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_OnLoadSuggestedFriends value)
-        onLoadSuggestedFriends,
+    required TResult Function(_OnLoadSuggestedFriends value) onLoadSuggestedFriends,
     required TResult Function(_OnLoadCurrentUser value) onLoadCurrentUser,
     required TResult Function(_OnGamesLoadRequest value) onGamesLoadRequest,
     required TResult Function(_OnGameChanged value) onGameChanged,
@@ -228,28 +221,24 @@ class _$OnLoadSuggestedFriendsImpl implements _OnLoadSuggestedFriends {
 }
 
 abstract class _OnLoadSuggestedFriends implements MainViewEvent {
-  const factory _OnLoadSuggestedFriends([final String? gameId]) =
-      _$OnLoadSuggestedFriendsImpl;
+  const factory _OnLoadSuggestedFriends([final String? gameId]) = _$OnLoadSuggestedFriendsImpl;
 
   String? get gameId;
   @JsonKey(ignore: true)
-  _$$OnLoadSuggestedFriendsImplCopyWith<_$OnLoadSuggestedFriendsImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$OnLoadSuggestedFriendsImplCopyWith<_$OnLoadSuggestedFriendsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$OnLoadCurrentUserImplCopyWith<$Res> {
-  factory _$$OnLoadCurrentUserImplCopyWith(_$OnLoadCurrentUserImpl value,
-          $Res Function(_$OnLoadCurrentUserImpl) then) =
+  factory _$$OnLoadCurrentUserImplCopyWith(_$OnLoadCurrentUserImpl value, $Res Function(_$OnLoadCurrentUserImpl) then) =
       __$$OnLoadCurrentUserImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$OnLoadCurrentUserImplCopyWithImpl<$Res>
-    extends _$MainViewEventCopyWithImpl<$Res, _$OnLoadCurrentUserImpl>
+class __$$OnLoadCurrentUserImplCopyWithImpl<$Res> extends _$MainViewEventCopyWithImpl<$Res, _$OnLoadCurrentUserImpl>
     implements _$$OnLoadCurrentUserImplCopyWith<$Res> {
-  __$$OnLoadCurrentUserImplCopyWithImpl(_$OnLoadCurrentUserImpl _value,
-      $Res Function(_$OnLoadCurrentUserImpl) _then)
+  __$$OnLoadCurrentUserImplCopyWithImpl(_$OnLoadCurrentUserImpl _value, $Res Function(_$OnLoadCurrentUserImpl) _then)
       : super(_value, _then);
 }
 
@@ -265,8 +254,7 @@ class _$OnLoadCurrentUserImpl implements _OnLoadCurrentUser {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$OnLoadCurrentUserImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$OnLoadCurrentUserImpl);
   }
 
   @override
@@ -312,8 +300,7 @@ class _$OnLoadCurrentUserImpl implements _OnLoadCurrentUser {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_OnLoadSuggestedFriends value)
-        onLoadSuggestedFriends,
+    required TResult Function(_OnLoadSuggestedFriends value) onLoadSuggestedFriends,
     required TResult Function(_OnLoadCurrentUser value) onLoadCurrentUser,
     required TResult Function(_OnGamesLoadRequest value) onGamesLoadRequest,
     required TResult Function(_OnGameChanged value) onGameChanged,
@@ -354,17 +341,15 @@ abstract class _OnLoadCurrentUser implements MainViewEvent {
 
 /// @nodoc
 abstract class _$$OnGamesLoadRequestImplCopyWith<$Res> {
-  factory _$$OnGamesLoadRequestImplCopyWith(_$OnGamesLoadRequestImpl value,
-          $Res Function(_$OnGamesLoadRequestImpl) then) =
+  factory _$$OnGamesLoadRequestImplCopyWith(
+          _$OnGamesLoadRequestImpl value, $Res Function(_$OnGamesLoadRequestImpl) then) =
       __$$OnGamesLoadRequestImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$OnGamesLoadRequestImplCopyWithImpl<$Res>
-    extends _$MainViewEventCopyWithImpl<$Res, _$OnGamesLoadRequestImpl>
+class __$$OnGamesLoadRequestImplCopyWithImpl<$Res> extends _$MainViewEventCopyWithImpl<$Res, _$OnGamesLoadRequestImpl>
     implements _$$OnGamesLoadRequestImplCopyWith<$Res> {
-  __$$OnGamesLoadRequestImplCopyWithImpl(_$OnGamesLoadRequestImpl _value,
-      $Res Function(_$OnGamesLoadRequestImpl) _then)
+  __$$OnGamesLoadRequestImplCopyWithImpl(_$OnGamesLoadRequestImpl _value, $Res Function(_$OnGamesLoadRequestImpl) _then)
       : super(_value, _then);
 }
 
@@ -380,8 +365,7 @@ class _$OnGamesLoadRequestImpl implements _OnGamesLoadRequest {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$OnGamesLoadRequestImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$OnGamesLoadRequestImpl);
   }
 
   @override
@@ -427,8 +411,7 @@ class _$OnGamesLoadRequestImpl implements _OnGamesLoadRequest {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_OnLoadSuggestedFriends value)
-        onLoadSuggestedFriends,
+    required TResult Function(_OnLoadSuggestedFriends value) onLoadSuggestedFriends,
     required TResult Function(_OnLoadCurrentUser value) onLoadCurrentUser,
     required TResult Function(_OnGamesLoadRequest value) onGamesLoadRequest,
     required TResult Function(_OnGameChanged value) onGameChanged,
@@ -469,19 +452,16 @@ abstract class _OnGamesLoadRequest implements MainViewEvent {
 
 /// @nodoc
 abstract class _$$OnGameChangedImplCopyWith<$Res> {
-  factory _$$OnGameChangedImplCopyWith(
-          _$OnGameChangedImpl value, $Res Function(_$OnGameChangedImpl) then) =
+  factory _$$OnGameChangedImplCopyWith(_$OnGameChangedImpl value, $Res Function(_$OnGameChangedImpl) then) =
       __$$OnGameChangedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String value, String gameId});
 }
 
 /// @nodoc
-class __$$OnGameChangedImplCopyWithImpl<$Res>
-    extends _$MainViewEventCopyWithImpl<$Res, _$OnGameChangedImpl>
+class __$$OnGameChangedImplCopyWithImpl<$Res> extends _$MainViewEventCopyWithImpl<$Res, _$OnGameChangedImpl>
     implements _$$OnGameChangedImplCopyWith<$Res> {
-  __$$OnGameChangedImplCopyWithImpl(
-      _$OnGameChangedImpl _value, $Res Function(_$OnGameChangedImpl) _then)
+  __$$OnGameChangedImplCopyWithImpl(_$OnGameChangedImpl _value, $Res Function(_$OnGameChangedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -576,8 +556,7 @@ class _$OnGameChangedImpl implements _OnGameChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_OnLoadSuggestedFriends value)
-        onLoadSuggestedFriends,
+    required TResult Function(_OnLoadSuggestedFriends value) onLoadSuggestedFriends,
     required TResult Function(_OnLoadCurrentUser value) onLoadCurrentUser,
     required TResult Function(_OnGamesLoadRequest value) onGamesLoadRequest,
     required TResult Function(_OnGameChanged value) onGameChanged,
@@ -613,14 +592,12 @@ class _$OnGameChangedImpl implements _OnGameChanged {
 }
 
 abstract class _OnGameChanged implements MainViewEvent {
-  const factory _OnGameChanged(final String value, final String gameId) =
-      _$OnGameChangedImpl;
+  const factory _OnGameChanged(final String value, final String gameId) = _$OnGameChangedImpl;
 
   String get value;
   String get gameId;
   @JsonKey(ignore: true)
-  _$$OnGameChangedImplCopyWith<_$OnGameChangedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$OnGameChangedImplCopyWith<_$OnGameChangedImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -632,29 +609,22 @@ mixin _$MainViewState {
   String get selectedValue => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $MainViewStateCopyWith<MainViewState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $MainViewStateCopyWith<MainViewState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MainViewStateCopyWith<$Res> {
-  factory $MainViewStateCopyWith(
-          MainViewState value, $Res Function(MainViewState) then) =
+  factory $MainViewStateCopyWith(MainViewState value, $Res Function(MainViewState) then) =
       _$MainViewStateCopyWithImpl<$Res, MainViewState>;
   @useResult
   $Res call(
-      {StateType type,
-      List<User>? suggestedUsers,
-      User? currentUser,
-      List<Game> availableGames,
-      String selectedValue});
+      {StateType type, List<User>? suggestedUsers, User? currentUser, List<Game> availableGames, String selectedValue});
 
   $UserCopyWith<$Res>? get currentUser;
 }
 
 /// @nodoc
-class _$MainViewStateCopyWithImpl<$Res, $Val extends MainViewState>
-    implements $MainViewStateCopyWith<$Res> {
+class _$MainViewStateCopyWithImpl<$Res, $Val extends MainViewState> implements $MainViewStateCopyWith<$Res> {
   _$MainViewStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -709,30 +679,22 @@ class _$MainViewStateCopyWithImpl<$Res, $Val extends MainViewState>
 }
 
 /// @nodoc
-abstract class _$$MainViewStateImplCopyWith<$Res>
-    implements $MainViewStateCopyWith<$Res> {
-  factory _$$MainViewStateImplCopyWith(
-          _$MainViewStateImpl value, $Res Function(_$MainViewStateImpl) then) =
+abstract class _$$MainViewStateImplCopyWith<$Res> implements $MainViewStateCopyWith<$Res> {
+  factory _$$MainViewStateImplCopyWith(_$MainViewStateImpl value, $Res Function(_$MainViewStateImpl) then) =
       __$$MainViewStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {StateType type,
-      List<User>? suggestedUsers,
-      User? currentUser,
-      List<Game> availableGames,
-      String selectedValue});
+      {StateType type, List<User>? suggestedUsers, User? currentUser, List<Game> availableGames, String selectedValue});
 
   @override
   $UserCopyWith<$Res>? get currentUser;
 }
 
 /// @nodoc
-class __$$MainViewStateImplCopyWithImpl<$Res>
-    extends _$MainViewStateCopyWithImpl<$Res, _$MainViewStateImpl>
+class __$$MainViewStateImplCopyWithImpl<$Res> extends _$MainViewStateCopyWithImpl<$Res, _$MainViewStateImpl>
     implements _$$MainViewStateImplCopyWith<$Res> {
-  __$$MainViewStateImplCopyWithImpl(
-      _$MainViewStateImpl _value, $Res Function(_$MainViewStateImpl) _then)
+  __$$MainViewStateImplCopyWithImpl(_$MainViewStateImpl _value, $Res Function(_$MainViewStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -817,24 +779,15 @@ class _$MainViewStateImpl implements _MainViewState {
         (other.runtimeType == runtimeType &&
             other is _$MainViewStateImpl &&
             (identical(other.type, type) || other.type == type) &&
-            const DeepCollectionEquality()
-                .equals(other._suggestedUsers, _suggestedUsers) &&
-            (identical(other.currentUser, currentUser) ||
-                other.currentUser == currentUser) &&
-            const DeepCollectionEquality()
-                .equals(other._availableGames, _availableGames) &&
-            (identical(other.selectedValue, selectedValue) ||
-                other.selectedValue == selectedValue));
+            const DeepCollectionEquality().equals(other._suggestedUsers, _suggestedUsers) &&
+            (identical(other.currentUser, currentUser) || other.currentUser == currentUser) &&
+            const DeepCollectionEquality().equals(other._availableGames, _availableGames) &&
+            (identical(other.selectedValue, selectedValue) || other.selectedValue == selectedValue));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      type,
-      const DeepCollectionEquality().hash(_suggestedUsers),
-      currentUser,
-      const DeepCollectionEquality().hash(_availableGames),
-      selectedValue);
+  int get hashCode => Object.hash(runtimeType, type, const DeepCollectionEquality().hash(_suggestedUsers), currentUser,
+      const DeepCollectionEquality().hash(_availableGames), selectedValue);
 
   @JsonKey(ignore: true)
   @override
@@ -863,6 +816,5 @@ abstract class _MainViewState implements MainViewState {
   String get selectedValue;
   @override
   @JsonKey(ignore: true)
-  _$$MainViewStateImplCopyWith<_$MainViewStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$MainViewStateImplCopyWith<_$MainViewStateImpl> get copyWith => throw _privateConstructorUsedError;
 }

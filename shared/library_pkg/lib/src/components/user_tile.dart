@@ -51,7 +51,7 @@ class UserTile extends StatelessWidget {
                       itemCount: 3,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
-                        if(index >= user.gamesList.length){
+                        if (index >= user.gamesList.length) {
                           return const SizedBox.shrink();
                         }
                         final item = user.gamesList[index];

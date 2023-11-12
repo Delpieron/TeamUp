@@ -4,10 +4,9 @@ import 'dart:convert';
 import 'package:dependency_interfaces/dependency_interfaces.dart' as dep
     show MessageWrapper, RestClient, Service, WrappedResult;
 import 'package:http/http.dart';
+import 'package:rest_client_pkg/rest_client_pkg.dart';
 import 'package:rest_client_pkg/src/constants/rest_client_commands.dart';
 import 'package:rest_client_pkg/src/models/rest_request.dart';
-
-import '../../rest_client_pkg.dart';
 
 final class RestClientService extends dep.Service implements dep.RestClient {
   RestClientService(super.services);

@@ -13,12 +13,9 @@ _$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
       age: json['age'] as int,
       startHour: json['startHour'] as int,
       endHour: json['endHour'] as int,
-      gamesList: (json['gamesList'] as List<dynamic>)
-          .map((e) => Game.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      friendsList: (json['friendsList'] as List<dynamic>?)
-          ?.map((e) => User.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      gamesList: (json['gamesList'] as List<dynamic>).map((e) => Game.fromJson(e as Map<String, dynamic>)).toList(),
+      friendsList:
+          (json['friendsList'] as List<dynamic>?)?.map((e) => User.fromJson(e as Map<String, dynamic>)).toList(),
     );
 
 Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{

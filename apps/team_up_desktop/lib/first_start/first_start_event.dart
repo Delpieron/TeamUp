@@ -1,4 +1,5 @@
 part of 'first_start_bloc.dart';
+
 // ignore_for_file: avoid_positional_boolean_parameters
 @freezed
 class FirstStartEvent with _$FirstStartEvent {

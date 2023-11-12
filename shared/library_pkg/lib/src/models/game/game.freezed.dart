@@ -31,15 +31,13 @@ mixin _$Game {
 
 /// @nodoc
 abstract class $GameCopyWith<$Res> {
-  factory $GameCopyWith(Game value, $Res Function(Game) then) =
-      _$GameCopyWithImpl<$Res, Game>;
+  factory $GameCopyWith(Game value, $Res Function(Game) then) = _$GameCopyWithImpl<$Res, Game>;
   @useResult
   $Res call({String id, String name, String category});
 }
 
 /// @nodoc
-class _$GameCopyWithImpl<$Res, $Val extends Game>
-    implements $GameCopyWith<$Res> {
+class _$GameCopyWithImpl<$Res, $Val extends Game> implements $GameCopyWith<$Res> {
   _$GameCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -73,18 +71,15 @@ class _$GameCopyWithImpl<$Res, $Val extends Game>
 
 /// @nodoc
 abstract class _$$_GameCopyWith<$Res> implements $GameCopyWith<$Res> {
-  factory _$$_GameCopyWith(_$_Game value, $Res Function(_$_Game) then) =
-      __$$_GameCopyWithImpl<$Res>;
+  factory _$$_GameCopyWith(_$_Game value, $Res Function(_$_Game) then) = __$$_GameCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, String name, String category});
 }
 
 /// @nodoc
-class __$$_GameCopyWithImpl<$Res> extends _$GameCopyWithImpl<$Res, _$_Game>
-    implements _$$_GameCopyWith<$Res> {
-  __$$_GameCopyWithImpl(_$_Game _value, $Res Function(_$_Game) _then)
-      : super(_value, _then);
+class __$$_GameCopyWithImpl<$Res> extends _$GameCopyWithImpl<$Res, _$_Game> implements _$$_GameCopyWith<$Res> {
+  __$$_GameCopyWithImpl(_$_Game _value, $Res Function(_$_Game) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -136,8 +131,7 @@ class _$_Game implements _Game {
             other is _$_Game &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.category, category) ||
-                other.category == category));
+            (identical(other.category, category) || other.category == category));
   }
 
   @JsonKey(ignore: true)
@@ -147,8 +141,7 @@ class _$_Game implements _Game {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GameCopyWith<_$_Game> get copyWith =>
-      __$$_GameCopyWithImpl<_$_Game>(this, _$identity);
+  _$$_GameCopyWith<_$_Game> get copyWith => __$$_GameCopyWithImpl<_$_Game>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -159,10 +152,7 @@ class _$_Game implements _Game {
 }
 
 abstract class _Game implements Game {
-  const factory _Game(
-      {required final String id,
-      required final String name,
-      required final String category}) = _$_Game;
+  const factory _Game({required final String id, required final String name, required final String category}) = _$_Game;
 
   factory _Game.fromJson(Map<String, dynamic> json) = _$_Game.fromJson;
 

@@ -9,10 +9,9 @@ import 'package:rest_client_pkg/src/models/rest_request.dart';
 import 'package:rest_client_pkg/src/models/rest_response.dart';
 
 final class RestClientProvider implements dep.RestClient {
-  RestClientProvider._(this._backgroundService, this._logger);
+  RestClientProvider._(this._backgroundService);
 
   final dep.BackgroundWrapper _backgroundService;
-  final dep.Logger? _logger;
 
   static Future<RestClientProvider> createAsync(
     dep.BackgroundWorker backgroundWorker, {
@@ -20,7 +19,7 @@ final class RestClientProvider implements dep.RestClient {
   }) async {
     final backgroundService = dep.BackgroundWrapper(backgroundWorker, dep.BackgroundCommand.restClient);
     await backgroundService.registerService(RestClientService.new);
-    final instance = RestClientProvider._(backgroundService, logger);
+    final instance = RestClientProvider._(backgroundService);
     logger?.d('Service $instance initialized');
     return instance;
   }

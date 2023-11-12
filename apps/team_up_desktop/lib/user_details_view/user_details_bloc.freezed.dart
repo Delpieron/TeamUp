@@ -19,39 +19,32 @@ mixin _$UserDetailsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() onUserGameCategoriesLoad,
-    required TResult Function(UserFriendActionStatus action, String userId)
-        onChangeUserFriendStatus,
+    required TResult Function(UserFriendActionStatus action, String userId) onChangeUserFriendStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onUserGameCategoriesLoad,
-    TResult? Function(UserFriendActionStatus action, String userId)?
-        onChangeUserFriendStatus,
+    TResult? Function(UserFriendActionStatus action, String userId)? onChangeUserFriendStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onUserGameCategoriesLoad,
-    TResult Function(UserFriendActionStatus action, String userId)?
-        onChangeUserFriendStatus,
+    TResult Function(UserFriendActionStatus action, String userId)? onChangeUserFriendStatus,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_OnUserGameCategoriesLoad value)
-        onUserGameCategoriesLoad,
-    required TResult Function(_OnChangeUserFriendStatus value)
-        onChangeUserFriendStatus,
+    required TResult Function(_OnUserGameCategoriesLoad value) onUserGameCategoriesLoad,
+    required TResult Function(_OnChangeUserFriendStatus value) onChangeUserFriendStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_OnUserGameCategoriesLoad value)?
-        onUserGameCategoriesLoad,
-    TResult? Function(_OnChangeUserFriendStatus value)?
-        onChangeUserFriendStatus,
+    TResult? Function(_OnUserGameCategoriesLoad value)? onUserGameCategoriesLoad,
+    TResult? Function(_OnChangeUserFriendStatus value)? onChangeUserFriendStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,14 +58,12 @@ mixin _$UserDetailsEvent {
 
 /// @nodoc
 abstract class $UserDetailsEventCopyWith<$Res> {
-  factory $UserDetailsEventCopyWith(
-          UserDetailsEvent value, $Res Function(UserDetailsEvent) then) =
+  factory $UserDetailsEventCopyWith(UserDetailsEvent value, $Res Function(UserDetailsEvent) then) =
       _$UserDetailsEventCopyWithImpl<$Res, UserDetailsEvent>;
 }
 
 /// @nodoc
-class _$UserDetailsEventCopyWithImpl<$Res, $Val extends UserDetailsEvent>
-    implements $UserDetailsEventCopyWith<$Res> {
+class _$UserDetailsEventCopyWithImpl<$Res, $Val extends UserDetailsEvent> implements $UserDetailsEventCopyWith<$Res> {
   _$UserDetailsEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -84,8 +75,7 @@ class _$UserDetailsEventCopyWithImpl<$Res, $Val extends UserDetailsEvent>
 /// @nodoc
 abstract class _$$OnUserGameCategoriesLoadImplCopyWith<$Res> {
   factory _$$OnUserGameCategoriesLoadImplCopyWith(
-          _$OnUserGameCategoriesLoadImpl value,
-          $Res Function(_$OnUserGameCategoriesLoadImpl) then) =
+          _$OnUserGameCategoriesLoadImpl value, $Res Function(_$OnUserGameCategoriesLoadImpl) then) =
       __$$OnUserGameCategoriesLoadImplCopyWithImpl<$Res>;
 }
 
@@ -94,8 +84,7 @@ class __$$OnUserGameCategoriesLoadImplCopyWithImpl<$Res>
     extends _$UserDetailsEventCopyWithImpl<$Res, _$OnUserGameCategoriesLoadImpl>
     implements _$$OnUserGameCategoriesLoadImplCopyWith<$Res> {
   __$$OnUserGameCategoriesLoadImplCopyWithImpl(
-      _$OnUserGameCategoriesLoadImpl _value,
-      $Res Function(_$OnUserGameCategoriesLoadImpl) _then)
+      _$OnUserGameCategoriesLoadImpl _value, $Res Function(_$OnUserGameCategoriesLoadImpl) _then)
       : super(_value, _then);
 }
 
@@ -111,9 +100,7 @@ class _$OnUserGameCategoriesLoadImpl implements _OnUserGameCategoriesLoad {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$OnUserGameCategoriesLoadImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$OnUserGameCategoriesLoadImpl);
   }
 
   @override
@@ -123,8 +110,7 @@ class _$OnUserGameCategoriesLoadImpl implements _OnUserGameCategoriesLoad {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() onUserGameCategoriesLoad,
-    required TResult Function(UserFriendActionStatus action, String userId)
-        onChangeUserFriendStatus,
+    required TResult Function(UserFriendActionStatus action, String userId) onChangeUserFriendStatus,
   }) {
     return onUserGameCategoriesLoad();
   }
@@ -133,8 +119,7 @@ class _$OnUserGameCategoriesLoadImpl implements _OnUserGameCategoriesLoad {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onUserGameCategoriesLoad,
-    TResult? Function(UserFriendActionStatus action, String userId)?
-        onChangeUserFriendStatus,
+    TResult? Function(UserFriendActionStatus action, String userId)? onChangeUserFriendStatus,
   }) {
     return onUserGameCategoriesLoad?.call();
   }
@@ -143,8 +128,7 @@ class _$OnUserGameCategoriesLoadImpl implements _OnUserGameCategoriesLoad {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onUserGameCategoriesLoad,
-    TResult Function(UserFriendActionStatus action, String userId)?
-        onChangeUserFriendStatus,
+    TResult Function(UserFriendActionStatus action, String userId)? onChangeUserFriendStatus,
     required TResult orElse(),
   }) {
     if (onUserGameCategoriesLoad != null) {
@@ -156,10 +140,8 @@ class _$OnUserGameCategoriesLoadImpl implements _OnUserGameCategoriesLoad {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_OnUserGameCategoriesLoad value)
-        onUserGameCategoriesLoad,
-    required TResult Function(_OnChangeUserFriendStatus value)
-        onChangeUserFriendStatus,
+    required TResult Function(_OnUserGameCategoriesLoad value) onUserGameCategoriesLoad,
+    required TResult Function(_OnChangeUserFriendStatus value) onChangeUserFriendStatus,
   }) {
     return onUserGameCategoriesLoad(this);
   }
@@ -167,10 +149,8 @@ class _$OnUserGameCategoriesLoadImpl implements _OnUserGameCategoriesLoad {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_OnUserGameCategoriesLoad value)?
-        onUserGameCategoriesLoad,
-    TResult? Function(_OnChangeUserFriendStatus value)?
-        onChangeUserFriendStatus,
+    TResult? Function(_OnUserGameCategoriesLoad value)? onUserGameCategoriesLoad,
+    TResult? Function(_OnChangeUserFriendStatus value)? onChangeUserFriendStatus,
   }) {
     return onUserGameCategoriesLoad?.call(this);
   }
@@ -196,8 +176,7 @@ abstract class _OnUserGameCategoriesLoad implements UserDetailsEvent {
 /// @nodoc
 abstract class _$$OnChangeUserFriendStatusImplCopyWith<$Res> {
   factory _$$OnChangeUserFriendStatusImplCopyWith(
-          _$OnChangeUserFriendStatusImpl value,
-          $Res Function(_$OnChangeUserFriendStatusImpl) then) =
+          _$OnChangeUserFriendStatusImpl value, $Res Function(_$OnChangeUserFriendStatusImpl) then) =
       __$$OnChangeUserFriendStatusImplCopyWithImpl<$Res>;
   @useResult
   $Res call({UserFriendActionStatus action, String userId});
@@ -208,8 +187,7 @@ class __$$OnChangeUserFriendStatusImplCopyWithImpl<$Res>
     extends _$UserDetailsEventCopyWithImpl<$Res, _$OnChangeUserFriendStatusImpl>
     implements _$$OnChangeUserFriendStatusImplCopyWith<$Res> {
   __$$OnChangeUserFriendStatusImplCopyWithImpl(
-      _$OnChangeUserFriendStatusImpl _value,
-      $Res Function(_$OnChangeUserFriendStatusImpl) _then)
+      _$OnChangeUserFriendStatusImpl _value, $Res Function(_$OnChangeUserFriendStatusImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -261,16 +239,14 @@ class _$OnChangeUserFriendStatusImpl implements _OnChangeUserFriendStatus {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$OnChangeUserFriendStatusImplCopyWith<_$OnChangeUserFriendStatusImpl>
-      get copyWith => __$$OnChangeUserFriendStatusImplCopyWithImpl<
-          _$OnChangeUserFriendStatusImpl>(this, _$identity);
+  _$$OnChangeUserFriendStatusImplCopyWith<_$OnChangeUserFriendStatusImpl> get copyWith =>
+      __$$OnChangeUserFriendStatusImplCopyWithImpl<_$OnChangeUserFriendStatusImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() onUserGameCategoriesLoad,
-    required TResult Function(UserFriendActionStatus action, String userId)
-        onChangeUserFriendStatus,
+    required TResult Function(UserFriendActionStatus action, String userId) onChangeUserFriendStatus,
   }) {
     return onChangeUserFriendStatus(action, userId);
   }
@@ -279,8 +255,7 @@ class _$OnChangeUserFriendStatusImpl implements _OnChangeUserFriendStatus {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onUserGameCategoriesLoad,
-    TResult? Function(UserFriendActionStatus action, String userId)?
-        onChangeUserFriendStatus,
+    TResult? Function(UserFriendActionStatus action, String userId)? onChangeUserFriendStatus,
   }) {
     return onChangeUserFriendStatus?.call(action, userId);
   }
@@ -289,8 +264,7 @@ class _$OnChangeUserFriendStatusImpl implements _OnChangeUserFriendStatus {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onUserGameCategoriesLoad,
-    TResult Function(UserFriendActionStatus action, String userId)?
-        onChangeUserFriendStatus,
+    TResult Function(UserFriendActionStatus action, String userId)? onChangeUserFriendStatus,
     required TResult orElse(),
   }) {
     if (onChangeUserFriendStatus != null) {
@@ -302,10 +276,8 @@ class _$OnChangeUserFriendStatusImpl implements _OnChangeUserFriendStatus {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_OnUserGameCategoriesLoad value)
-        onUserGameCategoriesLoad,
-    required TResult Function(_OnChangeUserFriendStatus value)
-        onChangeUserFriendStatus,
+    required TResult Function(_OnUserGameCategoriesLoad value) onUserGameCategoriesLoad,
+    required TResult Function(_OnChangeUserFriendStatus value) onChangeUserFriendStatus,
   }) {
     return onChangeUserFriendStatus(this);
   }
@@ -313,10 +285,8 @@ class _$OnChangeUserFriendStatusImpl implements _OnChangeUserFriendStatus {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_OnUserGameCategoriesLoad value)?
-        onUserGameCategoriesLoad,
-    TResult? Function(_OnChangeUserFriendStatus value)?
-        onChangeUserFriendStatus,
+    TResult? Function(_OnUserGameCategoriesLoad value)? onUserGameCategoriesLoad,
+    TResult? Function(_OnChangeUserFriendStatus value)? onChangeUserFriendStatus,
   }) {
     return onChangeUserFriendStatus?.call(this);
   }
@@ -336,44 +306,36 @@ class _$OnChangeUserFriendStatusImpl implements _OnChangeUserFriendStatus {
 }
 
 abstract class _OnChangeUserFriendStatus implements UserDetailsEvent {
-  const factory _OnChangeUserFriendStatus(
-          final UserFriendActionStatus action, final String userId) =
+  const factory _OnChangeUserFriendStatus(final UserFriendActionStatus action, final String userId) =
       _$OnChangeUserFriendStatusImpl;
 
   UserFriendActionStatus get action;
   String get userId;
   @JsonKey(ignore: true)
-  _$$OnChangeUserFriendStatusImplCopyWith<_$OnChangeUserFriendStatusImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$OnChangeUserFriendStatusImplCopyWith<_$OnChangeUserFriendStatusImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$UserDetailsState {
   StateType get type => throw _privateConstructorUsedError;
   List<String> get gameCategories => throw _privateConstructorUsedError;
-  UserFriendStatus get userFriendActionStatus =>
-      throw _privateConstructorUsedError;
+  UserFriendStatus get userFriendActionStatus => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $UserDetailsStateCopyWith<UserDetailsState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $UserDetailsStateCopyWith<UserDetailsState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UserDetailsStateCopyWith<$Res> {
-  factory $UserDetailsStateCopyWith(
-          UserDetailsState value, $Res Function(UserDetailsState) then) =
+  factory $UserDetailsStateCopyWith(UserDetailsState value, $Res Function(UserDetailsState) then) =
       _$UserDetailsStateCopyWithImpl<$Res, UserDetailsState>;
   @useResult
-  $Res call(
-      {StateType type,
-      List<String> gameCategories,
-      UserFriendStatus userFriendActionStatus});
+  $Res call({StateType type, List<String> gameCategories, UserFriendStatus userFriendActionStatus});
 }
 
 /// @nodoc
-class _$UserDetailsStateCopyWithImpl<$Res, $Val extends UserDetailsState>
-    implements $UserDetailsStateCopyWith<$Res> {
+class _$UserDetailsStateCopyWithImpl<$Res, $Val extends UserDetailsState> implements $UserDetailsStateCopyWith<$Res> {
   _$UserDetailsStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -406,25 +368,18 @@ class _$UserDetailsStateCopyWithImpl<$Res, $Val extends UserDetailsState>
 }
 
 /// @nodoc
-abstract class _$$UserDetailsStateImplCopyWith<$Res>
-    implements $UserDetailsStateCopyWith<$Res> {
-  factory _$$UserDetailsStateImplCopyWith(_$UserDetailsStateImpl value,
-          $Res Function(_$UserDetailsStateImpl) then) =
+abstract class _$$UserDetailsStateImplCopyWith<$Res> implements $UserDetailsStateCopyWith<$Res> {
+  factory _$$UserDetailsStateImplCopyWith(_$UserDetailsStateImpl value, $Res Function(_$UserDetailsStateImpl) then) =
       __$$UserDetailsStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {StateType type,
-      List<String> gameCategories,
-      UserFriendStatus userFriendActionStatus});
+  $Res call({StateType type, List<String> gameCategories, UserFriendStatus userFriendActionStatus});
 }
 
 /// @nodoc
-class __$$UserDetailsStateImplCopyWithImpl<$Res>
-    extends _$UserDetailsStateCopyWithImpl<$Res, _$UserDetailsStateImpl>
+class __$$UserDetailsStateImplCopyWithImpl<$Res> extends _$UserDetailsStateCopyWithImpl<$Res, _$UserDetailsStateImpl>
     implements _$$UserDetailsStateImplCopyWith<$Res> {
-  __$$UserDetailsStateImplCopyWithImpl(_$UserDetailsStateImpl _value,
-      $Res Function(_$UserDetailsStateImpl) _then)
+  __$$UserDetailsStateImplCopyWithImpl(_$UserDetailsStateImpl _value, $Res Function(_$UserDetailsStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -455,9 +410,7 @@ class __$$UserDetailsStateImplCopyWithImpl<$Res>
 
 class _$UserDetailsStateImpl implements _UserDetailsState {
   const _$UserDetailsStateImpl(
-      {required this.type,
-      required final List<String> gameCategories,
-      required this.userFriendActionStatus})
+      {required this.type, required final List<String> gameCategories, required this.userFriendActionStatus})
       : _gameCategories = gameCategories;
 
   @override
@@ -484,33 +437,27 @@ class _$UserDetailsStateImpl implements _UserDetailsState {
         (other.runtimeType == runtimeType &&
             other is _$UserDetailsStateImpl &&
             (identical(other.type, type) || other.type == type) &&
-            const DeepCollectionEquality()
-                .equals(other._gameCategories, _gameCategories) &&
+            const DeepCollectionEquality().equals(other._gameCategories, _gameCategories) &&
             (identical(other.userFriendActionStatus, userFriendActionStatus) ||
                 other.userFriendActionStatus == userFriendActionStatus));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      type,
-      const DeepCollectionEquality().hash(_gameCategories),
-      userFriendActionStatus);
+  int get hashCode =>
+      Object.hash(runtimeType, type, const DeepCollectionEquality().hash(_gameCategories), userFriendActionStatus);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$UserDetailsStateImplCopyWith<_$UserDetailsStateImpl> get copyWith =>
-      __$$UserDetailsStateImplCopyWithImpl<_$UserDetailsStateImpl>(
-          this, _$identity);
+      __$$UserDetailsStateImplCopyWithImpl<_$UserDetailsStateImpl>(this, _$identity);
 }
 
 abstract class _UserDetailsState implements UserDetailsState {
   const factory _UserDetailsState(
-          {required final StateType type,
-          required final List<String> gameCategories,
-          required final UserFriendStatus userFriendActionStatus}) =
-      _$UserDetailsStateImpl;
+      {required final StateType type,
+      required final List<String> gameCategories,
+      required final UserFriendStatus userFriendActionStatus}) = _$UserDetailsStateImpl;
 
   @override
   StateType get type;
@@ -520,6 +467,5 @@ abstract class _UserDetailsState implements UserDetailsState {
   UserFriendStatus get userFriendActionStatus;
   @override
   @JsonKey(ignore: true)
-  _$$UserDetailsStateImplCopyWith<_$UserDetailsStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UserDetailsStateImplCopyWith<_$UserDetailsStateImpl> get copyWith => throw _privateConstructorUsedError;
 }

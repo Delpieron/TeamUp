@@ -26,22 +26,19 @@ mixin _$SavedDevice {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SavedDeviceCopyWith<SavedDevice> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SavedDeviceCopyWith<SavedDevice> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SavedDeviceCopyWith<$Res> {
-  factory $SavedDeviceCopyWith(
-          SavedDevice value, $Res Function(SavedDevice) then) =
+  factory $SavedDeviceCopyWith(SavedDevice value, $Res Function(SavedDevice) then) =
       _$SavedDeviceCopyWithImpl<$Res, SavedDevice>;
   @useResult
   $Res call({String name, String address, String fullName});
 }
 
 /// @nodoc
-class _$SavedDeviceCopyWithImpl<$Res, $Val extends SavedDevice>
-    implements $SavedDeviceCopyWith<$Res> {
+class _$SavedDeviceCopyWithImpl<$Res, $Val extends SavedDevice> implements $SavedDeviceCopyWith<$Res> {
   _$SavedDeviceCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -74,10 +71,8 @@ class _$SavedDeviceCopyWithImpl<$Res, $Val extends SavedDevice>
 }
 
 /// @nodoc
-abstract class _$$SavedDeviceImplCopyWith<$Res>
-    implements $SavedDeviceCopyWith<$Res> {
-  factory _$$SavedDeviceImplCopyWith(
-          _$SavedDeviceImpl value, $Res Function(_$SavedDeviceImpl) then) =
+abstract class _$$SavedDeviceImplCopyWith<$Res> implements $SavedDeviceCopyWith<$Res> {
+  factory _$$SavedDeviceImplCopyWith(_$SavedDeviceImpl value, $Res Function(_$SavedDeviceImpl) then) =
       __$$SavedDeviceImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -85,11 +80,9 @@ abstract class _$$SavedDeviceImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SavedDeviceImplCopyWithImpl<$Res>
-    extends _$SavedDeviceCopyWithImpl<$Res, _$SavedDeviceImpl>
+class __$$SavedDeviceImplCopyWithImpl<$Res> extends _$SavedDeviceCopyWithImpl<$Res, _$SavedDeviceImpl>
     implements _$$SavedDeviceImplCopyWith<$Res> {
-  __$$SavedDeviceImplCopyWithImpl(
-      _$SavedDeviceImpl _value, $Res Function(_$SavedDeviceImpl) _then)
+  __$$SavedDeviceImplCopyWithImpl(_$SavedDeviceImpl _value, $Res Function(_$SavedDeviceImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -119,11 +112,9 @@ class __$$SavedDeviceImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$SavedDeviceImpl implements _SavedDevice {
-  const _$SavedDeviceImpl(
-      {required this.name, required this.address, required this.fullName});
+  const _$SavedDeviceImpl({required this.name, required this.address, required this.fullName});
 
-  factory _$SavedDeviceImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SavedDeviceImplFromJson(json);
+  factory _$SavedDeviceImpl.fromJson(Map<String, dynamic> json) => _$$SavedDeviceImplFromJson(json);
 
   @override
   final String name;
@@ -144,8 +135,7 @@ class _$SavedDeviceImpl implements _SavedDevice {
             other is _$SavedDeviceImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.address, address) || other.address == address) &&
-            (identical(other.fullName, fullName) ||
-                other.fullName == fullName));
+            (identical(other.fullName, fullName) || other.fullName == fullName));
   }
 
   @JsonKey(ignore: true)
@@ -168,12 +158,9 @@ class _$SavedDeviceImpl implements _SavedDevice {
 
 abstract class _SavedDevice implements SavedDevice {
   const factory _SavedDevice(
-      {required final String name,
-      required final String address,
-      required final String fullName}) = _$SavedDeviceImpl;
+      {required final String name, required final String address, required final String fullName}) = _$SavedDeviceImpl;
 
-  factory _SavedDevice.fromJson(Map<String, dynamic> json) =
-      _$SavedDeviceImpl.fromJson;
+  factory _SavedDevice.fromJson(Map<String, dynamic> json) = _$SavedDeviceImpl.fromJson;
 
   @override
   String get name;
@@ -183,6 +170,5 @@ abstract class _SavedDevice implements SavedDevice {
   String get fullName;
   @override
   @JsonKey(ignore: true)
-  _$$SavedDeviceImplCopyWith<_$SavedDeviceImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SavedDeviceImplCopyWith<_$SavedDeviceImpl> get copyWith => throw _privateConstructorUsedError;
 }

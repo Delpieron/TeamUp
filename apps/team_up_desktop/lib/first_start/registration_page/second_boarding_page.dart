@@ -88,14 +88,18 @@ class SecondBoardingPage extends StatelessWidget {
                 const SizedBox(width: 100),
                 CustomButton(
                   onPressed: () async {
-                    context.read<RegistrationBloc>().onRegisterRequest().then((result) async {
-                      if (!result) {
-                        onRegistrationFailed(context);
-                        return;
-                      }
-                      final token = await context.read<FirstStartBloc>().getCurrentUserToken();
-                      Navigator.push(context, MaterialPageRoute(builder: (_) => MainView(token: token)));
-                    });
+                    if (context.mounted) {
+                      await context.read<RegistrationBloc>().onRegisterRequest().then((result) async {
+                        if (!result) {
+                          onRegistrationFailed(context);
+                          return;
+                        }
+                        final token = await context.read<FirstStartBloc>().getCurrentUserToken();
+                        if (context.mounted) {
+                          await Navigator.push(context, MaterialPageRoute(builder: (_) => MainView(token: token)));
+                        }
+                      });
+                    }
                   },
                   backgroundColor: const Color(0xFF3ACAAB),
                   child: const Text('Zarejestruj!'),

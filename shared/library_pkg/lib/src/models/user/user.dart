@@ -5,8 +5,9 @@ import 'package:library_pkg/src/models/game/game.dart';
 part 'user.freezed.dart';
 
 part 'user.g.dart';
+
 @freezed
-class User  with _$User{
+class User with _$User {
   const factory User({
     required String id,
     required String username,
@@ -16,8 +17,7 @@ class User  with _$User{
     required int endHour,
     required List<Game> gamesList,
     required List<User>? friendsList,
-  })= _User;
-
+  }) = _User;
 
   factory User.fromJson(Map<String, Object?> json) => _$UserFromJson(json);
 }

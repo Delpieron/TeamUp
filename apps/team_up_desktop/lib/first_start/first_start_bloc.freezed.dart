@@ -18,8 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$FirstStartEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(FirstStartPageEnum firstStartPageEnum)
-        onNewPageRequest,
+    required TResult Function(FirstStartPageEnum firstStartPageEnum) onNewPageRequest,
     required TResult Function(bool startLoading) onStartLoading,
   }) =>
       throw _privateConstructorUsedError;
@@ -59,14 +58,12 @@ mixin _$FirstStartEvent {
 
 /// @nodoc
 abstract class $FirstStartEventCopyWith<$Res> {
-  factory $FirstStartEventCopyWith(
-          FirstStartEvent value, $Res Function(FirstStartEvent) then) =
+  factory $FirstStartEventCopyWith(FirstStartEvent value, $Res Function(FirstStartEvent) then) =
       _$FirstStartEventCopyWithImpl<$Res, FirstStartEvent>;
 }
 
 /// @nodoc
-class _$FirstStartEventCopyWithImpl<$Res, $Val extends FirstStartEvent>
-    implements $FirstStartEventCopyWith<$Res> {
+class _$FirstStartEventCopyWithImpl<$Res, $Val extends FirstStartEvent> implements $FirstStartEventCopyWith<$Res> {
   _$FirstStartEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -77,19 +74,16 @@ class _$FirstStartEventCopyWithImpl<$Res, $Val extends FirstStartEvent>
 
 /// @nodoc
 abstract class _$$OnNewPageRequestImplCopyWith<$Res> {
-  factory _$$OnNewPageRequestImplCopyWith(_$OnNewPageRequestImpl value,
-          $Res Function(_$OnNewPageRequestImpl) then) =
+  factory _$$OnNewPageRequestImplCopyWith(_$OnNewPageRequestImpl value, $Res Function(_$OnNewPageRequestImpl) then) =
       __$$OnNewPageRequestImplCopyWithImpl<$Res>;
   @useResult
   $Res call({FirstStartPageEnum firstStartPageEnum});
 }
 
 /// @nodoc
-class __$$OnNewPageRequestImplCopyWithImpl<$Res>
-    extends _$FirstStartEventCopyWithImpl<$Res, _$OnNewPageRequestImpl>
+class __$$OnNewPageRequestImplCopyWithImpl<$Res> extends _$FirstStartEventCopyWithImpl<$Res, _$OnNewPageRequestImpl>
     implements _$$OnNewPageRequestImplCopyWith<$Res> {
-  __$$OnNewPageRequestImplCopyWithImpl(_$OnNewPageRequestImpl _value,
-      $Res Function(_$OnNewPageRequestImpl) _then)
+  __$$OnNewPageRequestImplCopyWithImpl(_$OnNewPageRequestImpl _value, $Res Function(_$OnNewPageRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -135,14 +129,12 @@ class _$OnNewPageRequestImpl implements _OnNewPageRequest {
   @override
   @pragma('vm:prefer-inline')
   _$$OnNewPageRequestImplCopyWith<_$OnNewPageRequestImpl> get copyWith =>
-      __$$OnNewPageRequestImplCopyWithImpl<_$OnNewPageRequestImpl>(
-          this, _$identity);
+      __$$OnNewPageRequestImplCopyWithImpl<_$OnNewPageRequestImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(FirstStartPageEnum firstStartPageEnum)
-        onNewPageRequest,
+    required TResult Function(FirstStartPageEnum firstStartPageEnum) onNewPageRequest,
     required TResult Function(bool startLoading) onStartLoading,
   }) {
     return onNewPageRequest(firstStartPageEnum);
@@ -203,30 +195,25 @@ class _$OnNewPageRequestImpl implements _OnNewPageRequest {
 }
 
 abstract class _OnNewPageRequest implements FirstStartEvent {
-  const factory _OnNewPageRequest(final FirstStartPageEnum firstStartPageEnum) =
-      _$OnNewPageRequestImpl;
+  const factory _OnNewPageRequest(final FirstStartPageEnum firstStartPageEnum) = _$OnNewPageRequestImpl;
 
   FirstStartPageEnum get firstStartPageEnum;
   @JsonKey(ignore: true)
-  _$$OnNewPageRequestImplCopyWith<_$OnNewPageRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$OnNewPageRequestImplCopyWith<_$OnNewPageRequestImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$OnStartLoadingImplCopyWith<$Res> {
-  factory _$$OnStartLoadingImplCopyWith(_$OnStartLoadingImpl value,
-          $Res Function(_$OnStartLoadingImpl) then) =
+  factory _$$OnStartLoadingImplCopyWith(_$OnStartLoadingImpl value, $Res Function(_$OnStartLoadingImpl) then) =
       __$$OnStartLoadingImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool startLoading});
 }
 
 /// @nodoc
-class __$$OnStartLoadingImplCopyWithImpl<$Res>
-    extends _$FirstStartEventCopyWithImpl<$Res, _$OnStartLoadingImpl>
+class __$$OnStartLoadingImplCopyWithImpl<$Res> extends _$FirstStartEventCopyWithImpl<$Res, _$OnStartLoadingImpl>
     implements _$$OnStartLoadingImplCopyWith<$Res> {
-  __$$OnStartLoadingImplCopyWithImpl(
-      _$OnStartLoadingImpl _value, $Res Function(_$OnStartLoadingImpl) _then)
+  __$$OnStartLoadingImplCopyWithImpl(_$OnStartLoadingImpl _value, $Res Function(_$OnStartLoadingImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -261,8 +248,7 @@ class _$OnStartLoadingImpl implements _OnStartLoading {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OnStartLoadingImpl &&
-            (identical(other.startLoading, startLoading) ||
-                other.startLoading == startLoading));
+            (identical(other.startLoading, startLoading) || other.startLoading == startLoading));
   }
 
   @override
@@ -272,14 +258,12 @@ class _$OnStartLoadingImpl implements _OnStartLoading {
   @override
   @pragma('vm:prefer-inline')
   _$$OnStartLoadingImplCopyWith<_$OnStartLoadingImpl> get copyWith =>
-      __$$OnStartLoadingImplCopyWithImpl<_$OnStartLoadingImpl>(
-          this, _$identity);
+      __$$OnStartLoadingImplCopyWithImpl<_$OnStartLoadingImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(FirstStartPageEnum firstStartPageEnum)
-        onNewPageRequest,
+    required TResult Function(FirstStartPageEnum firstStartPageEnum) onNewPageRequest,
     required TResult Function(bool startLoading) onStartLoading,
   }) {
     return onStartLoading(startLoading);
@@ -344,8 +328,7 @@ abstract class _OnStartLoading implements FirstStartEvent {
 
   bool get startLoading;
   @JsonKey(ignore: true)
-  _$$OnStartLoadingImplCopyWith<_$OnStartLoadingImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$OnStartLoadingImplCopyWith<_$OnStartLoadingImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -354,22 +337,19 @@ mixin _$FirstStartState {
   FirstStartPageEnum get currentPage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $FirstStartStateCopyWith<FirstStartState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $FirstStartStateCopyWith<FirstStartState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $FirstStartStateCopyWith<$Res> {
-  factory $FirstStartStateCopyWith(
-          FirstStartState value, $Res Function(FirstStartState) then) =
+  factory $FirstStartStateCopyWith(FirstStartState value, $Res Function(FirstStartState) then) =
       _$FirstStartStateCopyWithImpl<$Res, FirstStartState>;
   @useResult
   $Res call({StateType type, FirstStartPageEnum currentPage});
 }
 
 /// @nodoc
-class _$FirstStartStateCopyWithImpl<$Res, $Val extends FirstStartState>
-    implements $FirstStartStateCopyWith<$Res> {
+class _$FirstStartStateCopyWithImpl<$Res, $Val extends FirstStartState> implements $FirstStartStateCopyWith<$Res> {
   _$FirstStartStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -397,10 +377,8 @@ class _$FirstStartStateCopyWithImpl<$Res, $Val extends FirstStartState>
 }
 
 /// @nodoc
-abstract class _$$FirstStartStateImplCopyWith<$Res>
-    implements $FirstStartStateCopyWith<$Res> {
-  factory _$$FirstStartStateImplCopyWith(_$FirstStartStateImpl value,
-          $Res Function(_$FirstStartStateImpl) then) =
+abstract class _$$FirstStartStateImplCopyWith<$Res> implements $FirstStartStateCopyWith<$Res> {
+  factory _$$FirstStartStateImplCopyWith(_$FirstStartStateImpl value, $Res Function(_$FirstStartStateImpl) then) =
       __$$FirstStartStateImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -408,11 +386,9 @@ abstract class _$$FirstStartStateImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$FirstStartStateImplCopyWithImpl<$Res>
-    extends _$FirstStartStateCopyWithImpl<$Res, _$FirstStartStateImpl>
+class __$$FirstStartStateImplCopyWithImpl<$Res> extends _$FirstStartStateCopyWithImpl<$Res, _$FirstStartStateImpl>
     implements _$$FirstStartStateImplCopyWith<$Res> {
-  __$$FirstStartStateImplCopyWithImpl(
-      _$FirstStartStateImpl _value, $Res Function(_$FirstStartStateImpl) _then)
+  __$$FirstStartStateImplCopyWithImpl(_$FirstStartStateImpl _value, $Res Function(_$FirstStartStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -455,8 +431,7 @@ class _$FirstStartStateImpl implements _FirstStartState {
         (other.runtimeType == runtimeType &&
             other is _$FirstStartStateImpl &&
             (identical(other.type, type) || other.type == type) &&
-            (identical(other.currentPage, currentPage) ||
-                other.currentPage == currentPage));
+            (identical(other.currentPage, currentPage) || other.currentPage == currentPage));
   }
 
   @override
@@ -466,14 +441,12 @@ class _$FirstStartStateImpl implements _FirstStartState {
   @override
   @pragma('vm:prefer-inline')
   _$$FirstStartStateImplCopyWith<_$FirstStartStateImpl> get copyWith =>
-      __$$FirstStartStateImplCopyWithImpl<_$FirstStartStateImpl>(
-          this, _$identity);
+      __$$FirstStartStateImplCopyWithImpl<_$FirstStartStateImpl>(this, _$identity);
 }
 
 abstract class _FirstStartState implements FirstStartState {
-  const factory _FirstStartState(
-      {required final StateType type,
-      required final FirstStartPageEnum currentPage}) = _$FirstStartStateImpl;
+  const factory _FirstStartState({required final StateType type, required final FirstStartPageEnum currentPage}) =
+      _$FirstStartStateImpl;
 
   @override
   StateType get type;
@@ -481,6 +454,5 @@ abstract class _FirstStartState implements FirstStartState {
   FirstStartPageEnum get currentPage;
   @override
   @JsonKey(ignore: true)
-  _$$FirstStartStateImplCopyWith<_$FirstStartStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FirstStartStateImplCopyWith<_$FirstStartStateImpl> get copyWith => throw _privateConstructorUsedError;
 }

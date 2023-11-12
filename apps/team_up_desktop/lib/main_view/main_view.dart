@@ -153,7 +153,7 @@ class MainView extends StatelessWidget {
                   ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

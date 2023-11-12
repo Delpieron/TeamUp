@@ -6,8 +6,7 @@ import 'package:library_pkg/library_pkg.dart';
 import 'package:team_up_desktop/enums/first_start_page_enum.dart';
 import 'package:team_up_desktop/first_start/first_start_bloc.dart';
 import 'package:team_up_desktop/first_start/login_page/login_bloc.dart';
-
-import '../../main_view/main_view.dart';
+import 'package:team_up_desktop/main_view/main_view.dart';
 
 final _getIt = GetIt.instance;
 
@@ -100,7 +99,9 @@ class LoginPage extends StatelessWidget {
       }
       context.read<FirstStartBloc>().add(const FirstStartEvent.onStartLoading(false));
       final token = await context.read<FirstStartBloc>().getCurrentUserToken();
-      await Navigator.push(context, MaterialPageRoute(builder: (_) => MainView(token:token)));
+      if (context.mounted) {
+        await Navigator.push(context, MaterialPageRoute(builder: (_) => MainView(token: token)));
+      }
       return;
     });
   }

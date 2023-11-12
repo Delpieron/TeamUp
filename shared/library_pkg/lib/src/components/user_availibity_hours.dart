@@ -1,8 +1,7 @@
-
 import 'package:flutter/material.dart';
 
 class UserAvailibityHours extends StatelessWidget {
-  const UserAvailibityHours({required this.startHour, required this.endHour});
+  const UserAvailibityHours({required this.startHour, required this.endHour, super.key});
 
   final int startHour;
   final int endHour;

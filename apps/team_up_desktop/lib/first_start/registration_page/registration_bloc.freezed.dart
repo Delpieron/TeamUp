@@ -58,14 +58,12 @@ mixin _$RegistrationBlocEvent {
 
 /// @nodoc
 abstract class $RegistrationBlocEventCopyWith<$Res> {
-  factory $RegistrationBlocEventCopyWith(RegistrationBlocEvent value,
-          $Res Function(RegistrationBlocEvent) then) =
+  factory $RegistrationBlocEventCopyWith(RegistrationBlocEvent value, $Res Function(RegistrationBlocEvent) then) =
       _$RegistrationBlocEventCopyWithImpl<$Res, RegistrationBlocEvent>;
 }
 
 /// @nodoc
-class _$RegistrationBlocEventCopyWithImpl<$Res,
-        $Val extends RegistrationBlocEvent>
+class _$RegistrationBlocEventCopyWithImpl<$Res, $Val extends RegistrationBlocEvent>
     implements $RegistrationBlocEventCopyWith<$Res> {
   _$RegistrationBlocEventCopyWithImpl(this._value, this._then);
 
@@ -77,8 +75,8 @@ class _$RegistrationBlocEventCopyWithImpl<$Res,
 
 /// @nodoc
 abstract class _$$OnGamesLoadRequestImplCopyWith<$Res> {
-  factory _$$OnGamesLoadRequestImplCopyWith(_$OnGamesLoadRequestImpl value,
-          $Res Function(_$OnGamesLoadRequestImpl) then) =
+  factory _$$OnGamesLoadRequestImplCopyWith(
+          _$OnGamesLoadRequestImpl value, $Res Function(_$OnGamesLoadRequestImpl) then) =
       __$$OnGamesLoadRequestImplCopyWithImpl<$Res>;
 }
 
@@ -86,8 +84,7 @@ abstract class _$$OnGamesLoadRequestImplCopyWith<$Res> {
 class __$$OnGamesLoadRequestImplCopyWithImpl<$Res>
     extends _$RegistrationBlocEventCopyWithImpl<$Res, _$OnGamesLoadRequestImpl>
     implements _$$OnGamesLoadRequestImplCopyWith<$Res> {
-  __$$OnGamesLoadRequestImplCopyWithImpl(_$OnGamesLoadRequestImpl _value,
-      $Res Function(_$OnGamesLoadRequestImpl) _then)
+  __$$OnGamesLoadRequestImplCopyWithImpl(_$OnGamesLoadRequestImpl _value, $Res Function(_$OnGamesLoadRequestImpl) _then)
       : super(_value, _then);
 }
 
@@ -103,8 +100,7 @@ class _$OnGamesLoadRequestImpl implements _OnGamesLoadRequest {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$OnGamesLoadRequestImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$OnGamesLoadRequestImpl);
   }
 
   @override
@@ -179,8 +175,8 @@ abstract class _OnGamesLoadRequest implements RegistrationBlocEvent {
 
 /// @nodoc
 abstract class _$$OnGameItemSelectedImplCopyWith<$Res> {
-  factory _$$OnGameItemSelectedImplCopyWith(_$OnGameItemSelectedImpl value,
-          $Res Function(_$OnGameItemSelectedImpl) then) =
+  factory _$$OnGameItemSelectedImplCopyWith(
+          _$OnGameItemSelectedImpl value, $Res Function(_$OnGameItemSelectedImpl) then) =
       __$$OnGameItemSelectedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String id});
@@ -190,8 +186,7 @@ abstract class _$$OnGameItemSelectedImplCopyWith<$Res> {
 class __$$OnGameItemSelectedImplCopyWithImpl<$Res>
     extends _$RegistrationBlocEventCopyWithImpl<$Res, _$OnGameItemSelectedImpl>
     implements _$$OnGameItemSelectedImplCopyWith<$Res> {
-  __$$OnGameItemSelectedImplCopyWithImpl(_$OnGameItemSelectedImpl _value,
-      $Res Function(_$OnGameItemSelectedImpl) _then)
+  __$$OnGameItemSelectedImplCopyWithImpl(_$OnGameItemSelectedImpl _value, $Res Function(_$OnGameItemSelectedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -236,8 +231,7 @@ class _$OnGameItemSelectedImpl implements _OnGameItemSelected {
   @override
   @pragma('vm:prefer-inline')
   _$$OnGameItemSelectedImplCopyWith<_$OnGameItemSelectedImpl> get copyWith =>
-      __$$OnGameItemSelectedImplCopyWithImpl<_$OnGameItemSelectedImpl>(
-          this, _$identity);
+      __$$OnGameItemSelectedImplCopyWithImpl<_$OnGameItemSelectedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -307,8 +301,7 @@ abstract class _OnGameItemSelected implements RegistrationBlocEvent {
 
   String get id;
   @JsonKey(ignore: true)
-  _$$OnGameItemSelectedImplCopyWith<_$OnGameItemSelectedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$OnGameItemSelectedImplCopyWith<_$OnGameItemSelectedImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -318,25 +311,19 @@ mixin _$RegistrationBlocState {
   List<String> get selectedGamesIds => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $RegistrationBlocStateCopyWith<RegistrationBlocState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $RegistrationBlocStateCopyWith<RegistrationBlocState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $RegistrationBlocStateCopyWith<$Res> {
-  factory $RegistrationBlocStateCopyWith(RegistrationBlocState value,
-          $Res Function(RegistrationBlocState) then) =
+  factory $RegistrationBlocStateCopyWith(RegistrationBlocState value, $Res Function(RegistrationBlocState) then) =
       _$RegistrationBlocStateCopyWithImpl<$Res, RegistrationBlocState>;
   @useResult
-  $Res call(
-      {StateType type,
-      List<Game> availableGames,
-      List<String> selectedGamesIds});
+  $Res call({StateType type, List<Game> availableGames, List<String> selectedGamesIds});
 }
 
 /// @nodoc
-class _$RegistrationBlocStateCopyWithImpl<$Res,
-        $Val extends RegistrationBlocState>
+class _$RegistrationBlocStateCopyWithImpl<$Res, $Val extends RegistrationBlocState>
     implements $RegistrationBlocStateCopyWith<$Res> {
   _$RegistrationBlocStateCopyWithImpl(this._value, this._then);
 
@@ -370,25 +357,18 @@ class _$RegistrationBlocStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$FirstStartStateImplCopyWith<$Res>
-    implements $RegistrationBlocStateCopyWith<$Res> {
-  factory _$$FirstStartStateImplCopyWith(_$FirstStartStateImpl value,
-          $Res Function(_$FirstStartStateImpl) then) =
+abstract class _$$FirstStartStateImplCopyWith<$Res> implements $RegistrationBlocStateCopyWith<$Res> {
+  factory _$$FirstStartStateImplCopyWith(_$FirstStartStateImpl value, $Res Function(_$FirstStartStateImpl) then) =
       __$$FirstStartStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {StateType type,
-      List<Game> availableGames,
-      List<String> selectedGamesIds});
+  $Res call({StateType type, List<Game> availableGames, List<String> selectedGamesIds});
 }
 
 /// @nodoc
-class __$$FirstStartStateImplCopyWithImpl<$Res>
-    extends _$RegistrationBlocStateCopyWithImpl<$Res, _$FirstStartStateImpl>
+class __$$FirstStartStateImplCopyWithImpl<$Res> extends _$RegistrationBlocStateCopyWithImpl<$Res, _$FirstStartStateImpl>
     implements _$$FirstStartStateImplCopyWith<$Res> {
-  __$$FirstStartStateImplCopyWithImpl(
-      _$FirstStartStateImpl _value, $Res Function(_$FirstStartStateImpl) _then)
+  __$$FirstStartStateImplCopyWithImpl(_$FirstStartStateImpl _value, $Res Function(_$FirstStartStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -419,9 +399,7 @@ class __$$FirstStartStateImplCopyWithImpl<$Res>
 
 class _$FirstStartStateImpl implements _FirstStartState {
   const _$FirstStartStateImpl(
-      {required this.type,
-      required final List<Game> availableGames,
-      required final List<String> selectedGamesIds})
+      {required this.type, required final List<Game> availableGames, required final List<String> selectedGamesIds})
       : _availableGames = availableGames,
         _selectedGamesIds = selectedGamesIds;
 
@@ -438,8 +416,7 @@ class _$FirstStartStateImpl implements _FirstStartState {
   final List<String> _selectedGamesIds;
   @override
   List<String> get selectedGamesIds {
-    if (_selectedGamesIds is EqualUnmodifiableListView)
-      return _selectedGamesIds;
+    if (_selectedGamesIds is EqualUnmodifiableListView) return _selectedGamesIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_selectedGamesIds);
   }
@@ -455,25 +432,19 @@ class _$FirstStartStateImpl implements _FirstStartState {
         (other.runtimeType == runtimeType &&
             other is _$FirstStartStateImpl &&
             (identical(other.type, type) || other.type == type) &&
-            const DeepCollectionEquality()
-                .equals(other._availableGames, _availableGames) &&
-            const DeepCollectionEquality()
-                .equals(other._selectedGamesIds, _selectedGamesIds));
+            const DeepCollectionEquality().equals(other._availableGames, _availableGames) &&
+            const DeepCollectionEquality().equals(other._selectedGamesIds, _selectedGamesIds));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      type,
-      const DeepCollectionEquality().hash(_availableGames),
+  int get hashCode => Object.hash(runtimeType, type, const DeepCollectionEquality().hash(_availableGames),
       const DeepCollectionEquality().hash(_selectedGamesIds));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FirstStartStateImplCopyWith<_$FirstStartStateImpl> get copyWith =>
-      __$$FirstStartStateImplCopyWithImpl<_$FirstStartStateImpl>(
-          this, _$identity);
+      __$$FirstStartStateImplCopyWithImpl<_$FirstStartStateImpl>(this, _$identity);
 }
 
 abstract class _FirstStartState implements RegistrationBlocState {
@@ -490,6 +461,5 @@ abstract class _FirstStartState implements RegistrationBlocState {
   List<String> get selectedGamesIds;
   @override
   @JsonKey(ignore: true)
-  _$$FirstStartStateImplCopyWith<_$FirstStartStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FirstStartStateImplCopyWith<_$FirstStartStateImpl> get copyWith => throw _privateConstructorUsedError;
 }

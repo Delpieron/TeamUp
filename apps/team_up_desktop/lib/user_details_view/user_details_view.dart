@@ -73,7 +73,7 @@ class UserDetailsView extends StatelessWidget {
                           final icon = state.userFriendActionStatus == UserFriendStatus.isFriend
                               ? Icons.person_remove_alt_1
                               : Icons.person_add_alt_1;
-                          if(state.userFriendActionStatus == UserFriendStatus.currentUser) {
+                          if (state.userFriendActionStatus == UserFriendStatus.currentUser) {
                             return const SizedBox.shrink();
                           }
                           return IconButton(
