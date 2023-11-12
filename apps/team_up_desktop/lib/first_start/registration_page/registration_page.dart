@@ -64,7 +64,9 @@ class RegistrationPage extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: 16),
                       child: CustomButton(
                         onPressed: () => context.read<FirstStartBloc>().add(
-                              const FirstStartEvent.onNewPageRequest(FirstStartPageEnum.loginPage),
+                              const FirstStartEvent.onNewPageRequest(
+                                FirstStartPageEnum.loginPage,
+                              ),
                             ),
                         backgroundColor: const Color(0xFF3ACAAB),
                         child: const Text('Zaloguj się'),

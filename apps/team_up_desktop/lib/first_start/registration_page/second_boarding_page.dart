@@ -89,16 +89,23 @@ class SecondBoardingPage extends StatelessWidget {
                 CustomButton(
                   onPressed: () async {
                     if (context.mounted) {
-                      await context.read<RegistrationBloc>().onRegisterRequest().then((result) async {
-                        if (!result) {
-                          onRegistrationFailed(context);
-                          return;
-                        }
-                        final token = await context.read<FirstStartBloc>().getCurrentUserToken();
-                        if (context.mounted) {
-                          await Navigator.push(context, MaterialPageRoute(builder: (_) => MainView(token: token)));
-                        }
-                      });
+                      await context.read<RegistrationBloc>().onRegisterRequest().then(
+                        (result) async {
+                          if (!result) {
+                            onRegistrationFailed(context);
+                            return;
+                          }
+                          final token = await context.read<FirstStartBloc>().getCurrentUserToken();
+                          if (context.mounted) {
+                            await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => MainView(token: token),
+                              ),
+                            );
+                          }
+                        },
+                      );
                     }
                   },
                   backgroundColor: const Color(0xFF3ACAAB),

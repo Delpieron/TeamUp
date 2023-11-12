@@ -40,122 +40,139 @@ class MainView extends StatelessWidget {
             ],
           ),
         ),
-        body: Column(
+        body: const Column(
           children: [
-            Container(
-              color: Colors.blue,
-              height: 60,
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                primary: true,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    BlocBuilder<MainViewBloc, MainViewState>(
-                      builder: (context, state) {
-                        return InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (_) => UserDetailsView(
-                                  user: state.currentUser!,
-                                  myUser: state.currentUser!,
-                                ),
-                              ),
-                            );
-                          },
-                          child: const _NavigationBarItem('Profil'),
-                        );
-                      },
-                    ),
-                    BlocBuilder<MainViewBloc, MainViewState>(
-                      builder: (context, state) {
-                        return InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (_) => FriendsListView(state.currentUser!),
-                              ),
-                            );
-                          },
-                          child: const _NavigationBarItem('Znajomi'),
-                        );
-                      },
-                    ),
-                    const _NavigationBarItem('Szukaj graczy'),
-                    const _NavigationBarItem('Ustawienia'),
-                    const _NavigationBarItem('Kontakt', isLastItem: true),
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(
-              height: MediaQuery.sizeOf(context).height - 140,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  BlocBuilder<MainViewBloc, MainViewState>(
-                    buildWhen: (previous, current) => previous.currentUser != current.currentUser,
-                    builder: (context, state) {
-                      return UserMainInfo(state.currentUser);
-                    },
-                  ),
-                  const VerticalDivider(thickness: 2, indent: 32, color: Colors.black),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        BlocBuilder<MainViewBloc, MainViewState>(
-                          buildWhen: (previous, current) =>
-                              previous.selectedValue != current.selectedValue ||
-                              previous.availableGames.length != current.availableGames.length,
-                          builder: (context, state) {
-                            if (state.type == StateType.loading || state.suggestedUsers == null) {
-                              return const SizedBox.shrink();
-                            }
-                            return _FilerDropDown(state.availableGames, state.selectedValue);
-                          },
-                        ),
-                        Expanded(
-                          child: BlocBuilder<MainViewBloc, MainViewState>(
-                            buildWhen: (previous, current) =>
-                                previous.suggestedUsers?.length != current.suggestedUsers?.length,
-                            builder: (context, state) {
-                              if (state.type == StateType.loading || state.suggestedUsers == null) {
-                                return const Center(child: CircularProgressIndicator());
-                              }
-                              return ListView.builder(
-                                itemCount: state.suggestedUsers!.length,
-                                itemBuilder: (context, index) {
-                                  return UserTile(
-                                    user: state.suggestedUsers![index],
-                                    onUserTileTap: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (_) => UserDetailsView(
-                                            user: state.suggestedUsers![index],
-                                            myUser: state.currentUser!,
-                                          ),
-                                        ),
-                                      );
-                                    },
-                                  );
-                                },
-                              );
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            _TopMenuOptions(),
+            _SuggestedUsers(),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _TopMenuOptions extends StatelessWidget {
+  const _TopMenuOptions(); // TODO(kw) make responsive
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.blue,
+      height: 60,
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        primary: true,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            BlocBuilder<MainViewBloc, MainViewState>(
+              builder: (context, state) {
+                return InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => UserDetailsView(
+                          user: state.currentUser!,
+                          myUser: state.currentUser!,
+                        ),
+                      ),
+                    );
+                  },
+                  child: const _NavigationBarItem('Profil'),
+                );
+              },
+            ),
+            BlocBuilder<MainViewBloc, MainViewState>(
+              builder: (context, state) {
+                return InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => FriendsListView(state.currentUser!),
+                      ),
+                    );
+                  },
+                  child: const _NavigationBarItem('Znajomi'),
+                );
+              },
+            ),
+            const _NavigationBarItem('Szukaj graczy'),
+            const _NavigationBarItem('Ustawienia'),
+            const _NavigationBarItem('Kontakt', isLastItem: true),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _SuggestedUsers extends StatelessWidget {
+  const _SuggestedUsers();
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: MediaQuery.sizeOf(context).height - 140,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          BlocBuilder<MainViewBloc, MainViewState>(
+            buildWhen: (previous, current) => previous.currentUser != current.currentUser,
+            builder: (context, state) {
+              return UserMainInfo(state.currentUser);
+            },
+          ),
+          const VerticalDivider(thickness: 2, indent: 32, color: Colors.black),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                BlocBuilder<MainViewBloc, MainViewState>(
+                  buildWhen: (previous, current) =>
+                      previous.selectedValue != current.selectedValue ||
+                      previous.availableGames.length != current.availableGames.length,
+                  builder: (context, state) {
+                    if (state.type == StateType.loading || state.suggestedUsers == null) {
+                      return const SizedBox.shrink();
+                    }
+                    return _FilerDropDown(state.availableGames, state.selectedValue);
+                  },
+                ),
+                Expanded(
+                  child: BlocBuilder<MainViewBloc, MainViewState>(
+                    buildWhen: (previous, current) => previous.suggestedUsers?.length != current.suggestedUsers?.length,
+                    builder: (context, state) {
+                      if (state.type == StateType.loading || state.suggestedUsers == null) {
+                        return const Center(child: CircularProgressIndicator());
+                      }
+                      return ListView.builder(
+                        itemCount: state.suggestedUsers!.length,
+                        itemBuilder: (context, index) {
+                          return UserTile(
+                            user: state.suggestedUsers![index],
+                            onUserTileTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => UserDetailsView(
+                                    user: state.suggestedUsers![index],
+                                    myUser: state.currentUser!,
+                                  ),
+                                ),
+                              );
+                            },
+                          );
+                        },
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

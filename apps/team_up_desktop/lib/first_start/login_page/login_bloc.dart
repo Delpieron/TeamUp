@@ -21,7 +21,7 @@ class LoginBloc {
       fromJson: (element) => LoginResponse.fromJson(element as Map<String, Object?>),
     );
     if (result.statusCode != RestStatusCodes.ok) {
-      return true; //TODO(KW): true until server is on
+      return true; //TODO(KW): true until server is off
     }
     final response = result.result! as LoginResponse;
     return _localStorage.storeData(Constants.authTokenKey, response.token);
